@@ -27,14 +27,17 @@ namespace DziennikSzkolny13.Controllers
             try
             {
                 var response = new HttpResponseMessage(HttpStatusCode.OK);
-                //var klasas = db.Klasas.Include(x => x.UczniowieKlasy).Select(p => new Klasa
-                //{
-                //    ID = p.ID,
-                //    NazwaKlasy = p.NazwaKlasy,
-                //    ProfilKlasy = p.ProfilKlasy,
-                //    UczniowieKlasy = p.UczniowieKlasy
-                //}).ToList();
-                response.Content = new StringContent(JsonConvert.SerializeObject(db.Nauczyciels.Include(x => x.PrzedmiotyNauczyciela).ToList()));
+                var nauczyciels = db.Nauczyciels.Include(x => x.PrzedmiotyNauczyciela).Select(p => new Nauczyciel
+                {
+                    ID = p.ID,
+                    Imie = p.Imie,
+                    Nazwisko = p.Nazwisko,
+                    Adres = p.Adres,
+                    Email = p.Email,
+                    NumerTelefonu = p.NumerTelefonu,
+                    PrzedmiotyNauczyciela = p.PrzedmiotyNauczyciela,
+                }).ToList();
+                response.Content = new StringContent(JsonConvert.SerializeObject(nauczyciels));
                 response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 return response;
             }
