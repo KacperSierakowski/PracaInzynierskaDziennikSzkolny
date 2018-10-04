@@ -1,0 +1,1265 @@
+{1}{1}23.976
+{1081}{1176}www.NapiProjekt.pl - nowa jakosc napisów.|Napisy zostaly specjalnie dopasowane do Twojej wersji filmu.
+{1177}{1263}T³umaczenie joy77
+{2845}{2921}Co mam z tym zrobiæ,|Wasza Ekscelencjo?
+{2923}{2953}Tak.
+{2955}{3019}Wybra³em j¹ dla|Darii Aleksandrowny i dzieci.
+{3089}{3117}Bonjour, Lili.
+{3119}{3158}Bonjour.
+{3196}{3224}Bonjour, Grisza.
+{3226}{3255}Bonjour.
+{3269}{3298}Wasia.
+{3377}{3413}Kto chce iœæ|do grand-maman?
+{3415}{3443}Ja!
+{3546}{3588}ChodŸcie,|moje kacz¹tka.
+{4316}{4354}B¹dŸ grzeczna.|Wychodzê.
+{4456}{4490}Uwa¿nie przeczytaj rozdzia³.
+{4492}{4517}Przepytam ciê z niego.
+{4560}{4593}Przeczytaj dwa razy.
+{4916}{4946}Au revoir.
+{5339}{5375}Och, Stiwa.
+{5954}{5996}Dolly znalaz³a|liœcik od guwernantki.
+{5998}{6022}I co?
+{6035}{6120}Stiwa chce, ¿ebym przyjecha³a do Moskwy|i przekona³a Dolly, by mu wybaczy³a.
+{6121}{6209}Mam zostaæ pozbawiony ¿ony,|¿eby wybaczono cudzo³óstwo?
+{6242}{6291}Nie mogê go usprawiedliwiaæ,|bo jest twoim bratem.
+{6292}{6337}To te¿ dla dobra Dolly.
+{6339}{6368}Mam dziœ 4 komisje.
+{6394}{6421}Œwiat na mnie czeka.
+{6423}{6497}Nigdy nie ma czasu,|¿eby sprawdziæ twoje zadania.
+{6499}{6580}Serio¿a znakomicie|sobie radzi, Wasza Ekscelencjo.
+{6581}{6624}Kto za³o¿y³ ci|tê koszulê?
+{6626}{6680}Niewa¿ne.|Ja pos³ucham jak czytasz.
+{6689}{6744}Mo¿e jutro.
+{6753}{6814}Dziêkujê, £ukicz.|Mo¿e jutro.
+{6848}{6890}Nie, nie jutro.
+{6892}{6923}Dziêkujê,|Wasza Ekscelencjo.
+{6926}{6952}ChodŸ.
+{6969}{7038}Aleksy, uwa¿asz,|¿e 9 lat ma³¿eñstwa i dzieci
+{7040}{7116}maj¹ pójœæ na marne|przez zadurzenie?
+{7118}{7178}Nie. Dobrze.
+{7180}{7264}Ale za grzech siê p³aci,|mo¿esz byæ pewna.
+{7304}{7332}Ale dlaczego?
+{7333}{7376}Bo tam mieszka|ciocia Dolly.
+{7377}{7452}- Ale dlaczego?|- Mówi³am ci, Serio¿a.
+{7453}{7500}le siê czuje.|Muszê j¹ odwiedziæ.
+{7501}{7537}Ale dlaczego, mamo?
+{7539}{7588}Nie doprowadzaj|mamy do ³ez.
+{7589}{7633}Wrócê nim siê zorientujesz|i przywiozê ci prezent.
+{7635}{7705}Nie chcê prezentu.|Chcê, ¿ebyœ zosta³a.
+{7707}{7761}Mój koteczku.
+{7769}{7809}Jaki prezent?
+{7811}{7856}Teraz lepiej.
+{8465}{8518}Pierwszy raz|zostawi³am synka.
+{8520}{8620}Pani zostawi³a swojego syna,|a ja wracam do mojego.
+{8621}{8667}Jestem hrabina Wroñska.
+{8668}{8748}By³am w Petersburgu|na chrzcinach wnuczki.
+{8750}{8821}Mój najstarszy syn o¿eni³ siê|z ksiê¿niczk¹ Czyrkow¹.
+{8936}{8984}Jesteœ czaruj¹c¹ istot¹.|Dlaczego ciê nie znam?
+{8984}{9053}Nigdy nie obraca³am siê|w moskiewskim towarzystwie.
+{9055}{9088}Ale zna pani|moje nazwisko.
+{9090}{9150}- Pani wspomina³a.|- Raczej o mnie mówiono?
+{9229}{9264}Ach mi³oœæ.
+{9281}{9333}- Czy to by³a mi³oœæ?|- Zawsze.
+{9352}{9388}Synowie siê mnie wstydz¹.
+{9389}{9453}Ale wolê ¿a³owaæ, ¿e coœ zrobi³am,|ni¿, ¿e nie zrobi³am.
+{9455}{9485}Pani nie?
+{9506}{9535}Nie wiem.
+{10216}{10280}Ma pan niezapowiedzianego|goœcia, ekscelencjo.
+{10282}{10309}Czeka na zewn¹trz.
+{10348}{10386}Lewin!|Gdzie przepad³eœ?
+{10397}{10437}Musia³em pilnie|siê z tob¹ zobaczyæ.
+{10473}{10500}Potrzebujê|twojej rady.
+{10502}{10535}ChodŸ do mojego gabinetu.
+{10536}{10618}To mój stary przyjaciel,|Konstanty Dmitricz Lewin.
+{10620}{10673}Niech ktoœ wyœle wiadomoœæ,|¿e siê spóŸniê.
+{10813}{10875}Ciê¿ko pracowa³em.|Usi¹dŸ.
+{10876}{10908}Nad czym w³aœciwie?
+{10910}{10958}Jesteœmy zawaleni robot¹.
+{10960}{10984}Papierkow¹.
+{10985}{11040}Robota papierkowa to dusza Rosji.|Rolnictwo to jedynie ¿o³¹dek.
+{11042}{11110}Kiedy mogê|przyjechaæ na bekasy?
+{11185}{11257}Masz na sobie zachodnie ubranie!|Mówi³eœ, ¿e ju¿ nigdy go nie za³o¿ysz.
+{11259}{11284}Coœ siê szykuje.
+{11285}{11372}Tak, zakocha³em siê.|Wróci³em, aby siê oœwiadczyæ.
+{11409}{11444}Domyœlasz siê kto to?
+{11446}{11505}Mam podejrzenia.|Dlaczego nie oœwiadczy³eœ siê poprzednio?
+{11517}{11568}Uzna³em, ¿e to niemo¿liwe.
+{11570}{11652}Kitty jest z niebios, to anio³.|A ja jestem z ziemi.
+{11653}{11744}Ale myœla³em i myœla³em|i nie ma dla mnie ¿ycia bez niej.
+{11772}{11816}- Mam szansê?|- Oczywiœcie.
+{11817}{11852}Jest dziœ wieczorek|u Szczerbackich.
+{11853}{11889}PrzyjdŸ wczeœniej,|przed innymi.
+{11889}{11931}- Jeœli mogê coœ zasugerowaæ...|- Co zechcesz.
+{11931}{11983}- Nowe buty.|- Dobrze. Coœ jeszcze?
+{12024}{12052}Lepiej zjedzmy razem obiad.
+{12052}{12095}ChodŸ. Spotkamy siê|póŸniej w "l'Angleterre".
+{12095}{12128}Czy wolisz "Hermitage"?
+{12130}{12173}Niech bêdzie|17.30 w "l'Angleterre".
+{12175}{12210}Zalegam u nich bardziej|ni¿ w Hermitage,
+{12212}{12247}wiêc by³oby nieuczciwie|tam nie jadaæ.
+{12248}{12360}Nowe buty, p³aszcz|i odpowiedni kapelusz.
+{13383}{13433}Przepraszam.
+{13435}{13468}Czy...
+{13563}{13592}Przepraszam.
+{14242}{14275}To takie niesprawiedliwe.
+{14296}{14332}¯enisz siê z mi³oœci.
+{14344}{14377}Jesteœ dobrym mê¿em.
+{14405}{14472}Pojawiaj¹ siê dzieci,|mijaj¹ lata.
+{14492}{14600}I nagle twoja ¿ona|robi siê stara i zmêczona.
+{14601}{14664}Ma rzadkie w³osy.|A jej cia³o...
+{14665}{14717}A ty wci¹¿|jesteœ pe³en wigoru!
+{14746}{14821}I jesteœ nara¿ony|na wdziêki tylu kobiet.
+{14823}{14869}Wybacz, ale dla mnie|to niezrozumia³e.
+{14871}{14954}Jakbym po wyjœciu z tej restauracji|ukrad³ bu³kê z piekarni.
+{14956}{14983}Œwie¿o pieczon¹ bu³kê.
+{14984}{15079}Mówiê o mi³oœci,|a ty o swoim apetycie.
+{15080}{15144}£atwo to pomyliæ.|Znasz hrabiego Wroñskiego?
+{15146}{15184}Kogo? Nie.|Dlaczego?
+{15184}{15236}To twój rywal. Przyjecha³|z Petersburga po twoim wyjeŸdzie.
+{15236}{15260}Kto to?
+{15261}{15322}Nie musisz siê nim martwiæ.|To tylko...
+{15324}{15364}Bogaty, przystojny|oficer kawalerii,
+{15366}{15429}który rozkochuje w sobie|piêkne kobiety.
+{15431}{15458}Czy to kapuœniak?
+{15460}{15537}Potage aux choux a la russe,|jak pan zamawia³.
+{15539}{15584}Tego chcia³em.
+{15628}{15707}Zrozum, dzisiejszy wieczór|to dla mnie kwestia ¿ycia lub œmierci.
+{15708}{15741}Kostia...
+{15756}{15815}Kitty by³aby szalona|gdyby ci odmówi³a.
+{15816}{15868}Dolly jest|po twojej stronie.
+{15884}{15974}Mówi, ¿e jej siostra, Kitty,|zawsze mia³a byæ twoj¹ ¿on¹ i ni¹ bêdzie.
+{15976}{16002}Dolly tak powiedzia³a?
+{16051}{16094}Zawsze uwa¿a³em,|¿e twoja Dolly to skarb.
+{16096}{16123}To prawda.
+{16147}{16178}To prawda.
+{16182}{16227}Szala³em za ni¹.
+{16260}{16296}{y:i}Konstanty!
+{16345}{16381}{y:i}Konstanty!
+{16491}{16526}Konstanty!
+{16533}{16580}Przyszed³em za wczeœnie.|Wrócê póŸniej.
+{16585}{16632}Nie. ChodŸ.
+{17403}{17440}Spójrz na mnie.
+{17442}{17512}Przyjmujê goœci zamiast papa i maman,|którzy siê ubieraj¹.
+{17513}{17556}Pierwszy raz przyjmujê.
+{17581}{17626}Ksiê¿niczko Jakaterino.
+{17662}{17693}Jestem zachwycony.
+{17728}{17805}Cieszê siê, ¿e do nas do³¹czy³eœ,|Konstanty Dmitriczu.
+{17825}{17864}Kitty, wygl¹dasz...
+{17908}{17966}- Wygl¹dasz...|- Stiwa mówi³, ¿e wróci³eœ.
+{17968}{17992}Jak d³ugo zostaniesz?
+{17993}{18052}Nie wiem.|To zale¿y od ciebie.
+{18070}{18102}Ode mnie?
+{18146}{18245}Chcia³em powiedzieæ...
+{18247}{18315}Przyszed³em|w jednym celu.
+{18340}{18380}Zostaniesz moj¹ ¿on¹?
+{18492}{18540}Przepraszam.
+{18541}{18588}To z³y moment.
+{18594}{18622}Ale zostaniesz?
+{18683}{18712}Nie mogê.
+{18899}{18927}Przykro mi.
+{18956}{18980}Tak.
+{19005}{19044}To by³o niemo¿liwe.
+{19148}{19173}Przepraszam.
+{19190}{19232}Jest pan bratem|Miko³aja Lewina?
+{19233}{19258}Tak.
+{19260}{19347}Jest w Moskwie.|Przebywa w "Jednoro¿cu" na Chitrowce.
+{19348}{19376}Sk¹d pan wie?
+{19377}{19424}Wiem takie rzeczy.
+{19559}{19586}Hrabia Wroñski?
+{19595}{19622}Tak?
+{19944}{19984}Ksiê¿niczko Kitty.
+{19992}{20052}Minê³o tyle czasu,|a wydaje siê jakby to by³o wczoraj.
+{20053}{20100}To by³o wczoraj.
+{21738}{21767}To ja - Kostia.
+{21777}{21816}Dobry Bo¿e!|Spójrz na niego.
+{21846}{21887}Wygl¹dasz|jak kapitalista.
+{21899}{21935}Czego chcesz?
+{21936}{21996}Niczego.|Przyszed³em do ciebie.
+{22056}{22107}Dobry wieczór,|panno... proszê pani.
+{22108}{22168}Nie mów tak do niej.|Brzmisz jak sêdzia pokoju.
+{22218}{22265}Wiêcej wódki|dla mojego brata! Szybko.
+{22282}{22317}Nic nie chcê.
+{22338}{22372}Nic mi nie jest.
+{22460}{22498}Kto ci powiedzia³|gdzie mnie znaleŸæ?
+{22500}{22593}Pu³kownik z Trzeciego Oddzia³u.|Obserwuj¹ ciê.
+{22623}{22648}Dobrze.
+{22674}{22711}Myœl¹, ¿e jestem|niebezpieczny.
+{22748}{22783}Z czego siê œmiejesz?
+{22784}{22809}Z niczego.
+{22811}{22835}Racja.
+{22837}{22933}Dzieñ nadchodzi.|Zrezygnowa³em dla tego z moich praw.
+{22956}{23007}Stoisz po z³ej|stronie historii.
+{23019}{23071}Nie dlatego,|¿e przywileje s¹ niemoralne.
+{23073}{23130}Ale dlatego,|¿e s¹ irracjonalne.
+{23188}{23215}Jest chory!
+{23222}{23268}Puœæ, jeœli wiesz|co dla ciebie dobre.
+{23292}{23340}Wzi¹³em Mariê Niko³ajewn¹|z burdelu.
+{23377}{23421}Uwa¿am j¹ za ¿onê.
+{23436}{23492}Jeœli jej obecnoœæ|ciê obra¿a, mo¿esz wyjœæ.
+{23567}{23600}O¿eni³eœ siê?
+{23644}{23679}Nie.
+{23680}{23760}Dlaczego?|Czekasz, ¿eby siê zakochaæ?
+{23761}{23805}- Nie.|- Dobrze.
+{23812}{23876}Romantyczna mi³oœæ bêdzie|ostatni¹ iluzj¹ starego porz¹dku.
+{23926}{23960}Powinieneœ o¿eniæ siê|z jedn¹ z twoich ch³opek.
+{23970}{24025}Tak. Powinienem,|do cholery.
+{24080}{24118}Braterstwo ludzi!
+{24424}{24465}Miko³aj,|musisz iœæ do lekarza.
+{24518}{24577}PrzyjedŸ do mnie, do Pokrowskoje,|póki nie wrócisz do zdrowia.
+{24579}{24612}Z moj¹ ¿on¹?
+{24626}{24651}Jeœli...
+{24677}{24703}Albo...
+{24721}{24775}Albo jedŸ|za granicê do spa.
+{24819}{24881}Wyœlê wiêcej,|jeœli tego chcesz.
+{25148}{25183}Witaj. Co to?
+{25184}{25264}Austryjacka rodzina królewska|w podró¿y poœlubnej. Mam ich na 4 dni.
+{25275}{25325}Prywatny wagon|zatrzyma siê obok postoju.
+{25327}{25392}Co za pech.|Co oni lubi¹? Sztukê?
+{25407}{25431}Jedzenie.
+{25457}{25492}Jedzie poci¹g.
+{26007}{26039}Zaraz wrócê.
+{26261}{26294}Stiwa!
+{26313}{26338}Anna!
+{26443}{26503}- Nie wygl¹dasz na zawstydzonego!|- Ale jestem.
+{26544}{26590}Tak, oczywiœcie.|Siostra Ob³oñskiego, Karenina.
+{26673}{26706}Charmante, nie s¹dzisz?
+{27176}{27209}Hrabino.
+{27211}{27259}Znalaz³a pani syna,|a ja brata.
+{27260}{27304}Pani Karenina|te¿ ma syna.
+{27305}{27357}Pierwszy raz siê rozstali,|wiêc siê o niego martwi.
+{27375}{27429}Proszê wybaczyæ,|¿e wczeœniej pani nie pozna³em.
+{27474}{27512}- Au revoir, hrabino.|- Au revoir, moja droga.
+{27513}{27562}Niech uca³ujê|t¹ œliczn¹ twarz.
+{28045}{28114}Zatrzymajcie ludzi w œrodku,|póki to nie zostanie uprz¹tniête.
+{28162}{28220}Jedyny ¿ywiciel|du¿ej rodziny.
+{28221}{28264}Czy nic nie mo¿na|dla nich zrobiæ?
+{28266}{28308}Zaczekaj na mnie, maman.
+{28415}{28476}Odsuñcie siê.
+{28477}{28520}Zawdziêczamy to tobie.
+{28596}{28662}Jaki dobry cz³owiek!
+{28732}{28772}D³ugo znasz|hrabiego Wroñskiego?
+{28788}{28844}Spodoba³ ci siê?|Jest zakochany w Kitty.
+{28943}{29013}Powinniœmy rozmawiaæ|o tobie i Dolly.
+{29015}{29048}Co masz na swoj¹ obronê?
+{29050}{29121}Ju¿ wszystko powiedzia³em.|Na kolanach, we ³zach.
+{29123}{29152}Teraz ty musisz|to powiedzieæ.
+{29154}{29196}Jadê do biura,|wiêc masz Dolly dla siebie.
+{29197}{29234}Nie wracaj póŸno do domu.
+{29340}{29391}Kitty wpadnie,|¿eby siê z tob¹ zobaczyæ.
+{29392}{29468}Jest taka doros³a|i trochê siê ciebie boi.
+{29470}{29520}Piêknoœci|z petersburskiego towarzystwa.
+{29521}{29577}Tym jestem?
+{29661}{29693}Dolly.
+{29748}{29788}Stiwa mi powiedzia³.
+{29875}{29920}Dolly, przykro mi.
+{29925}{29976}Z ca³ego serca.
+{29990}{30038}Nie wiem co robiæ.
+{30044}{30094}Wiem.
+{30097}{30149}Nie mogê z nim byæ.
+{30157}{30216}A jego to nie obchodzi.|Ma czego chcia³.
+{30217}{30300}Chce ciebie.|Kocha ciê, Dolly.
+{30302}{30355}Ty i dzieci|jesteœcie dla niego wszystkim.
+{30356}{30387}Czy¿by?
+{30388}{30429}Jest jeszcze|miejsce dla guwernantki?
+{30431}{30512}To by³o karygodne, haniebne,|ale to nie mi³oœæ.
+{30525}{30592}To pochodzi³o ze zwierzêcia|w cz³owieku, nie z duszy.
+{30594}{30640}Skrucha Stiwy|pochodzi z duszy.
+{30660}{30701}A co ze mn¹?
+{30724}{30781}Czy jego skrucha|mi to u³atwia?
+{30783}{30858}Wiem, ¿e cierpisz.|Dolly, musisz mi powiedzieæ.
+{30879}{30972}Czy masz w sercu|na tyle mi³oœci, ¿eby mu wybaczyæ?
+{31026}{31121}Kiedy myœlê o nich razem,|nie mogê mu wybaczyæ.
+{31123}{31148}Nie.
+{31152}{31238}Biedna owieczko.|Wolisz pogodziæ siê z losem?
+{31240}{31268}Z losem?
+{31301}{31380}Ale ja nic nie zrobi³am!|To on...
+{31382}{31422}Kochasz go, Dolly?
+{31556}{31616}Kochasz go,|a on kocha ciebie.
+{31618}{31652}Ale nie mo¿esz mu wybaczyæ.
+{31653}{31728}Wiêc bêdziecie tak ¿yæ,|oboje nieszczêœliwi.
+{31816}{31888}Jaka ³adna.|To suknia œlubna?
+{31890}{31919}Tak.
+{31920}{31956}ZnajdŸ "G" jak "Grisza."
+{32012}{32047}U³o¿ysz ca³e imiê?
+{32048}{32098}Nie wygl¹da|jak ksiê¿niczka?
+{32128}{32207}{y:i}Wróci³em!
+{32208}{32259}{y:i}Gdzie moje kacz¹tka?
+{32315}{32360}Tata!
+{32362}{32392}Tata!
+{32484}{32538}Zostaniesz na bal|u Bobryszczewów, Anna?
+{32540}{32593}Zawsze siê nudzê|na balach.
+{32648}{32709}Stiwa, powiedz Annie,|¿e musi przyjœæ na bal.
+{32711}{32749}Oczywiœcie, ¿e musi.
+{32808}{32839}Niech Bóg|bêdzie z tob¹.
+{32874}{32924}Przedstawcie mnie|nowej guwernantce.
+{32925}{32986}Jest stara!|Ma 100 lat!
+{33053}{33087}Wiem dlaczego chcesz,|¿ebym przysz³a.
+{33088}{33144}Chcesz, ¿eby wszyscy tam byli,
+{33146}{33209}bo jesteœ pewna,|¿e to bêdzie twój wieczór.
+{33211}{33252}Sk¹d wiedzia³aœ?
+{33298}{33328}Wiem wszystko.
+{33394}{33441}Znów byæ w twoim wieku!
+{33468}{33501}Byæ otoczon¹ przez t¹...
+{33515}{33548}t¹ niebiesk¹ mg³ê.
+{33572}{33620}Ja te¿ mia³am 18 lat|kiedy wysz³am za m¹¿.
+{34032}{34073}Czy ksi¹¿ê jest w domu?
+{34084}{34129}W³aœnie wyszed³.
+{34131}{34174}Nikt nie przyjmuje?
+{34176}{34249}{y:i}Mogê spytaæ, sir.|Nie s¹dzê.
+{34279}{34364}{y:i}Ksiê¿na wczeœnie siê po³o¿y³a.|Przekazaæ coœ?
+{34616}{34658}Nie, dziêkujê.
+{35847}{35891}Myœleliœmy,|¿e wrócisz ¿onaty.
+{35892}{35921}Tak?
+{36001}{36058}Ale wróci³eœ tylko|z kapeluszem.
+{36076}{36119}Z czarnym,|jedwabnym kapeluszem.
+{36143}{36204}Z jakiego zwierzêcia|robi siê taki kapelusz?
+{36206}{36243}To nienaturalne.
+{36280}{36321}Mo¿e nastêpnym razem.
+{36343}{36389}Nie bêdzie|nastêpnego razu.
+{37556}{37581}Kitty.
+{37621}{37646}Mogê prosiæ o walca?
+{37648}{37690}Mo¿esz, Borys.
+{37692}{37764}Zarezerwujê ci trzeci,|tylko dlatego, ¿e to twój pierwszy bal.
+{37765}{37804}Jesteœ moim|pierwszym podbojem!
+{38487}{38536}Gdzie pani¹|zaprowadziæ?
+{38560}{38590}Tam.
+{39016}{39040}Jak siê masz, Stiwa?
+{39042}{39109}Dziêki Annie jestem|szczêœliwym cz³owiekiem. Zatañczysz?
+{39111}{39151}Nie. Poproœ Annê.
+{39158}{39196}Nie, ja nie...
+{39273}{39328}- ChodŸmy.|- Uwa¿aj!
+{40228}{40309}To twoje okropne,|idiotyczne swatanie.
+{40311}{40368}Na mi³oœæ bosk¹,|có¿ zrobi³am?
+{40403}{40441}Coœ siê sta³o?
+{40443}{40472}Nie.
+{40581}{40643}Wygl¹dasz równie piêknie|jak zawsze, ksiê¿niczko Kitty.
+{40865}{40910}Nie pytaj, maman.
+{40928}{40968}Kitty, teraz my.
+{41024}{41099}Ksiê¿niczko, mam zaszczyt|odebraæ mój taniec.
+{41581}{41657}Zobaczysz, ¿e mazurka|zatañczy z Kitty.
+{42394}{42430}Zatañcz ze mn¹.
+{42478}{42521}Nie przywyk³am,|¿eby odzywa³ siê tak do mnie
+{42523}{42574}cz³owiek, którego raz|spotka³am na dworcu.
+{42576}{42636}Jeœli z tob¹ nie zatañczê,
+{42638}{42708}to wychodzê z tej operetki|i wracam do domu.
+{42738}{42776}Zatem ze wzglêdu na Kitty.
+{45020}{45048}To moja siostra.
+{48285}{48328}Mogê w czymœ pomóc?
+{48418}{48454}Dlaczego wyje¿d¿asz z Moskwy?
+{48500}{48537}Có¿ innego mogê zrobiæ?
+{48580}{48612}Muszê byæ tam, gdzie ty.
+{48614}{48651}Przestañ.|Doœæ tego.
+{48678}{48705}Wracaj do Kitty.
+{48727}{48752}Nie.
+{48784}{48815}To z³e.
+{48816}{48849}To bez znaczenia.
+{48856}{48882}Nie masz prawa.
+{48884}{48920}To bez znaczenia.
+{48955}{48992}Musisz o mnie zapomnieæ.
+{49019}{49064}Jeœli jesteœ dobrym cz³owiekiem,|zapomnisz o wszystkim.
+{49073}{49126}A ty? Zapomnisz?
+{49184}{49215}Tak.
+{50012}{50042}Czy Serio¿a jest zdrów?
+{50044}{50080}Tylko tyle dostanê?
+{50081}{50108}Tak, ma siê dobrze.
+{50145}{50176}Odnios³aœ sukces?
+{50177}{50204}Ja?
+{50205}{50244}A Dolly i Stiwa.
+{50266}{50298}Tak s¹dzê.
+{50416}{50459}- Zapowiem siê.|- Dobrze, sir.
+{50488}{50553}Wroñski. Pan domu|we w³asnej osobie.
+{50571}{50624}Baronowo, kawa z nowego dzbanka|dla hrabiego Wroñskiego.
+{50660}{50698}Wrócê do domu,|jeœli zawadzam.
+{50705}{50757}Jest pani w domu, baronowo.
+{50759}{50829}Pierre, nigdy nie mówisz mi|takich mi³ych rzeczy.
+{50836}{50879}W³aœnie rozmawialiœmy|o moim mê¿u.
+{50880}{50928}Nie rozwiedzie siê ze mn¹,|wiesz dlaczego?
+{50929}{50999}- Nie.|- Bo lubi jeœæ na moim rodzinnym srebrze.
+{51000}{51030}Chcê go pozwaæ.
+{51032}{51070}Tylko dlatego,|¿e niby by³am niewierna,
+{51072}{51119}nie rozumiem dlaczego|mam jeœæ z zastawy Pierre'a.
+{51120}{51148}Spójrz na ni¹!
+{51168}{51196}To moja zastawa.
+{51226}{51261}Jak Moskwa?
+{51282}{51312}Prowincjonalna.
+{51940}{51972}Dziêkujê za prezenty.
+{52804}{52872}Piszê do Dolly i Kitty.
+{52920}{52956}Jesteœ taka dobra.
+{53260}{53297}Czas do ³ó¿ka.
+{53400}{53476}Co mówi¹ w Moskwie|o nowej ustawie?
+{53495}{53531}Jakiej ustawie?
+{53567}{53604}O tej, któr¹|przepchn¹³em w radzie.
+{53667}{53700}Nikt o tym|nie wspomina³.
+{53723}{53752}Naprawdê?
+{53891}{53946}Tutaj wywo³a³a sensacjê.
+{54720}{54746}Ksiê¿no Betsy.
+{54758}{54782}Kuzynie.
+{54784}{54831}Nie wiedzia³am,|¿e kochasz sztukê.
+{54832}{54870}Pokocham.
+{55859}{55890}Hrabina Lidia mówi³a,
+{55892}{55954}¿e od powrotu nie by³aœ|na ¿adnym z jej wieczorków.
+{55956}{55988}Na ostatnim|mieliœmy poznaæ misjonarza.
+{55990}{56016}A na wczeœniejszym
+{56018}{56093}by³ wyk³ad o zjednoczeniu|greckiego i rzymskiego koœcio³a.
+{56143}{56188}Przepraszam.
+{56189}{56230}Wiem, ¿e j¹ lubisz.
+{56260}{56300}ChodŸ, bo siê spóŸnimy.
+{56792}{56831}Powiem w czym rzecz, Wroñski.
+{56832}{56900}Jest nowy przydzia³|i czeka ciê awans.
+{56901}{56925}Dziêkujê, sir.
+{56927}{56965}W Taszkiencie.
+{56967}{57012}Taszkient? Ale...
+{57045}{57131}Wola³bym zostaæ w Petersburgu,|jeœli nie ma pan nic przeciwko.
+{57140}{57178}Nie mam.
+{57209}{57292}Ale twoja matka...|To jej pomys³.
+{57695}{57745}Pani m¹¿ jest œwiêtym,
+{57753}{57820}i wszyscy musimy|go ceniæ dla dobra Rosji.
+{57976}{58029}Nie przyszed³eœ|do mnie na kolacjê.
+{58031}{58067}Musia³em|zobaczyæ siê z dowódc¹.
+{58068}{58124}"Ona" te¿ nie przysz³a.
+{58212}{58259}Mam nadziejê,|¿e przyjdzie pani póŸniej.
+{58268}{58356}Sprawozdanie o misji w Chinach|ojciec Krzysztof poka¿e na przeŸroczach.
+{58382}{58427}Jestem oczekiwana|u Twerskich.
+{58448}{58480}Bez w¹tpienia.
+{58510}{58568}Ale ksiê¿na Betsy|mo¿e na pani¹ zaczekaæ.
+{58773}{58835}Tak, w³aœciwie,|raczej nie pójdê do Betsy.
+{58838}{58869}Przy³apany.
+{58914}{58981}Obawiam siê,|¿e stajê siê œmieszny.
+{59736}{59772}A to fenomen.
+{59775}{59852}Cieñ Anny|przyby³ przed Ann¹.
+{59863}{59900}Jestem przyjació³k¹ Anny.
+{59906}{59952}Ale to ca³e|podejmowanie decyzji publicznie
+{59954}{60017}jest nieuprzejme wobec|tak dystyngowanego cz³owieka jak Karenin.
+{60019}{60116}Uwa¿am, ¿e Karenin to g³upiec,|a Anna jest z nas najlepsza.
+{60118}{60192}Wszyscy pani¹ kochamy|za pani odmienne zdania.
+{60576}{60624}Aleksy, wygl¹dasz|na zdesperowanego.
+{60661}{60705}To nieatrakcyjne.
+{60712}{60744}Tracê nadziejê.
+{60746}{60778}Na co?
+{60780}{60832}¯e przekonasz cnotliw¹ kobietê|do z³amania przysiegi ma³¿eñskiej?
+{60884}{60913}Nie, masz racjê.
+{60957}{60990}Ona nie przyjdzie.
+{61820}{61853}Wyszed³.
+{61856}{61908}Zd¹¿y³aœ na niespodziankê.
+{62847}{62884}Zawróæ!
+{62904}{62986}Czy mogê|przynieœæ pani lód?
+{63124}{63176}Podano lód.
+{63254}{63313}Wolê spróbowaæ papierosa.
+{63700}{63734}Courage.
+{63744}{63776}Spróbujê innym razem.
+{63800}{63828}Kiedy?
+{63844}{63873}Gdzie?
+{63878}{63955}Tak jak myœla³am|pana maniery siê poprawi³y.
+{63957}{63989}le siê pan zachowa³.
+{63991}{64022}Bardzo Ÿle.
+{64026}{64073}Czyja to wina?
+{64164}{64207}Podaj mi herbatê.
+{64342}{64370}Jak mi³o!
+{64372}{64416}Przyby³|Aleksy Aleksandrowicz.
+{64475}{64532}Nie wiem czy moje nerwy|wytrzymaj¹ kolejnego Aleksego.
+{64696}{64736}Cieszysz siê,|¿e mnie widzisz czy nie?
+{64738}{64800}Szezburgowie|zaprosili nas na obiad.
+{64801}{64904}Sos kosztowa³ tysi¹c rubli,|a by³ okropny.
+{65044}{65135}Poda³am im sos|za 85 kopiejek i by³ przepyszny.
+{65176}{65214}To musi siê skoñczyæ.
+{65220}{65261}Przez ciebie|czujê siê winna.
+{65263}{65292}Co mam zrobiæ?
+{65306}{65359}Chcê, ¿ebyœ wróci³ do Moskwy|i b³aga³ Kitty o wybaczenie.
+{65360}{65396}Nie, nie tego chcesz.
+{65397}{65446}Moskwa?|Mogê zrobiæ coœ lepszego.
+{65460}{65526}Dziœ zrezygnowa³em|ze stanowiska w Taszkiencie.
+{65544}{65604}Mogê zmieniæ zdanie|i nigdy mnie ju¿ nie zobaczysz.
+{65645}{65704}Jeœli coœ dla ciebie znaczê,|zwrócisz mi spokój.
+{65706}{65742}Nie mogê go zwróciæ.
+{65748}{65787}Nie ma dla nas spokoju.
+{65788}{65860}Tylko cierpienie,|albo najwiêksze szczêœcie.
+{65912}{65959}Twój m¹¿ jest niemo¿liwy.
+{65960}{65986}Myli siê we wszystkim,
+{65988}{66039}ale przemawia tak b³yskotliwie,|¿e wygrywa ka¿dy spór.
+{66040}{66074}Co?
+{66079}{66109}Przyszed³em|zabraæ ciê do domu.
+{66123}{66153}Nie, zostajê.
+{66168}{66217}Wyœlij po mnie powóz.
+{66219}{66245}Oczywiœcie.
+{66751}{66808}Chcesz, ¿ebym|pojecha³ do Taszkientu?
+{67123}{67156}Zatem pojadê|do Taszkientu.
+{67159}{67186}Nie!
+{67272}{67308}Nie chcê,|¿ebyœ jecha³.
+{68021}{68072}{y:i}Czeka³em,|¿eby z tob¹ porozmawiaæ.
+{68228}{68255}O czym?
+{68289}{68323}Jest póŸno.
+{68345}{68386}Gdzie Anuszka?
+{68463}{68492}Odes³a³em j¹.
+{68632}{68680}Chcesz prozmawiaæ,|czy pójdziemy spaæ?
+{68684}{68715}Muszê ciê przed czymœ ostrzec.
+{68716}{68742}Ostrzec mnie?
+{68807}{68839}Jest naprawdê póŸno.
+{68840}{68889}Chcê ciê ostrzec,|¿e mog³aœ, nieumyœlnie,
+{68913}{68966}przez nierozwagê,
+{68968}{69008}daæ œwiatu|powód do plotek.
+{69009}{69046}Nie jestem komisj¹.
+{69076}{69111}Powiedz co chcesz powiedzieæ.
+{69194}{69244}Ty i hrabia Wroñski|przyci¹galiœcie uwagê.
+{69307}{69351}Nie podoba ci siê|kiedy nie rozmawiam z ludŸmi,
+{69352}{69384}i kiedy rozmawiam.
+{69385}{69420}Sam nic nie zauwa¿y³em,
+{69421}{69451}ale widzia³em,|¿e wszyscy inni zauwa¿yli.
+{69485}{69574}Uwa¿am zazdroœæ za obraŸliw¹ dla ciebie,|a upokarzaj¹c¹ dla mnie.
+{69576}{69623}Nie mam prawa|wypytywaæ ciê o uczucia.
+{69638}{69681}Dotycz¹ tylko|twojego sumienia.
+{69689}{69771}Ale mam obowi¹zek przypomnieæ ci,|¿e po³¹czy³ nas Bóg,
+{69772}{69856}i t¹ wiêŸ mo¿e z³amaæ|jedynie zbrodnia przeciw Bogu.
+{69865}{69917}Nie mam ci nic|do powiedzenia.
+{69952}{69984}I masz syna.
+{69993}{70026}I jestem zmêczona.
+{70282}{70343}Jeœli siê mylê,|proszê o wybaczenie.
+{70410}{70464}Nie wiem o czym mówisz
+{70466}{70511}i naprawdê jest|na to za póŸno.
+{70600}{70630}Zostaw mnie, proszê.
+{70856}{70888}Za póŸno.
+{72716}{72766}O Bo¿e! Wybacz mi!
+{72786}{72824}To koniec wszystkiego.
+{72828}{72884}Teraz nie zosta³o mi nic prócz ciebie,|pamiêtaj o tym.
+{72933}{72984}Jak móg³bym zapomnieæ?
+{73024}{73068}Jesteœ moim szczêœciem.
+{73194}{73232}Szczêœciem?
+{73233}{73282}Zamordowa³eœ moje szczêœcie.
+{73305}{73340}Morderca.
+{73349}{73382}Morderca.
+{73450}{73480}Tak.
+{73504}{73539}Morderca.
+{73569}{73597}Morderca.
+{73942}{73992}Patrz, lec¹.
+{74048}{74087}A to pech.
+{74310}{74352}Potage aux choux|a la russe!
+{74364}{74406}Agafia, gdybyœ otworzy³a|restauracjê w Moskwie,
+{74410}{74457}"l'Angleterre"|by zbankrutowa³a.
+{74517}{74551}To prawda.
+{74554}{74612}- Chcesz us³yszeæ wieœci z Moskwy?|- Z Babilonu? Nie.
+{74620}{74653}Masz racjê,|co ciê to obchodzi?
+{74655}{74686}Kochasz wieœ,|masz j¹.
+{74688}{74747}Kochasz rolnictwo,|i masz je.
+{74749}{74780}Kochasz strzelanie,|masz je.
+{74781}{74814}Masz wszystko,|czego chcesz.
+{74861}{74900}Dobra, mów.
+{74901}{74936}Przesta³eœ kraœæ bu³ki?
+{74964}{75028}Baletnica, orientalna uroda.|Jak móg³bym siê oprzeæ?
+{75058}{75088}Jak...
+{75089}{75124}Jak Szczerbaccy?
+{75131}{75156}Mówisz o Kitty.
+{75184}{75221}- Zarêczy³a siê?|- Nie.
+{75228}{75286}Wroñski wróci³|do Petersburga.
+{75334}{75397}Kitty latem przyjedzie|do Dolly do Jergoszewa.
+{75410}{75436}Móg³byœ...
+{75439}{75480}Jakbym mia³ czas latem.
+{75481}{75542}Mam dodatkow¹ ziemiê|w Kaszynie pod sianokosy.
+{75544}{75590}Kaszyn? To po drodze|do Jergoszewa, prawda?
+{75596}{75628}Nie móg³byœ odwiedziæ Kitty|kiedy tam bêdzie?
+{75631}{75691}Zw³aszcza nie wtedy.|Ju¿ raz siê upokorzy³em.
+{75692}{75748}Niech ciê, Kostia.|Kochasz Kitty.
+{75783}{75820}Kochasz Kitty|i nie mo¿esz jej wybaczyæ,
+{75822}{75875}bo najpierw stchórzy³eœ,|a potem spartaczy³eœ.
+{75876}{75919}A póŸniej uciek³eœ|od 18-letniej dziewczyny,
+{75920}{75982}któr¹ wystrychn¹³|na dudka mundur.
+{75996}{76036}Nie ciebie mi ¿al,|tylko Kitty.
+{76037}{76069}Jej serce powiedzia³o nie.
+{76103}{76173}Przyjecha³eœ strzelaæ do bekasów,|czy mnie krytykowaæ?
+{76355}{76392}Nie trzymaj go|jak paczkê.
+{76406}{76466}To ciocia Kitty,|kochanie.
+{76510}{76586}Nie zawstydza ciê,|¿e rozpamiêtujesz swoje k³opoty?
+{76588}{76617}Nie mam k³opotów.
+{76631}{76686}On nie by³|wart ³ez, wierz mi.
+{76688}{76766}Nie dbam o niego.|Nawet o nim nie myœlê, ani o niej.
+{76784}{76823}Tylko, ¿e|jej nienawidzê.
+{76844}{76904}Ju¿ nigdy nie bêdziemy|o tym mówiæ.
+{76964}{77026}Czekaj¹ na ciebie|lepsi mê¿czyŸni.
+{77040}{77076}Stiwa mówi...
+{77173}{77235}Kitty, czy Konstanty...
+{77237}{77292}Co Lewin ma|z tym wspólnego?
+{77293}{77340}Nigdy nie wyjdê za m¹¿.
+{77342}{77430}Ta ca³a sprawa mi obrzyd³a.
+{77432}{77486}Zobacz co tobie zrobi³a.|Dlaczego nazywaj¹ to mi³oœci¹?
+{77550}{77592}Bo to mi³oœæ.
+{77716}{77748}Chcê, ¿ebyœ to zrobi³,|nie obchodzi mnie to.
+{77750}{77776}Powinno ciê obchodziæ.
+{77784}{77844}Ktoœ mo¿e patrzeæ.
+{78149}{78196}I tak jestem przeklêta.
+{78206}{78256}Ja nie.|Jestem b³ogos³awiony.
+{78322}{78364}- Kochasz mnie?|- Tak.
+{78365}{78399}- Tylko mnie?|- Nie.
+{78465}{78514}- Oprócz Frou-Frou?|- Tak.
+{78521}{78569}Ale mnie bardziej|ni¿ konia?
+{78571}{78596}Tak.
+{78667}{78705}Jesteœ szczêœliwy?
+{78725}{78753}Tak.
+{78796}{78832}I mnie kochasz?
+{78833}{78862}Tak.
+{78905}{78931}Jak bardzo?
+{78956}{78983}Tak bardzo.
+{79027}{79053}Tak bardzo?
+{79063}{79089}Tak.
+{79100}{79140}- Tak bardzo?|- Tak.
+{79144}{79172}I tak bardzo?
+{79187}{79216}Tak.
+{79220}{79245}Tak bardzo?
+{79247}{79281}Tak.
+{79284}{79336}Tak bardzo?|I tak bardzo?
+{79754}{79799}Wiêc to jest mi³oœæ.
+{79830}{79864}To.
+{79976}{80002}Hrabino.
+{80058}{80109}Myœla³am, ¿e bêdzie pani|w Peterhofie.
+{80111}{80142}Wracam stamt¹d.
+{80147}{80212}Martwi mnie, ¿e nie wzi¹³ pan|tego domu, co zwykle.
+{80220}{80264}Anna chcia³a zmiany.
+{80278}{80349}Ma bli¿ej do ksiê¿nej Betsy|w Carskim Siole.
+{80405}{80462}Gwardia stacjonuje w Carskim.
+{80493}{80536}Aleksy Aleksandrowiczu,
+{80572}{80612}wybacz, ale...
+{80650}{80703}Jesteœ zbyt tolerancyjny.|Pañska ¿ona...
+{80704}{80760}Chodzi o moj¹ ¿onê?
+{80761}{80812}Moja ¿ona|jest bez zarzutu.
+{80832}{80883}W koñcu jest moj¹ ¿on¹.
+{81196}{81240}Aliosza! Aliosza!
+{81314}{81351}Wiadomoœæ od maman.
+{81355}{81406}Jej przyjació³ka,|ksiê¿na Sorokina, ma tu dom
+{81408}{81462}i córkê dziewicê.
+{81465}{81510}Tego nie ma w wiadomoœci,
+{81512}{81545}ale bêd¹ na wyœcigach
+{81547}{81585}i potem jesteœ|oczekiwany na kolacji.
+{81591}{81654}Panowie!
+{81656}{81716}Za regiment!
+{81736}{81780}Regiment!
+{81893}{81940}S³ysza³em, ¿e odrzuci³eœ awans.
+{81941}{81989}Maman siê wtr¹ci³a.
+{81991}{82017}Tak.
+{82023}{82064}A teraz|znalaz³a ci ksiê¿niczkê.
+{82129}{82204}Aleksy, jesteœmy braæmi,|wiêc nie obraŸ siê.
+{82221}{82288}Ma³¿eñstwo wk³ada ci|ciê¿ar na plecy.
+{82289}{82355}Wtedy masz puste rêce|i mo¿esz siê wspinaæ po drabinie.
+{82404}{82449}Powa¿ny zwi¹zek z mê¿atk¹
+{82451}{82486}jest jak noszenie|ciê¿aru w rêkach.
+{82488}{82528}Wiêc o mnie mówi¹.
+{82595}{82637}Wychodzê, Sasza.
+{82668}{82704}Schadzka?
+{82706}{82749}ChodŸ, przedstawiê ciê.
+{82836}{82869}Piêkna.
+{82894}{82947}Nic ci siê nie stanie.
+{83015}{83060}Myœlisz, ¿e jutro wygrasz?
+{83069}{83109}Gladiator Machotina|jest faworytem.
+{83125}{83161}Ma ponad 1,5 metra wysokoœci.
+{83172}{83206}Frou-Frou jest przy nim drobna.
+{83229}{83271}Ale ma serce.
+{83279}{83312}Prawda, kochana?
+{83708}{83736}Anna.
+{83790}{83823}Aleksy!
+{83837}{83863}Co siê sta³o?
+{83885}{83952}Musia³em siê z tob¹ zobaczyæ|przed wyœcigiem.
+{84124}{84176}O czym myœla³aœ?
+{84276}{84309}Powiedz mi.
+{84362}{84398}Jestem w ci¹¿y.
+{84449}{84484}Kochana.
+{84556}{84603}Mi³oœæ nigdy|nie by³a dla nas zabaw¹.
+{84614}{84676}Koniec chowania siê|po k¹tach,
+{84678}{84716}¿ycia w k³amstwie.
+{84727}{84764}Tak.
+{84774}{84820}Teraz mo¿emy byæ razem.
+{84841}{84884}Jak, Aleksy?
+{84888}{84936}Powiedz o wszystkim Kareninowi.
+{84939}{84986}Myœlisz, ¿e mój m¹¿|wrêczy ci mnie w prezencie?
+{84988}{85015}Zostaw go.
+{85016}{85049}Mam go zostawiæ|i zostaæ twoj¹ kochank¹?
+{85051}{85092}Tak, ucieknij.
+{85169}{85224}Nigdy ju¿|nie zobaczy³abym syna.
+{85249}{85291}Prawa ustanawiaj¹|mê¿owie i ojcowie.
+{85292}{85325}Co wiêc?
+{85362}{85424}Nie wybaczy³bym sobie,|gdybyœ by³a nieszczêsliwa.
+{85436}{85472}Nieszczêœliwa?
+{85496}{85555}Jestem jak g³oduj¹cy ¿ebrak,|którego nakarmiono.
+{85576}{85608}Ja, nieszczêœliwa?
+{85651}{85680}Nie.
+{85729}{85775}To jest moje szczêœcie.
+{85835}{85874}{y:i}Serio¿a!
+{85920}{85961}{y:i}Serio¿a,|zaraz ciê z³apiê!
+{86085}{86122}{y:i}Gdzie jesteœ?
+{86169}{86204}{y:i}Serio¿a!
+{86251}{86288}{y:i}Gdzie jesteœ?
+{86327}{86375}Jak siê masz,|m³odzieñcze?
+{86390}{86428}Nie widzê|twojego nauczyciela.
+{86559}{86592}Aleksy.
+{86600}{86653}W koñcu siê wyrwa³eœ.|Mo¿esz zostaæ?
+{86664}{86694}Dlaczego?
+{86741}{86791}ZnajdŸ £ukicza.
+{86832}{86860}Muszê siê przebraæ.
+{86861}{86905}Ksiê¿na Betsy|przyœle po mnie dwukó³kê.
+{86907}{86973}Chcesz jechaæ?|Zabiera mnie na wyœcigi.
+{86980}{87018}Wyœcigi, oczywiœcie.
+{87024}{87106}Nie, przyjadê póŸniej.|Potem muszê wracaæ do miasta.
+{88297}{88331}Ksiê¿no!
+{88332}{88374}Zak³ad!|Na kogo pani stawia?
+{88390}{88418}Kuzowlew.
+{88424}{88469}Ja stawiam na Wroñskiego.|O parê rêkawiczek?
+{88486}{88524}Stoi.
+{88627}{88676}Aleksander Wroñski.
+{88984}{89032}Jesteœ przepiêkn¹ istot¹.
+{89033}{89085}Ty powinnaœ|byæ dzisiaj nagrod¹.
+{90917}{90960}Aleksy!
+{91116}{91148}Jestem.
+{91400}{91424}Jestem tu.
+{91521}{91547}Wstawaj!
+{91596}{91624}Wstawaj!
+{91687}{91718}Ma z³amany krêgos³up.
+{92152}{92188}Wiesz...
+{92284}{92360}Mówi¹, ¿e cesarz|nie pochwala wyœcigów.
+{92377}{92409}To niebezpieczne.
+{92411}{92437}Ale ja...
+{92439}{92467}Co?
+{92508}{92625}Uwa¿am, ¿e mêskie sporty|s¹ po¿yteczne, dla wojska.
+{92664}{92696}Nie rozumiem.
+{92728}{92836}Moim zdaniem to nie sport.|To widowisko.
+{92852}{92901}Robi okrutne widowisko z...
+{92904}{92948}O czym ty mówisz?
+{93019}{93058}- Muszê ci powiedzieæ...|- Tak.
+{93060}{93140}Zachowa³aœ siê|dziœ niew³aœciwie.
+{93170}{93198}Jak?
+{93260}{93347}Publicznie okaza³aœ uczucia|kiedy spad³ jeden z jeŸdŸców.
+{93348}{93403}Twoje zachowanie|by³o niew³aœciwe.
+{93420}{93505}To nie mo¿e siê powtórzyæ.|Mówi³em ju¿ o tym wczeœniej.
+{93575}{93652}Powiesz, ¿e moje obawy|s¹ nie na miejscu i œmieszne.
+{93653}{93692}Jesteœ moj¹ ¿on¹.
+{93720}{93768}Nie powinienem|tak myœleæ.
+{93823}{93852}Tak?
+{93873}{93907}Mo¿e siê myli³em...
+{93911}{93942}Nie.
+{93972}{94017}Nie myli³eœ siê.
+{94098}{94135}Kocham go.
+{94188}{94232}Jestem jego kochank¹.
+{94324}{94371}Zrób ze mn¹ co zechcesz.
+{94715}{94751}Zaczekaj.|Proszê, odsuñ siê.
+{94895}{94983}Nie chcê skandalu.|Wiêcej siê z nim nie zobaczysz.
+{94997}{95087}Bêdziesz siê zachowywaæ tak,|¿eby nikt nie mia³ ci nic do zarzucenia,
+{95089}{95132}ani towarzystwo|ani s³u¿ba.
+{95137}{95256}W zamian zatrzymasz|przywileje i obowi¹zki ¿ony.
+{95267}{95336}Jutro wrócisz do domu.|To wszystko.
+{96113}{96153}Jesteœ ranny?
+{96242}{96281}Co siê sta³o?
+{96302}{96356}Powiedzia³am mu,|¿e jestem twoj¹ kochank¹.
+{96378}{96420}Myœli, ¿e mogê|z ciebie zrezygnowaæ i ¿yæ dalej.
+{96422}{96464}Nie, nie mo¿esz.
+{97590}{97616}Czas spaæ?
+{97877}{97948}Mi³o by³o s³yszeæ,|¿e gratulowano ci mê¿a.
+{97977}{98018}Nie, ¿ebym dba³|o odznaczenia, ale...
+{98024}{98064}Aleksy, nie mogê.|Przepraszam.
+{98144}{98191}Teraz jestem|jego ¿on¹.
+{98348}{98392}Noszê jego dziecko.
+{99203}{99265}Powiedz czym|sobie na to zas³u¿y³em.
+{99983}{100008}Przerwa!
+{100580}{100628}Ile jest kosiarzy, Teodorze?
+{100630}{100680}42, panie.
+{100697}{100787}W czasach pañskiego ojca,|to by³a praca na dwa dni dla 30 ludzi.
+{100789}{100832}Choæ sam|nigdy nie podniós³ kosy.
+{100868}{100922}Ludzie mnie za to nie lubi¹.
+{100925}{100977}Lubi¹ to,|do czego siê przyzwyczaili.
+{100985}{101019}To mnie uspokaja.
+{101021}{101050}Jak to, panie?
+{101073}{101140}Kiedy koszê,|nie zastanawiam siê dlaczego tu jestem.
+{101141}{101203}Jest pan tu,|by byæ Konstantym Dmitriczem.
+{101208}{101260}Jak zawsze,|dziêki bo¿ej ³asce.
+{101269}{101324}By³eœ w³asnoœci¹|mojego ojca, Teodorze.
+{101339}{101398}Jak ruchomoœci,|które mo¿na kupiæ i sprzedaæ.
+{101404}{101440}Czy to by³o|z bo¿ej ³aski?
+{101481}{101514}Tak.
+{101528}{101580}Patrzy pan|na mojego najm³odszego.
+{101600}{101696}Jego ¿ycie jest zagro¿one|od kiedy nasta³a wolnoœæ i musi szukaæ pracy.
+{101716}{101789}Wygl¹daj¹ na szczêœliwszych|ni¿ ja kiedykolwiek by³em.
+{101836}{101903}Czy to prostego ¿ycia szukam?
+{104214}{104251}Jestem oczekiwany.
+{104336}{104365}Nie.
+{104393}{104444}Nie bêdê tak ¿yæ.
+{104481}{104533}To czekanie,|godzina po godzinie,
+{104536}{104588}nie wiedz¹c|kiedy ciê znów zobaczê.
+{104608}{104636}Przepraszam.
+{104662}{104703}To mój demon.|Nic na to nie poradzê.
+{104708}{104739}Pisa³, ¿e jesteœ chora.
+{104740}{104769}Nie martw siê,|to nie potrwa d³ugo.
+{104771}{104806}- Przestañ.|- Nie, to prawda.
+{104808}{104840}Powiedziano mi to we œnie.
+{104841}{104872}To tylko z³y sen.
+{104874}{104913}Tak, a ja tylko umrê|rodz¹c twoje dziecko.
+{104915}{104975}- To bzdury.|- Powiedz, ¿e tak jest.
+{104993}{105034}Powiedz, ¿e tak jest.
+{105083}{105116}Kochasz mnie,|tylko mnie.
+{105118}{105185}Pisa³aœ,|¿e twojego mê¿a nie bêdzie.
+{105189}{105249}SpóŸni³ siê.|Dobrze mu tak.
+{105326}{105360}A ty...
+{105371}{105412}Dlaczego nazywasz|go moim mê¿em?
+{105413}{105448}To nie mój m¹¿,|to zegar.
+{105450}{105520}Ale to krêpuj¹ce. Mój honor.|Zawar³aœ umowê.
+{105522}{105593}Myœlisz o honorze kiedy dzielisz siê|dziwkami ze swoim pu³kownikiem?
+{105595}{105636}Znów twój demon?
+{105670}{105717}Cieszê siê, ¿e umrê,|nim mnie znienawidzisz.
+{105719}{105750}Anna.
+{105800}{105837}Po³ó¿ tu rêkê.
+{105877}{105915}Mo¿na poczuæ jak siê rusza.
+{105968}{106033}Z szacunkiem pytam|ministra Karenina
+{106036}{106170}czy jego propozycje przepisu|dotycz¹cego tych kolorowych cygañskich plemion,
+{106187}{106266}tych uczonych,|bogobojnych ¯ydów...
+{106293}{106377}Obawiam siê,|¿e minister mnie nie s³ucha.
+{106438}{106464}Kto tu jest?
+{106466}{106508}Tylko madame,|ekscelencjo.
+{106660}{106697}Chcia³am|siê z nim widzieæ, bo...
+{106699}{106785}Nie chcê wiedzieæ dlaczego|kobieta chce siê widzieæ z kochankiem.
+{106804}{106835}Co robisz?
+{106839}{106874}Chcê jego listów!
+{107008}{107065}Jutro jadê do Moskwy,|a potem na prowincjê
+{107067}{107133}z komisj¹, któr¹ zbada|warunki ¿ycia ¯ydów i Cyganów,
+{107136}{107208}które to wolê od w³asnych.
+{107210}{107314}Nie wrócê tu póki przez rozwód|nie wyl¹dujesz na ulicy.
+{107316}{107372}W miêdzyczasie, mój syn|zamieszka u mojej siostry.
+{107380}{107438}Nie, Aleksy, proszê.|Zostaw mi Serio¿ê!
+{107444}{107494}Myœlisz,|¿e zostawiê ci syna?
+{107496}{107546}Jesteœ zdeprawowana.|Kobieta bez honoru.
+{107549}{107626}Dziêkujê Bogu, ¿e przekleñstwo mi³oœci|zosta³o ze mnie zdjête.
+{108040}{108089}Potrzebujê twojej rady.
+{108259}{108313}- ChodŸ!|- Tak, tak.
+{108422}{108474}Ty przodem.
+{108476}{108518}- SpóŸniliœmy siê?|- Oczywiœcie, ¿e tak.
+{108520}{108572}Jestem hrabina Nordston.
+{108573}{108640}Prawie siê poznaliœmy|u Szczerbackich ubieg³ej zimy.
+{108778}{108848}Czekaliœcie na mnie.|Wybaczcie.
+{108895}{108933}Kitty tu jest.
+{109007}{109088}Konstanty, tak dawno|siê nie widzieliœmy.
+{109103}{109168}Ty mnie nie widzia³aœ,|ale ja niedawno ciê widzia³em.
+{109176}{109201}Kiedy?
+{109212}{109246}Jecha³aœ do Jergoszewa.
+{109248}{109280}By³em w Kaszynie|na sianokosach.
+{109284}{109308}Ale dlaczego nie...
+{109314}{109353}Tak siê cieszê,|¿e ciê widzê.
+{109380}{109418}Nie zmieni³aœ siê.
+{109478}{109509}Mam nadziejê.
+{109536}{109581}By³am wtedy|m³oda i g³upia.
+{109591}{109628}Miesi¹ce temu.
+{109723}{109757}I ty siê nie zmieni³eœ.
+{109804}{109860}Nie.
+{109982}{110057}Pozwólcie, ¿e zapowiem|zupê Marie-Louise, karpia
+{110059}{110109}ze szparagami|i pieczon¹ wo³owin¹.
+{110111}{110159}Osobiœcie poszed³em na targ.
+{110234}{110272}Dodatkowe miejsce.
+{110322}{110402}Przyszed³em ci powiedzieæ,|¿e nasza relacje musz¹ byæ zerwane.
+{110430}{110468}Rozwodzê siê|z twoj¹ siostr¹.
+{110498}{110528}Rozwód?
+{110577}{110620}O czym ty mówisz?
+{110622}{110663}Nie œpiesz siê.|Zostañ na obiad.
+{110664}{110688}A potem mo¿esz|to omówiæ z Dolly.
+{110690}{110744}Ksi¹¿ê Ob³oñski,|miêdzy naszymi rodzinami wszystko skoñczone.
+{110746}{110816}Aleksy, rozwód to jedno.|Obiad to drugie.
+{110833}{110915}Wy Petersburczycy uwa¿acie siê|za takich de bon ton
+{110916}{110991}w porównaniu z nudn¹,|staromodn¹ Moskw¹.
+{110996}{111048}Ale my siê znamy na rzeczy.
+{111051}{111077}Któregoœ dnia
+{111079}{111149}s³ysza³am jak Wasia Priacznikow|stoczy³ pojedynek z Kwyckim i go zabi³.
+{111151}{111177}Có¿, co...
+{111179}{111219}O co siê pojedynkowali?
+{111220}{111256}O ¿onê Priacznikowa,|naturalnie.
+{111257}{111319}To kwestia honoru,|obrona honoru kobiety.
+{111320}{111392}To barbarzyñstwo.|A gdyby kochanek zabi³ mê¿a?
+{111393}{111456}Czy to te¿ ocali³oby|honor ¿ony?
+{111457}{111518}Niewielu z nas mo¿e powiedzieæ,|¿e nasz kochanek umar³ dla mi³oœci.
+{111523}{111552}Mi³oœci?
+{111558}{111628}"Nie bêdziesz po¿¹da³|¿ony bliŸniego swego."
+{111857}{111933}Umar³byœ dla mi³oœci,|Konstanty Dmitriczu?
+{111941}{111992}Tak.|Ale nie dla ¿ony bliŸniego.
+{112090}{112150}Nieczysta mi³oœæ|to dla mnie nie mi³oœæ.
+{112166}{112228}Podziwianie cudzej ¿ony|jest przyjemne,
+{112249}{112316}ale pob³a¿anie w³asnej|¿¹dzy zmys³owej to chciwoœæ,
+{112324}{112364}rodzaj ob¿arstwa,
+{112366}{112438}niew³aœciwe u¿ycie czegoœ œwiêtego,|co zosta³o nam dane,
+{112442}{112520}byœmy wybrali jedn¹ osobê,|z któr¹ wype³nimy cz³owieczeñstwo.
+{112600}{112637}W innym wypadku|wszyscy bylibyœmy jak bydlêta.
+{112639}{112678}Idealista!
+{112837}{112891}Bêdzie niczyj¹ ¿on¹.
+{112903}{112933}Bêdzie zrujnowana.
+{112959}{113022}Próbowa³em j¹ ocaliæ.|Wybra³a ruinê.
+{113038}{113071}Aleksy Aleksandrowiczu.
+{113083}{113112}Spójrz na mnie.
+{113165}{113248}Nie zaznasz spokoju,|póki jej nie wybaczysz.
+{113285}{113332}To Anna mnie tego nauczy³a.
+{113335}{113372}Nie chcê jej wybaczyæ.
+{113373}{113419}Nie jestem okrutny.
+{113420}{113469}Nigdy nikogo|nie nienawidzi³em.
+{113479}{113521}Ale nienawidzê jej|z ca³ej duszy
+{113523}{113583}za krzywdê,|jak¹ mi wyrz¹dzi³a.
+{113624}{113691}Teraz pani kolej,|¿eby nam coœ zagraæ, hrabino.
+{113693}{113742}Myœla³am,|¿e nigdy nie poprosisz.
+{113746}{113779}Dobrze.
+{113830}{113880}Od naszego|ostatniego spotkania,
+{113881}{113956}chcia³em ciê|o coœ spytaæ.
+{113957}{113994}O co?
+{114248}{114282}To.
+{114358}{114392}Czy...
+{114412}{114437}Nie...
+{114580}{114611}Czy.
+{114672}{114700}Czy nie.
+{115000}{115048}Ostatnie s³owo to "nigdy."
+{115439}{115483}{y:i}Czy "nie" znaczy³o "nigdy"?
+{116751}{116786}Wiem co to znaczy.
+{117257}{117335}{y:i}Wtedy nie wiedzia³am.
+{117367}{117393}Wtedy.
+{117476}{117505}A teraz?
+{117703}{117743}Czy mo¿esz wybaczyæ
+{117788}{117821}i zapomnieæ?
+{118042}{118117}{y:i}Kocham ciê.
+{118228}{118266}Nigdy nie przesta³em.
+{119252}{119350}{y:i}"B³agam przyjedŸ.|{y:i}Potrzebujê twojego przebaczenia.
+{119350}{119400}{y:i}Umieram. Anna"
+{120268}{120310}Dlaczego nie przybywa?
+{120339}{120412}Jest dobry.|Wybaczy mi.
+{120485}{120516}Gor¹czka wzros³a.
+{120518}{120576}Chcê Aleksego.|Dlaczego nie przychodzi?
+{120589}{120631}Dajcie mi wody.|Nie, nie mogê.
+{120646}{120681}To zaszkodzi|mojej córeczce.
+{120685}{120729}Potrzebuje mamki.
+{120742}{120805}Nie przynoœcie jej tutaj,|bo Aleksy przyjdzie
+{120807}{120854}i jej widok go zaboli.
+{120857}{120909}Ju¿ przyszed³. Zobacz.
+{120921}{120981}Jej wybawienie|jest w rêkach Boga.
+{120983}{121068}Myœlicie, ¿e mi nie wybaczy,|ale nie znacie go.
+{121088}{121140}Nikt go nie zna poza mn¹.
+{121157}{121208}Ju¿ siê go nie bojê.
+{121266}{121311}Ale bojê siê œmierci.
+{121561}{121596}Biedaku.
+{121691}{121733}Pozwól mu podejœæ bli¿ej.
+{121786}{121815}Aleksy.
+{121897}{121926}Aleksy.
+{122277}{122312}Spójrz na mojego mê¿a.
+{122337}{122372}To œwiêty.
+{122397}{122433}WeŸ jego d³oñ.
+{122826}{122858}Dziêki Bogu.
+{122904}{122930}Dziêki Bogu.
+{123339}{123380}Musisz ju¿ iœæ.
+{123402}{123474}Obieca³em, ¿e po ciebie poœlê,|jeœli o to poprosi.
+{123507}{123563}Nie wiem|co mi siê sta³o.
+{123567}{123640}Wybaczam ci.|Wybaczam Annie.
+{123702}{123751}Moj¹ duszê|wype³nia radoœæ.
+{123795}{123872}Zostanê z ni¹|i bêdê siê ni¹ zawsze opiekowa³.
+{124005}{124036}Ju¿.
+{124214}{124244}Ju¿, ju¿.
+{124265}{124299}Spójrz na siebie.
+{124317}{124393}Wygl¹dasz na to czym siê sta³eœ.|Poœmiewiskiem.
+{124427}{124476}Zapewne bêdziesz musia³|opuœciæ regiment.
+{124478}{124514}OdejdŸ, maman.
+{124516}{124556}Odejdê|kiedy bêdê chcia³a.
+{124571}{124620}Ma³y romans z mê¿atk¹
+{124621}{124666}nadaje ostatni szlif|edukacji m³odego mê¿czyzny.
+{124668}{124728}Ale ta chorobliwa,|samolubna obsesja...
+{124730}{124764}Publicznie siê upokorzy³eœ
+{124765}{124806}i zhañbi³eœ cz³owieka,|który poœwiêci³ ¿ycie Rosji.
+{124834}{124904}Lepiej wróæ ze mn¹ do Moskwy.
+{124910}{124951}Tu jesteœ skoñczony.
+{125445}{125541}Jej m¹¿ mia³ na sobie|jej najlepsz¹ balow¹ sukniê.
+{125543}{125595}Ca³a twarz w ró¿u.
+{125633}{125678}Ma chere, le scandale!
+{125731}{125801}Opowiem ci nowiny|o regimencie.
+{125809}{125833}Kto tu jest?
+{125835}{125937}Ksiê¿na El¿bieta|Federowna Twerska, ekscelencjo.
+{125957}{125993}Nie chcê go widzieæ.
+{126005}{126070}Twój m¹¿ z pewnoœci¹|nie przesta³by...
+{126094}{126126}Mi³o ciê widzieæ.
+{126128}{126156}Jesteœ rozgor¹czkowana.
+{126157}{126206}Za d³ugo rozmawia³yœmy,|wiêc ju¿ idê.
+{126208}{126254}Ksiê¿na Betsy|przysz³a mi powiedzieæ...
+{126281}{126328}Nie chcê nic|przed tob¹ ukrywaæ.
+{126335}{126414}Hrabia Wroñski chcia³by siê po¿egnaæ.|Wyje¿d¿a.
+{126486}{126549}Powiedzia³am,|¿e nie mogê go przyj¹æ.
+{126617}{126656}Do widzenia, skarbie.
+{127211}{127249}Zgadzam siê z tob¹.
+{127251}{127312}Skoro wyje¿d¿a,|nie ma potrzeby, ¿eby tu przyje¿d¿a³.
+{127313}{127360}W³aœnie to powiedzia³am,|nie musisz tego powtarzaæ.
+{127362}{127394}Decyzja nale¿y do ciebie.
+{127396}{127449}Ju¿ zdecydowa³am.
+{127451}{127476}Zatem cieszê siê, ¿e...
+{127477}{127545}¯e siê zgadzamy,|wiêc nie musimy o tym mówiæ.
+{127547}{127617}Oczywiœcie.|Mogê coœ dla ciebie zrobiæ?
+{127619}{127731}Tak, proszê,|przestañ strzelaæ palcami!
+{127865}{127904}Jestem z³¹ kobiet¹.
+{127979}{128021}Ale nie mogê oddychaæ.
+{128066}{128120}Twoja dobroæ, za któr¹ nie mogê siê odwdziêczyæ,|i twoje przebaczenie...
+{128121}{128190}B³aga³aœ mnie o wybaczenie.
+{128194}{128234}Ale nie umar³am|i teraz muszê z tym ¿yæ.
+{128236}{128304}Czego wiêc chcesz?
+{128306}{128384}Wiesz czego chcesz?|Chcesz zobaczyæ siê z hrabi¹ Wroñskim?
+{128388}{128439}Nie, ¿eby siê po¿egnaæ.
+{128525}{128559}Nie s³ysza³em.
+{128582}{128624}Nie, ¿eby siê po¿egnaæ.
+{128691}{128788}Bêdziesz stracona.|Bezpowrotnie stracona.
+{128805}{128852}Nie bêdziesz mia³a pozycji.
+{128854}{128937}Co gorsze, jeœli siê rozwiedziemy,|bêdziesz winna.
+{128939}{129001}Nie bêdziesz mog³a|legalnie znów wyjœæ za m¹¿.
+{129003}{129085}Twój zwi¹zek z hrabi¹ Wroñskim|bêdzie nieœlubny,
+{129087}{129149}jak twoja córka,|któr¹ teraz chroni moje nazwisko.
+{129151}{129199}Tego chcesz?
+{129244}{129328}By³oby grzechem|pozwoliæ ci siê zniszczyæ.
+{129330}{129373}Zapomnia³eœ o czymœ.
+{129406}{129495}Hrabia Wroñski i ja|siê kochamy.
+{129526}{129624}Ta mi³oœæ uœwiêca|karygodne szaleñstwo?
+{129625}{129669}Wiem tylko,|¿e go odes³a³am
+{129671}{129731}i czujê jakbym|strzeli³a sobie prosto w serce!
+{129828}{129862}Rozumiem.
+{129963}{130005}Co z Serio¿¹?
+{130063}{130108}Umar³abym dla niego,
+{130135}{130193}ale nie bêdê|tak dla niego ¿y³a.
+{130236}{130303}Kiedy pozna mi³oœæ,|wybaczy mi.
+{130400}{130459}Zatem muszê|wybraæ mniejszy grzech.
+{130480}{130571}Wroñski zabra³ mi szatê,|oddam mu i p³aszcz.
+{130577}{130607}Nie, ja...
+{131276}{131329}Kochany.
+{131397}{131424}Jesteœ taka blada.
+{131425}{131462}Kochany.
+{131500}{131568}Pojedziemy na po³udnie,|gdzie jest morskie powietrze i s³oñce.
+{133135}{133208}W porz¹dku?|Usi¹dŸ na chwilê.
+{133235}{133283}Chcê wszystko zobaczyæ.
+{133370}{133401}Chwileczkê.
+{133468}{133522}I teraz wykonujê|pracê podkuchennej,
+{133524}{133593}bo rodzice Nadii|nie pozwalaj¹ jej tu przychodziæ.
+{133595}{133657}Kto mo¿e ich winiæ?|To nieprzyzwoite.
+{134591}{134632}To ja, Konstanty.
+{134672}{134704}Dobrze.
+{134726}{134776}Tutejszy lekarz jest bezu¿yteczny.
+{134798}{134844}SprowadŸ mi|jakiegoœ z Moskwy.
+{134880}{134920}Gdzie by³eœ?
+{134960}{135042}Wszêdzie o ciebie pyta³em|kiedy siê ¿eni³em.
+{135236}{135294}Przepraszam.|Nie mog³am go zostawiæ.
+{135304}{135365}Tak. Moja ¿ona...
+{135411}{135452}Nie mo¿esz zostaæ.
+{135552}{135604}Zajmê siê nim z Agafi¹.
+{135627}{135675}Kobieta znajdzie coœ na wsi.
+{135676}{135717}Nie zobaczysz jej.
+{135736}{135799}Ona wie, ¿e to niemo¿liwe.
+{135830}{135888}To dla mnie udrêka,|¿e sprowadzi³em ciê pod ten sam dach
+{135889}{135963}pod którym|ta nieszczêsna... upad³a...
+{135979}{136044}I to w twoim stanie.
+{136085}{136118}Kostia.
+{136192}{136256}Potzrebna mi czysta koszula nocna|i przeœcierad³a.
+{136257}{136321}Rêcznik i wiadro|czystej, ciep³ej wody.
+{136337}{136362}Zaczekaj.
+{136488}{136513}I przynieœ perfumy.
+{136530}{136591}S¹ w kieszeni|mojej torebki.
+{138443}{138540}{y:i}21 na Stremowa, 4 na Karenina.|Wniosek przeszed³.
+{139006}{139056}Aleksy, wrócili.
+{139076}{139124}Do Petersburga.
+{139139}{139177}Pisa³a do mnie.
+{139198}{139224}Do ciebie?
+{139496}{139566}Myœl¹, ¿e nie mam prawa odmówiæ.
+{139584}{139612}To urodziny ch³opca.
+{139628}{139662}Przyjacielu,
+{139714}{139807}dmucha³byœ na ¿ar,|który powinien wygasn¹æ.
+{139868}{139904}Pozwól mi|do niej napisaæ.
+{140987}{141034}Przysz³am|zobaczyæ siê z Serio¿¹.
+{141088}{141116}Madame?
+{141219}{141277}Proszê wybaczyæ, ekscelencjo.
+{141387}{141438}Nie, przysz³am do Serio¿y.
+{141884}{141925}Serio¿a.
+{141933}{141961}Mama?
+{142004}{142036}Mój kochany synek.
+{142038}{142083}Wiedzia³em, ¿e przyjdziesz.
+{142100}{142131}Dziœ s¹ moje urodziny.
+{142132}{142168}Wiem.
+{142184}{142226}P³aczesz?
+{142228}{142256}Nie, nie bêdê p³akaæ.
+{142275}{142307}Gdzie wyjecha³aœ?
+{142308}{142350}Nie wiem.
+{142355}{142401}Wszêdzie.|Na po³udnie.
+{142436}{142488}Myœla³am o tobie|ka¿dego dnia.
+{142508}{142576}Ja te¿ codziennie|o tobie myœla³em.
+{142635}{142699}Musisz kochaæ tatê.|Jest lepszy ni¿ ja.
+{142700}{142771}Nikt na ca³ym œwiecie|nie jest od ciebie lepszy.
+{143207}{143232}Nie.
+{144072}{144103}Gdzie Ania?
+{144104}{144146}Wci¹¿ œpi.
+{144184}{144231}Mogê wzi¹æ|pani p³aszcz?
+{144310}{144356}le siê pani czuje, madam?
+{144358}{144397}Nie sypiam.
+{144413}{144464}Mogê po coœ pos³aæ.
+{144482}{144508}Tak.
+{145041}{145088}Dlaczego siedzisz|po ciemku?
+{145099}{145167}Odwiedzi nas Jaszwin.|Pamiêtasz go?
+{145176}{145201}Wychodzisz?
+{145215}{145246}Dok¹d?
+{145275}{145304}Do kogo?
+{145312}{145352}Co siê sta³o?
+{145376}{145409}Nie wiedzia³am|co siê z tob¹ dzieje.
+{145411}{145447}Mówi³em ci wczoraj.|Mój brat.
+{145448}{145516}Spotkanie z bratem|zajmuje ci ca³y dzieñ?
+{145522}{145572}Potrzebuje ciê|bardziej ni¿ ja?
+{145582}{145617}Co siê sta³o?
+{145718}{145771}Aleksander zgodzi³ siê|na wszystko.
+{145772}{145813}Dom matki w Moskwie|bêdzie jego,
+{145815}{145885}a maj¹tek na wsi|bêdzie naszym nowym domem.
+{145952}{145998}Kiedy dostaniesz rozwód.
+{146033}{146098}Karenin ci nie odpisa³?
+{146212}{146270}Jest pan pierwsz¹ osob¹,|która mnie odwiedzi³a od naszego powrotu.
+{146272}{146327}Dosta³am liœcik|od ksiê¿nej Betsy.
+{146328}{146399}Prosi mnie, ¿ebym j¹ odwiedzi³a|miêdzy 18.30 a 20.00.
+{146400}{146440}A mo¿e 19.00?
+{146448}{146509}Ale mo¿e spotkacie siê|dziœ w operze.
+{146511}{146558}Chcia³abym tam byæ,|gdybym dosta³a lo¿ê.
+{146564}{146603}Madame,|lo¿a nr 4 jest pani.
+{146616}{146676}Bêdê tam|z ksiê¿n¹ Miagkaj¹.
+{146700}{146728}Przyjdziesz, Wroñski?
+{146832}{146899}Rozumiem dlaczego|Aleksy tak pana lubi.
+{147078}{147117}Wiesz, ¿e nie mo¿esz|iœæ do opery.
+{147119}{147161}- Anuszka!|- Na mi³oœæ bosk¹.
+{147163}{147196}K¹piel!|Przyjdê i wybiorê sukniê.
+{147197}{147224}Anna, b³agam ciê.
+{147225}{147283}Nie wstydzê siê tego, kim jestem,|ani co zrobi³am.
+{147284}{147326}Wstydzisz siê za mnie?
+{147330}{147393}Dlaczego nie wynajmiesz|pokoju w hotelu?
+{147395}{147436}Nie jesteœmy razem?
+{147455}{147480}Ju¿ nie czujesz do mnie|tego samego?
+{147482}{147518}To dlatego, ¿e ciê kocham|i mi na tobie zale¿y.
+{147520}{147576}Zatem nie rozumiem|dlaczego ze mn¹ nie idziesz.
+{147578}{147628}- To wszystko pogorszy.|- Boisz siê.
+{147637}{147673}A ja nie.
+{148604}{148656}Odwiedzamy,|czy zostajemy na miejscu?
+{148671}{148701}Zostajemy.
+{148763}{148822}Ministrze!|Gratulacje.
+{148838}{148881}Proszê wejœæ na chwilê.
+{149351}{149405}Ksiê¿na Sorokina|i jej córka.
+{149407}{149487}S¹ z Moskwy,|s¹siadki matki hrabiego Wroñskiego.
+{149492}{149573}Doœæ zamo¿na.|Nie ma synów. Jest wdow¹.
+{149629}{149677}Moja droga, jestem|jak katalog sprzeda¿y.
+{149877}{149906}Aleksy.
+{149969}{150029}Odwiedzicie nas potem?
+{150040}{150082}Porozmawiam z Wari¹.
+{150181}{150213}Odwiedzisz Annê?
+{150216}{150300}Aleksy. Lubiê...
+{150301}{150326}Na mi³oœæ bosk¹!
+{150384}{150409}Anna nie jest zbrodniark¹.
+{150411}{150481}Odwiedzi³abym j¹,|gdyby z³ama³a tylko prawo.
+{150499}{150546}Ale z³ama³a zasady.
+{150914}{150992}Kto robi³ dekoracje?|Nie mamy programu?
+{150999}{151036}Pu³kowniku,|bêdzie pan tak dobry?
+{151038}{151064}Oczywiœcie.
+{151065}{151151}Proszê, bêdê zaszczycony|jeœli wezm¹ panie mój.
+{151156}{151200}Dziêkujê.|Jakie to...
+{151264}{151289}To hañba.
+{151291}{151324}Cicho, kochanie.|To zwyk³a uprzejmoœæ.
+{151441}{151482}Wszyscy patrz¹.
+{151484}{151552}Niech patrz¹!|Przynieœ moj¹ pelerynê.
+{151571}{151616}Do czego to dochodzi?
+{151623}{151692}To obraza przyzwoitoœci.|Zabierz mnie do domu.
+{151693}{151776}Cicho. B³agam ciê, kochanie.|Zamieni³em tylko s³ówko.
+{151781}{151816}Mam s³ówko|dla niektórych ludzi,
+{151817}{151861}o których|nie chce siê ocieraæ.
+{151888}{151973}Ma tupet,|tak afiszowaæ siê jak zdzira.
+{152076}{152109}Dlaczego nie?
+{152111}{152167}Uratuj j¹|i przypieczêtuj to fiasko.
+{152541}{152573}Aleksy,
+{152585}{152632}widzisz dlaczego|musi siê rozwieœæ.
+{152655}{152736}Ma³¿eñstwo wszystko rozwi¹¿e.|Kiedy to siê stanie?
+{152737}{152786}Jeœli o mnie chodzi,|jest moj¹ ¿on¹.
+{152788}{152836}Jak widzia³eœ,|nie jest.
+{152890}{152930}Jedziemy do Moskwy,|potem na wieœ.
+{152944}{152980}To dobry pomys³.
+{152984}{153022}Ale przez dzieñ lub dwa|Anna bêdzie w domu.
+{153150}{153193}Po¿egnam siê.
+{153668}{153724}Mia³eœ wspania³y wieczór.
+{153773}{153835}Twoja matka chce,|¿ebyœ o¿eni³ siê z wdow¹ czy dzieckiem?
+{153856}{153908}- Obojêtnie.|- Nie ¿artuj z tego.
+{153910}{154001}Gdybyœ mnie kocha³,|zamkn¹³byœ mnie, ¿ebym nie posz³a!
+{154383}{154426}Tak, to moja wina.
+{154749}{154785}Nie zasnê.
+{154880}{154931}Wiem jak ciê uspaæ.
+{155048}{155168}{y:i}Morfina.
+{156245}{156323}Anna, cieszê siê,|¿e ciê widzê.
+{156332}{156388}Dobrze siê czujesz?|Jak córeczka?
+{156432}{156506}Stiwa chcia³ zaprosiæ|ciebie i hrabiego Wroñskiego,
+{156508}{156546}ale to niemo¿liwe.
+{156548}{156584}Rozumiem.
+{156586}{156632}Nie rozumiesz.
+{156653}{156704}Kitty i jej m¹¿ s¹ u nas.
+{156706}{156752}Przyjecha³a do Moskwy urodziæ.
+{156753}{156832}Kitty! Przeka¿ jej,|¿e bardzo siê cieszê.
+{156849}{156904}Mo¿e za rok lub dwa.
+{156951}{156976}Mi³oœæ.
+{157021}{157053}Tak, mi³oœæ.
+{157179}{157232}Potêpiasz mnie|za to, co zrobi³am?
+{157245}{157320}Nie. Szkoda,|¿e nie zrobi³am tego samego.
+{157332}{157374}Ale nikt|mnie nie poprosi³.
+{157406}{157490}Nie starczy³oby mi odwagi.
+{157526}{157570}Stiwa, wiesz,
+{157585}{157625}on siê nie zmieni.
+{157652}{157699}Jak wszyscy mê¿czyŸni.
+{159174}{159212}Wpad³am na œwietny pomys³.
+{159216}{159245}Dlaczego|mamy tu czekaæ?
+{159247}{159290}Dlaczego|nie zaczekamy na wsi?
+{159292}{159346}Nie chcê ju¿ s³yszeæ o rozwodzie|ani o nim myœleæ.
+{159348}{159387}Dobrze, nudzê siê tu.|Kiedy jedziemy?
+{159398}{159444}Jeœli nudzê ciê tu,|bêdê ciê te¿ nudzi³a na wsi.
+{159444}{159518}Nie powiedzia³em, ¿e ty mnie nudzisz,|tylko Moskwa. Kiedy jedziemy? Jutro?
+{159518}{159550}Nie bêdê gotowa do jutra.
+{159552}{159580}- Zatem pojutrze.|- Jeœli chcesz.
+{159582}{159652}Nie, to niedziela.|Muszê zobaczyæ siê z mam¹.
+{159660}{159692}To 20 minut poci¹giem.
+{159704}{159748}Mo¿esz jechaæ|do niej jutro.
+{159778}{159844}A mo¿e chcia³eœ spêdziæ|niedzielê z ksiê¿n¹ Sorokin¹?
+{159850}{159904}Proszê.|Nie psuj wszystkiego.
+{159916}{159948}Nie mogê spotkaæ siê|jutro z mam¹,
+{159949}{159986}bo nie przeczyta dokumentów,|które musi podpisaæ.
+{160001}{160041}W takim razie|nie zawracajmy sobie g³owy.
+{160043}{160088}- Wyjadê w niedzielê albo wcale.|- To absurd.
+{160090}{160156}Bo nie rozumiesz|mojego ¿ycia tutaj.
+{160169}{160226}- Anna.|- Przesta³eœ mnie kochaæ.
+{160226}{160310}Zrezygnowa³eœ dla mnie ze wszystkiego|i to nastawi³o ciê przeciwko mnie.
+{160310}{160352}- Dlaczego k³amiesz?|- Przestañ!
+{160354}{160416}Przek³adam wyjazd,|a ty mówisz, ¿e ciê nie kocham.
+{160425}{160470}Bo ¿ywi³am siê twoj¹ mi³oœci¹,|a teraz nic nie zosta³o.
+{160472}{160498}Zatem to koniec.
+{160836}{160868}Przepraszam.
+{161109}{161141}Niewa¿ne kiedy pojedziemy.
+{161143}{161196}Zatelegrafujê do mamy.|Wyjedziemy w niedzielê.
+{161204}{161243}Zrobiê co zechcesz.
+{161246}{161320}- Powinieneœ mnie zostawiæ.|- Nie chcê. Kocham ciê.
+{161337}{161363}Dlaczego?
+{161392}{161464}W mi³oœci|nie mo¿esz pytaæ dlaczego.
+{162089}{162140}Spakujesz wszystko?
+{162156}{162208}Bêdê dziœ poza domem,|aby wszystko przygotowaæ.
+{162208}{162252}W ten sposób mówisz mi,|¿e bêdziesz u matki
+{162253}{162285}z t¹ mizdrz¹c¹ siê|ksiê¿niczk¹?
+{162287}{162356}Nie. Bêdê u prawnika|czeka³ na dokumenty.
+{162357}{162403}Potem zjem po¿egnalny obiad|z towarzyszami.
+{162404}{162429}Wiem co to znaczy.
+{162431}{162491}Bo¿e, to nie do zniesienia!
+{162536}{162566}Mogê zaprosiæ ich tutaj,|jeœli chcesz.
+{162568}{162636}Dziêkujê, ale jeœli nie mogê jadaæ|w towarzystwie, to nie bêdê jad³a z ¿o³nierzami.
+{162637}{162724}Od kogo by³ telegram?
+{162734}{162800}Nie pokaza³em ci go, bo Stiwa|pisze to, co ju¿ wiemy.
+{162801}{162840}Karenin nic nie obiecuje,|ale rozwa¿y...
+{162842}{162916}Mówi³am, ¿e nie dbam o rozwód,|wiêc dlaczego chowasz telegram?
+{163174}{163239}Chcesz mi coœ powiedzieæ?
+{164069}{164109}Wiêc jednak dziecko.
+{164128}{164164}Przywioz³a dokumenty|od mamy.
+{164288}{164314}Anna.
+{164796}{164820}Nie.
+{169951}{169979}Bo¿e.
+{169983}{170011}Wybacz mi.
+{170921}{170990}Bêdê kupowa³ paszê|przed koñcem zimy.
+{170992}{171097}Nie naciska pan ludzi,|ale kieruje siê pan tym, co s³uszne.
+{171097}{171158}Dla duszy, nie brzucha.
+{171227}{171269}Sk¹d wiemy|co jest s³uszne?
+{171277}{171333}Po prostu wiemy.|Jak¿e inaczej?
+{171352}{171430}Wierzê w rozs¹dek.
+{171441}{171520}To dziêki rozs¹dkowi|wybra³ pan ¿onê?
+{172172}{172218}Szuka³em ciê.
+{172276}{172315}Zrozumia³em coœ.
+{172323}{172370}Co zrozumia³eœ?
+{172688}{172727}Uœmiechn¹³ siê do mnie.
+{172731}{172784}Jest bardzo rozwiniêty|na swój wiek.
+{172856}{172903}Co zrozumia³eœ?
+{173317}{173363}Jestem z ciebie|bardzo dumna.
+{173364}{173404}Dobranoc.
+{173754}{173780}Dobranoc.
+{174336}{174372}Ania!
+{174404}{174436}Ania!
+{175136}{175210}T³umaczy³a joy77
+{175426}{175520}www.NapiProjekt.pl - nowa jakosc napisów.|Napisy zostaly specjalnie dopasowane do Twojej wersji filmu.

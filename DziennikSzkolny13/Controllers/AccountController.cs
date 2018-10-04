@@ -136,7 +136,7 @@ namespace DziennikSzkolny13.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Register()
         {
             return View();
@@ -144,6 +144,7 @@ namespace DziennikSzkolny13.Controllers
 
         //
         // POST: /Account/Register
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

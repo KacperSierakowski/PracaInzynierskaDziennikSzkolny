@@ -1,0 +1,86 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Uczen>
+
+@if (User.IsInRole("Uczeń"))
+{
+    {
+        ViewBag.Title = "Panel Ucznia";
+    }
+    <h2>Panel Ucznia</h2>
+}
+@if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+{
+    {
+        ViewBag.Title = "Panel Wszystkich Uczniów";
+    }
+    <h2>Panel Wszystkich Uczniów</h2>
+    using (Html.BeginForm("Index", "Uczens", FormMethod.Get))
+    {
+        @Html.TextBox("searching")<input type="submit" value="Szukaj" />
+        @Html.ActionLink("Back to List", "Index")
+    }
+}
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.klasaUcznia.NazwaKlasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.klasaUcznia.NazwaKlasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumerTelefonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,42 @@
+﻿@model DziennikSzkolny13.Models.Klasa
+
+@{
+    ViewBag.Title = "Szczegóły Klasy";
+}
+
+<h2>Szczegóły Klasy</h2>
+
+<div>
+    <h4>Klasa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazwaKlasy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazwaKlasy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfilKlasy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfilKlasy)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <h2>Lista Uczniów w tej Klasie:</h2>
+    @Html.Partial("ViewPartialListauczen", Model.UczniowieKlasy)
+</div>
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

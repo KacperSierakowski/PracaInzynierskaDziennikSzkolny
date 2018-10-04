@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Ocena>
+
+@if (User.IsInRole("Nauczyciel"))
+{
+    {
+        ViewBag.Title = "Panel Ocen";
+    }
+    <h2> Panel Ocen </h2>
+}
+@if (User.IsInRole("Administrator"))
+{
+    {
+        ViewBag.Title = "Panel Wszystkich Ocen";
+    }
+    <h2>Panel Wszystkich Ocen</h2>
+}
+@if (User.IsInRole("Uczeń"))
+{
+    {
+        ViewBag.Title = "Panel Ocen Ucznia";
+    }
+    <h2>Panel Ocen Ucznia</h2>
+}
+<p>
+    @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WartoscOceny)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WartoscOceny)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

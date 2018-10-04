@@ -1,0 +1,45 @@
+﻿@model DziennikSzkolny13.Models.Ocena
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ocena</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OcenaUczen.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WartoscOceny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WartoscOceny)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

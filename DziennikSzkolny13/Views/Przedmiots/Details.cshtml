@@ -1,0 +1,38 @@
+﻿@model DziennikSzkolny13.Models.Przedmiot
+@{
+    ViewBag.Title = "Szczegóły Przedmiotu";
+}
+<h2>Szczegóły Przedmiotu</h2>
+<div>
+    <h4>Przedmiot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.przedmiotNauczyciel.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NazwaPrzedmiotu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazwaPrzedmiotu)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    Oceny z tego Przedmiotu:
+    @Html.Partial("ListaWystawionychOcen", Model.OcenyWystawionePrzezNauczyciela)
+</div>
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

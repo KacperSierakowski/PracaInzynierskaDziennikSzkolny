@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Klasa>
+
+@if (User.IsInRole("Uczeń"))
+{
+    {
+        ViewBag.Title = "Panel Klasy";
+    }
+    <h2>Panel Klasy</h2>
+}
+@if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+{
+    {
+        ViewBag.Title = "Panel Wszystkich Klas";
+    }
+    <h2>Panel Wszystkich Klas</h2>
+    using (Html.BeginForm("Index", "Klasas", FormMethod.Get))
+    {
+        @Html.TextBox("searching")<input type="submit" value="Szukaj" />
+        @Html.ActionLink("Back to List", "Index")
+    }
+}
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazwaKlasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfilKlasy)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaKlasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfilKlasy)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

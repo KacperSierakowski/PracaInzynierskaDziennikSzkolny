@@ -49,12 +49,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -194,15 +203,57 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KlasasController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NauczycielsController.cs" />
+    <Compile Include="Controllers\NauczycielsWEBController.cs" />
+    <Compile Include="Controllers\OcenasController.cs" />
+    <Compile Include="Controllers\PliksController.cs" />
+    <Compile Include="Controllers\PrzedmiotsController.cs" />
+    <Compile Include="Controllers\UczensController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808281245522_InitialCreate.cs" />
+    <Compile Include="Migrations\201808281245522_InitialCreate.Designer.cs">
+      <DependentUpon>201808281245522_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808281334536_ZmianaKocepcjiLoginuDlaNauczycielaIUcznia.cs" />
+    <Compile Include="Migrations\201808281334536_ZmianaKocepcjiLoginuDlaNauczycielaIUcznia.Designer.cs">
+      <DependentUpon>201808281334536_ZmianaKocepcjiLoginuDlaNauczycielaIUcznia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808281917459_UczenKlasyDoKlasy.cs" />
+    <Compile Include="Migrations\201808281917459_UczenKlasyDoKlasy.Designer.cs">
+      <DependentUpon>201808281917459_UczenKlasyDoKlasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809101406151_pliki.cs" />
+    <Compile Include="Migrations\201809101406151_pliki.Designer.cs">
+      <DependentUpon>201809101406151_pliki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809121253274_pliki2.cs" />
+    <Compile Include="Migrations\201809121253274_pliki2.Designer.cs">
+      <DependentUpon>201809121253274_pliki2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809121313283_pliki3.cs" />
+    <Compile Include="Migrations\201809121313283_pliki3.Designer.cs">
+      <DependentUpon>201809121313283_pliki3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\DziennikSzkolny13DB.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Klasa.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Nauczyciel.cs" />
+    <Compile Include="Models\Nieobecnosc.cs" />
+    <Compile Include="Models\Ocena.cs" />
+    <Compile Include="Models\Plik.cs" />
+    <Compile Include="Models\Przedmiot.cs" />
+    <Compile Include="Models\Uczen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -265,9 +316,44 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Klasas\Create.cshtml" />
+    <Content Include="Views\Klasas\Delete.cshtml" />
+    <Content Include="Views\Klasas\Details.cshtml" />
+    <Content Include="Views\Klasas\Edit.cshtml" />
+    <Content Include="Views\Klasas\Index.cshtml" />
+    <Content Include="Views\Uczens\Create.cshtml" />
+    <Content Include="Views\Uczens\Delete.cshtml" />
+    <Content Include="Views\Uczens\Details.cshtml" />
+    <Content Include="Views\Uczens\Edit.cshtml" />
+    <Content Include="Views\Uczens\Index.cshtml" />
+    <Content Include="Views\Nauczyciels\Create.cshtml" />
+    <Content Include="Views\Nauczyciels\Delete.cshtml" />
+    <Content Include="Views\Nauczyciels\Details.cshtml" />
+    <Content Include="Views\Nauczyciels\Edit.cshtml" />
+    <Content Include="Views\Nauczyciels\Index.cshtml" />
+    <Content Include="Views\Uczens\PermissionDenied.cshtml" />
+    <Content Include="Views\Przedmiots\Create.cshtml" />
+    <Content Include="Views\Przedmiots\Delete.cshtml" />
+    <Content Include="Views\Przedmiots\Details.cshtml" />
+    <Content Include="Views\Przedmiots\Edit.cshtml" />
+    <Content Include="Views\Przedmiots\Index.cshtml" />
+    <Content Include="Views\Ocenas\Create.cshtml" />
+    <Content Include="Views\Ocenas\Delete.cshtml" />
+    <Content Include="Views\Ocenas\Details.cshtml" />
+    <Content Include="Views\Ocenas\Edit.cshtml" />
+    <Content Include="Views\Ocenas\Index.cshtml" />
+    <Content Include="Views\Klasas\ViewPartialListauczen.cshtml" />
+    <Content Include="Views\Nauczyciels\ViewPartialListaPrzedmiotów.cshtml" />
+    <Content Include="Views\Przedmiots\ListaWystawionychOcen.cshtml" />
+    <Content Include="Views\Pliks\Create.cshtml" />
+    <Content Include="Views\Pliks\Delete.cshtml" />
+    <Content Include="Views\Pliks\Details.cshtml" />
+    <Content Include="Views\Pliks\Edit.cshtml" />
+    <Content Include="Views\Pliks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\WgranePliki\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -281,6 +367,26 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808281245522_InitialCreate.resx">
+      <DependentUpon>201808281245522_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808281334536_ZmianaKocepcjiLoginuDlaNauczycielaIUcznia.resx">
+      <DependentUpon>201808281334536_ZmianaKocepcjiLoginuDlaNauczycielaIUcznia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808281917459_UczenKlasyDoKlasy.resx">
+      <DependentUpon>201808281917459_UczenKlasyDoKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809101406151_pliki.resx">
+      <DependentUpon>201809101406151_pliki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809121253274_pliki2.resx">
+      <DependentUpon>201809121253274_pliki2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809121313283_pliki3.resx">
+      <DependentUpon>201809121313283_pliki3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

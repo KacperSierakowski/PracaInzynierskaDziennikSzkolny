@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Ocena>
+
+<p>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WartoscOceny)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WartoscOceny)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Przedmiot>
+
+@if (User.IsInRole("Uczeń"))
+{
+    {
+        ViewBag.Title = "Panel Przedmiotów";
+    }
+    <h4>Przedmioty, z których otrzymano ocenę</h4>
+}
+@if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+{
+    if (User.IsInRole("Administrator"))
+    {
+        ViewBag.Title = "Panel Wszystkich Przedmiotów";
+        <h2>Panel Wszystkich Przedmiotów</h2>
+        using (Html.BeginForm("Index", "Przedmiots", FormMethod.Get))
+        {
+            @Html.TextBox("searching")<input type="submit" value="Szukaj" />
+            @Html.ActionLink("Back to List", "Index")
+        }
+    }
+    else
+    {
+        ViewBag.Title = "Panel Przedmiotów";
+        <h2>Panel Przedmiotów</h2>
+    }
+}
+
+<p>
+    @if (User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NazwaPrzedmiotu)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.przedmiotNauczyciel.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

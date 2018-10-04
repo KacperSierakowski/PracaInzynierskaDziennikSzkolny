@@ -13,13 +13,21 @@ namespace DziennikSzkolny13.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            if (User.IsInRole("Nauczyciel"))
+            {
+                ViewBag.Message = "Jestem Super Nauczyciel";
+            }
+            if (User.IsInRole("Uczeń"))
+            {
+                ViewBag.Message = "Jestem Super Uczeń";
+            }
             return View();
         }
 
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
