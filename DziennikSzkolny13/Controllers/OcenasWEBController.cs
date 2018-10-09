@@ -78,6 +78,26 @@ namespace DziennikSzkolny13.Controllers
             {
                 return BadRequest(ModelState);
             }
+            //TODO: Check if there is user from ocena and przedmiot
+            int WartoscOcenyTMP = ocena.WartoscOceny;
+            int IDuczniaTMP = ocena.UczenID;
+            int IDprzedmiotuTMP = ocena.PrzedmiotID;
+
+            //Ocena ocenaTMP = db.Ocenas.Find(id);
+            //if (ocena == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            Uczen uczenTMP = db.Uczens.Find(IDuczniaTMP);
+            if (uczenTMP == null)
+            {
+                return NotFound();
+            }
+            Przedmiot przedmiotTMP = db.Przedmiots.Find(IDprzedmiotuTMP);
+            if (przedmiotTMP == null)
+            {
+                return NotFound();
+            }
 
             db.Ocenas.Add(ocena);
             db.SaveChanges();

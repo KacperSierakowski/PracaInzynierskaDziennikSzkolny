@@ -1,0 +1,42 @@
+﻿@model DziennikSzkolny13.Models.Nieobecnosc
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nieobecnosc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NauczycielWystawiajacy.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NauczycielWystawiajacy.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UczenDotyczacy.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

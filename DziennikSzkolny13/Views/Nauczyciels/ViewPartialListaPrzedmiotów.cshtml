@@ -5,16 +5,22 @@
         <th>
             @Html.DisplayNameFor(model => model.NazwaPrzedmiotu)
         </th>
+        <th>
+            Ilość ocen
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)
+            <a href="~/Przedmiots/Details/@item.ID">@Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)</a>
+            @*@Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)*@
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.OcenyWystawionePrzezNauczyciela.Count)
         </td>
+        <td></td>
     </tr>
 }
 </table>

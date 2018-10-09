@@ -244,6 +244,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NauczycielsController.cs" />
     <Compile Include="Controllers\NauczycielsWEBController.cs" />
+    <Compile Include="Controllers\NieobecnoscsController.cs" />
     <Compile Include="Controllers\OcenasController.cs" />
     <Compile Include="Controllers\OcenasWEBController.cs" />
     <Compile Include="Controllers\PliksController.cs" />
@@ -278,6 +279,10 @@
     <Compile Include="Migrations\201809121313283_pliki3.Designer.cs">
       <DependentUpon>201809121313283_pliki3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810041717337_NieobecnoscModyfikacje.cs" />
+    <Compile Include="Migrations\201810041717337_NieobecnoscModyfikacje.Designer.cs">
+      <DependentUpon>201810041717337_NieobecnoscModyfikacje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -299,6 +304,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\schoolIcon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -387,6 +393,14 @@
     <Content Include="Views\Pliks\Details.cshtml" />
     <Content Include="Views\Pliks\Edit.cshtml" />
     <Content Include="Views\Pliks\Index.cshtml" />
+    <Content Include="Views\Nieobecnoscs\Create.cshtml" />
+    <Content Include="Views\Nieobecnoscs\Delete.cshtml" />
+    <Content Include="Views\Nieobecnoscs\Details.cshtml" />
+    <Content Include="Views\Nieobecnoscs\Edit.cshtml" />
+    <Content Include="Views\Nieobecnoscs\Index.cshtml" />
+    <Content Include="Views\Klasas\CreateOcenasFromKlasas.cshtml" />
+    <Content Include="Views\Uczens\ListaOcenUcznia.cshtml" />
+    <Content Include="Views\Uczens\CreateOcenasFromUczens.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809121313283_pliki3.resx">
       <DependentUpon>201809121313283_pliki3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810041717337_NieobecnoscModyfikacje.resx">
+      <DependentUpon>201810041717337_NieobecnoscModyfikacje.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

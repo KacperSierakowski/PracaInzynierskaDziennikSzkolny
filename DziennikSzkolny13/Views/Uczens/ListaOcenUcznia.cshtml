@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Ocena>
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WartoscOceny)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WartoscOceny)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edytuj", "Edit","Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Usuń", "Delete", "Ocenas", new { id = item.ID },null)
+                }
+                else if (User.IsInRole("Nauczyciel"))
+                {
+                    @Html.ActionLink("Edytuj ", "Edit", "Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
+                }
+                else
+                {
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
+                }
+            </td>
+        </tr>
+    }
+
+</table>

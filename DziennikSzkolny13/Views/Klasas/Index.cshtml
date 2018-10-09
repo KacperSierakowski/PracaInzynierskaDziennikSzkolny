@@ -13,17 +13,26 @@
         ViewBag.Title = "Panel Wszystkich Klas";
     }
     <h2>Panel Wszystkich Klas</h2>
-    using (Html.BeginForm("Index", "Klasas", FormMethod.Get))
+    <p>
+        @using (Html.BeginForm("Index", "Klasas", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaKlasy", true) <text>Nazwa Klasy</text>
+            @Html.RadioButton("searchBy", "ProfilKlasy") <text>Profil Klasy</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+    @*using (Html.BeginForm("Index", "Klasas", FormMethod.Get))
     {
         @Html.TextBox("searching")<input type="submit" value="Szukaj" />
-        @Html.ActionLink("Back to List", "Index")
-    }
+    }*@
 }
 
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Dodaj nową klasę", "Create")
     }
 </p>
 <table class="table">
@@ -34,30 +43,36 @@
         <th>
             @Html.DisplayNameFor(model => model.ProfilKlasy)
         </th>
+        <th>
+            Ilość uczniów
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NazwaKlasy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProfilKlasy)
-            </td>
-            <td>
-                @if (User.IsInRole("Administrator"))
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-                }
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
-                @if (User.IsInRole("Administrator"))
-                {
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                }
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaKlasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfilKlasy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UczniowieKlasy.Count)
+        </td>
+        <td>
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.ID })
+            }
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
+            }
+        </td>
+    </tr>
     }
 
 </table>

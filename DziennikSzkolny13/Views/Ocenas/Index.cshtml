@@ -21,19 +21,52 @@
     }
     <h2>Panel Ocen Ucznia</h2>
 }
-<p>
-    @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
-    {
-        @Html.ActionLink("Create New", "Create")
-    }
-</p>
+
+@if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+{
+    @Html.ActionLink("Dodaj nową ocenę", "Create")
+    <p>
+        @using (Html.BeginForm("Index", "Ocenas", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaPrzedmiotu", true) <text>Nazwa przedmiotu</text>
+            @Html.RadioButton("searchBy", "NazwiskoUcznia") <text> Nazwisko ucznia </text>
+            @Html.RadioButton("searchBy", "NazwaKlasy") <text>Nazwa Klasy</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+}
+@if (User.IsInRole("Uczen"))
+{
+    <p>
+        @using (Html.BeginForm("Index", "Ocenas", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaPrzedmiotu", true) <text>Nazwa przedmiotu</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+}
+
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.klasaUcznia.NazwaKlasy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcenaUczen.Nazwisko)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.WartoscOceny)
@@ -45,10 +78,22 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)
+                <a href="~/Przedmiots/Details/@item.OcenaPrzedmiot.ID">@Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)</a>
+                @*@Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)*@
+            </td>
+            <td>
+                <a href="~/Klasas/Details/@item.OcenaUczen.klasaUcznia.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)</a>
+                @*@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OcenaUczen.ID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
+            </td>
+            <td>
+                <a href="~/Uczens/Details/@item.OcenaUczen.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)</a>
+                @*@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WartoscOceny)
@@ -56,12 +101,12 @@
             <td>
                 @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.ID })
                 }
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
                 @if (User.IsInRole("Administrator"))
                 {
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
                 }
             </td>
         </tr>

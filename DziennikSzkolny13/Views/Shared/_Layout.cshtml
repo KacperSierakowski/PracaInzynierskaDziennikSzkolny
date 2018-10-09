@@ -20,7 +20,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("DziennikSzkolny13", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <a class="navbar-brand" href="@Url.Action("Index", "Home" )"><img alt="Brand" src="~/Content/Images/schoolIcon.png" height="35" width="35" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -37,7 +38,7 @@
                     <li>@Html.ActionLink("Panel Uczniów", "Index", "Uczens")</li>
                     <li>@Html.ActionLink("Panel Nauczycieli", "Index", "Nauczyciels")</li>
                     <li class="nav navbar-nav dropdown">
-                        <a href="@Url.Action(" Index", "Przedmiots" )" class="dropdown-toggle"
+                        <a href="@Url.Action("Index", "Przedmiots" )" class="dropdown-toggle"
                            data-toggle="dropdown">Przedmioty/Oceny<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="@Url.Action("Index", "Przedmiots" )">Panel Przedmiotów</a></li>

@@ -1,10 +1,10 @@
 ﻿@model DziennikSzkolny13.Models.Ocena
 
 @{
-    ViewBag.Title = "Dodaj Ocenę";
+    ViewBag.Title = "Dodaj ocenę";
 }
 
-<h2>Dodaj Ocenę</h2>
+<h2>Dodaj ocenę</h2>
 
 @using (Html.BeginForm())
 {
@@ -45,6 +45,13 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Przejdź do Panelu Ocen", "Index")
-</div>
+    <div>
+        @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+        {
+            @Html.ActionLink("Powrót do listy wszystkich uczniów", "Index")
+        }
+        else
+        {
+            @Html.ActionLink("Powrót do panelu ucznia", "Index")
+        }
+    </div>

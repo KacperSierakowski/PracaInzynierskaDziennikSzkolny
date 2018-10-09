@@ -1,14 +1,11 @@
 ﻿@model DziennikSzkolny13.Models.Ocena
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Usuń ocenę";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3>Jesteś pewien/pewna, że chcesz usunąć ocenę?</h3>
 <div>
-    <h4>Ocena</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -41,8 +38,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Przejdź do listy wszystkich przedmiotów", "Index")
         </div>
     }
 </div>

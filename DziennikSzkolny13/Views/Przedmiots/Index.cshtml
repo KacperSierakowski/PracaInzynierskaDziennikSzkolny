@@ -16,54 +16,69 @@
         using (Html.BeginForm("Index", "Przedmiots", FormMethod.Get))
         {
             @Html.TextBox("searching")<input type="submit" value="Szukaj" />
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Powrót", "Index")
         }
     }
     else
     {
         ViewBag.Title = "Panel Przedmiotów";
-        <h2>Panel Przedmiotów</h2>
+        <h2>Panel moich przedmiotów</h2>
     }
 }
 
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Dodaj nowy przedmiot", "Create")
     }
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Imie)
-        </th>
+        @if (User.IsInRole("Administrator"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Imie) i
+                @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Nazwisko)
+                prowadzącego przedmiot
+            </th>
+        }
         <th>
             @Html.DisplayNameFor(model => model.NazwaPrzedmiotu)
+        </th>
+        <th>
+            Ilość wystawionych ocen
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        @if (User.IsInRole("Administrator"))
+        {
             <td>
                 @Html.DisplayFor(modelItem => item.przedmiotNauczyciel.Imie)
+                @Html.DisplayFor(modelItem => item.przedmiotNauczyciel.Nazwisko)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)
-            </td>
-            <td>
-                @if (User.IsInRole("Administrator"))
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
-                }
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
-                @if (User.IsInRole("Administrator"))
-                {
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                }
-            </td>
-        </tr>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaPrzedmiotu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OcenyWystawionePrzezNauczyciela.Count)
+        </td>
+        <td>
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Edytuj przedmiot", "Edit", new { id = item.ID })
+            }
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
+            @if (User.IsInRole("Administrator"))
+            {
+                @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
+            }
+        </td>
+    </tr>
     }
 
 </table>

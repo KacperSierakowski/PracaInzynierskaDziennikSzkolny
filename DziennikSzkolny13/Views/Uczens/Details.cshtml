@@ -1,13 +1,12 @@
 ﻿@model DziennikSzkolny13.Models.Uczen
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegóły ucznia";
 }
 
-<h2>Details</h2>
+<h2>Szczegóły ucznia</h2>
 
 <div>
-    <h4>Uczen</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -15,7 +14,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.klasaUcznia.NazwaKlasy)
+            <a href="~/Klasas/Details/@Model.klasaUcznia.ID">@Html.DisplayFor(modelItem => modelItem.klasaUcznia.NazwaKlasy)</a>
+            @*@Html.DisplayFor(model => model.klasaUcznia.NazwaKlasy)*@
         </dd>
 
         <dt>
@@ -60,10 +60,29 @@
 
     </dl>
 </div>
+<div>
+    <h3>Lista ocen ucznia:</h3>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+    {
+        <p>
+            @Html.ActionLink("Dodaj Ocenę", "CreateOcenasFromUczens", new { id = Model.ID })
+        </p>
+    }
+    @Html.Partial("ListaOcenUcznia", Model.OcenyUcznia)
+</div>
+
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Powrót do listy wszystkich uczniów", "Index")
     }
-    @Html.ActionLink("Back to List", "Index")
+    else if (User.IsInRole("Nauczyciel"))
+    {
+        @Html.ActionLink("Powrót do listy wszystkich uczniów", "Index")
+    }
+    else
+    {
+        @Html.ActionLink("Powrót", "Index")
+    }
 </p>

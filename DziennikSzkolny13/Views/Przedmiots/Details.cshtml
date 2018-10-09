@@ -4,15 +4,15 @@
 }
 <h2>Szczegóły Przedmiotu</h2>
 <div>
-    <h4>Przedmiot</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.przedmiotNauczyciel.Imie)
+            Nauczyciel prowadzący
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.przedmiotNauczyciel.Imie)
+            @Html.DisplayFor(model => model.przedmiotNauczyciel.Nazwisko)
         </dd>
 
         <dt>
@@ -26,13 +26,14 @@
     </dl>
 </div>
 <div>
-    Oceny z tego Przedmiotu:
+    <h3>Oceny wystawione z tego przedmiotu:</h3>
+    @Html.ActionLink("Dodaj Ocenę", "Create","Ocenas", new { id = Model.ID },null)
     @Html.Partial("ListaWystawionychOcen", Model.OcenyWystawionePrzezNauczyciela)
 </div>
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Edytuj przedmiot", "Edit", new { id = Model.ID })
     }
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Przejdź do listy wszystkich przedmiotów", "Index")
 </p>

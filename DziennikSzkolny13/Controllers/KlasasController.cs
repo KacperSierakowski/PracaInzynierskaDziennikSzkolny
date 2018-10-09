@@ -19,11 +19,18 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: Klasas
-        public ActionResult Index(string searching)
+        public ActionResult Index(string SearchBy,string searching)
         {
             if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
             {
-                return View(db.Klasas.Include(x => x.UczniowieKlasy).Where(x => x.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                if (SearchBy == "NazwaKlasy")
+                {
+                    return View(db.Klasas.Include(x => x.UczniowieKlasy).Where(x => x.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                }
+                else
+                {
+                    return View(db.Klasas.Include(x => x.UczniowieKlasy).Where(x => x.ProfilKlasy.Contains(searching) || searching == null).ToList());
+                }
             }
             else if (User.IsInRole("Uczeń"))
             {
@@ -39,9 +46,7 @@ namespace DziennikSzkolny13.Controllers
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
         }
-
-
-
+        
         // GET: Klasas/Details/5
         public ActionResult Details(int? id)
         {
@@ -148,13 +153,76 @@ namespace DziennikSzkolny13.Controllers
             var ListaKlas = db.Klasas.Include(x => x.UczniowieKlasy).ToList();
             return Json(ListaKlas, JsonRequestBehavior.AllowGet);
         }
-        
+
         //public IEnumerable<Klasa> Get()
         //{
         //    return db.Klasas.Include(x => x.UczniowieKlasy).ToList();
         //}
 
+        // GET: Klasas/CreateOcenasFromKlasas
+        public ActionResult CreateOcenasFromKlasas(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Uczen uczen = db.Uczens.Find(id);
+            if (uczen == null)
+            {
+                return HttpNotFound();
+            }
+            if ((User.IsInRole("Nauczyciel")))
+            {
+                string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
 
+        }
+
+        // POST: Klasas/CreateOcenasFromKlasas
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateOcenasFromKlasas([Bind(Include = "ID,WartoscOceny,UczenID,PrzedmiotID")] Ocena ocena)
+        {
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Ocenas.Add(ocena);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                if (User.IsInRole("Nauczyciel"))
+                {
+                    string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                    ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                    return View(ocena);
+                }
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                return View(ocena);
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
+        }
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

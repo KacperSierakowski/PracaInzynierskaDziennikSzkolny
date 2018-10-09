@@ -7,7 +7,6 @@
 <h2>Szczegóły Klasy</h2>
 
 <div>
-    <h4>Klasa</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -29,14 +28,21 @@
     </dl>
 </div>
 <div>
-    <h2>Lista Uczniów w tej Klasie:</h2>
+    <h3>Lista Uczniów w tej Klasie:</h3>
     @Html.Partial("ViewPartialListauczen", Model.UczniowieKlasy)
 </div>
 
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+        @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID })
     }
-    @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+    {
+        @Html.ActionLink("Powrót do listy wszystkich klas", "Index")
+    }
+    else
+    {
+        @Html.ActionLink("Powrót do panelu klas", "Index")
+    }
 </p>

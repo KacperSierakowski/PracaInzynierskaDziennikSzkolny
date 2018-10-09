@@ -16,13 +16,22 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: Uczens
-        public ActionResult Index(string searching)
+        public ActionResult Index(string SearchBy, string searching)
         {
             if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
             {
-                ViewBag.Message = "Jestem Super Nauczyciel";
-                var uczens = db.Uczens.Include(u => u.klasaUcznia).Where(x => x.Nazwisko.Contains(searching) || searching == null);
-                return View(uczens.ToList());
+                if (SearchBy == "Imie")
+                {
+                    //ViewBag.Message = "Jestem Super Nauczyciel";
+                    var uczens = db.Uczens.Include(u => u.klasaUcznia).Where(x => x.Imie.Contains(searching) || searching == null);
+                    return View(uczens.ToList());
+                }
+                else
+                {
+                    //ViewBag.Message = "Jestem Super Nauczyciel";
+                    var uczens = db.Uczens.Include(u => u.klasaUcznia).Where(x => x.Nazwisko.Contains(searching) || searching == null);
+                    return View(uczens.ToList());
+                }
             }
             if (User.IsInRole("Uczeń"))
             {
@@ -48,7 +57,7 @@ namespace DziennikSzkolny13.Controllers
             return View(uczen);
         }
 
-        [Authorize(Roles="Administrator")]
+        [Authorize(Roles = "Administrator")]
         // GET: Uczens/Create
         public ActionResult Create()
         {
@@ -136,6 +145,70 @@ namespace DziennikSzkolny13.Controllers
             db.Uczens.Remove(uczen);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: Klasas/CreateOcenasFromUczens
+        public ActionResult CreateOcenasFromUczens(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Uczen uczen = db.Uczens.Find(id);
+            if (uczen == null)
+            {
+                return HttpNotFound();
+            }
+            if ((User.IsInRole("Nauczyciel")))
+            {
+                string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
+
+        }
+
+        // POST: Klasas/CreateOcenasFromUczens
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateOcenasFromUczens([Bind(Include = "ID,WartoscOceny,UczenID,PrzedmiotID")] Ocena ocena)
+        {
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Ocenas.Add(ocena);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                if (User.IsInRole("Nauczyciel"))
+                {
+                    string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                    ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                    return View(ocena);
+                }
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                return View(ocena);
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
         }
 
         protected override void Dispose(bool disposing)

@@ -4,42 +4,115 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Mvc;
 using DziennikSzkolny13.Models;
+using Newtonsoft.Json;
 
 namespace DziennikSzkolny13.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class OcenasController : Controller
     {
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: Ocenas
-        public ActionResult Index()
+        public ActionResult Index(string SearchBy, string searching)
         {
             if (User.IsInRole("Administrator"))
             {
-                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
-                return View(ocenas.ToList());
+                if (SearchBy == "NazwaKlasy")
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
+                    return View(ocenas.Where(x => x.OcenaUczen.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "NazwiskoUcznia")
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
+                    return View(ocenas.Where(x => x.OcenaUczen.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+                else
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
+                    return View(ocenas.Where(x => x.OcenaPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
+                }
             }
             else if (User.IsInRole("Nauczyciel"))
             {
                 string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
-                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
-                return View(ocenas.Where(x => x.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)).ToList());
+                if (SearchBy == "NazwaKlasy")
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                        .Where(x => x.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel));
+                    return View(ocenas.Where(x => x.OcenaUczen.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "NazwiskoUcznia")
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                        .Where(x => x.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel));
+                    return View(ocenas.Where(x => x.OcenaUczen.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+                else
+                {
+                    var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                        .Where(x => x.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel));
+                    return View(ocenas.Where(x => x.OcenaPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
+                }
             }
             else if (User.IsInRole("Uczeń"))
             {
                 string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
-                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen);
-                return View(ocenas.Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen)).ToList());
+                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                    .Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen));
+                return View(ocenas.Where(x => x.OcenaPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
             }
             else
             {
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
         }
+        public IQueryable<Ocena> GetOcenas()
+        {
+            return db.Ocenas;
+        }
+        public IEnumerable<Ocena> Get()
+        {
+            return db.Ocenas.ToList();
+        }
+        public JsonResult IndexForMobileApp()
+        {
+            var ListaOcen = db.Ocenas.Include(x => x.OcenaUczen).ToList();
+            return Json(ListaOcen, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        [Route("findall")]
+        public HttpResponseMessage findAll()
+        {
+            try
+            {
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
+                //var nauczyciels = db.Ocenas.Include(x => x.OcenaUczen).Select(p => new Nauczyciel
+                //{
+                //    ID = p.ID,
+                //    Imie = p.Imie,
+                //    Nazwisko = p.Nazwisko,
+                //    Adres = p.Adres,
+                //    Email = p.Email,
+                //    NumerTelefonu = p.NumerTelefonu,
+                //    PrzedmiotyNauczyciela = p.PrzedmiotyNauczyciela,
+                //}).ToList();
+                response.Content = new StringContent(JsonConvert.SerializeObject(db.Ocenas));
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                return response;
+            }
+            catch
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadGateway);
+            }
+        }
+
 
         // GET: Ocenas/Details/5
         public ActionResult Details(int? id)
@@ -99,7 +172,8 @@ namespace DziennikSzkolny13.Controllers
                     string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                     ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
                     ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
-                    return View(ocena);
+                    //return View("~/Views/Klasas/Details/"+ocena.OcenaUczen.KlasaID, ocena);
+                    return View("~/Views/Uczens/PermissionDenied.cshtml");
                 }
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
                 ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);

@@ -16,13 +16,13 @@
     using (Html.BeginForm("Index", "Nauczyciels", FormMethod.Get))
     {
         @Html.TextBox("searching")<input type="submit" value="Szukaj" />
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Powrót", "Index")
     }
 }
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Dodaj nowego nauczyciela", "Create")
     }
 </p>
 <table class="table">
@@ -33,11 +33,14 @@
         <th>
             @Html.DisplayNameFor(model => model.Nazwisko)
         </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.NumerTelefonu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.NumerTelefonu)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Adres)
+            Ilość nauczanych przedmiotów
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
@@ -54,11 +57,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nazwisko)
             </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.NumerTelefonu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.NumerTelefonu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Adres)
+                @Html.DisplayFor(modelItem => item.PrzedmiotyNauczyciela.Count)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
@@ -66,12 +72,12 @@
             <td>
                 @if (User.IsInRole("Administrator"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.ID })
                 }
-                @Html.ActionLink("Details", "Details", new { id = item.ID })
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
                 @if (User.IsInRole("Administrator"))
                 {
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
                 }
             </td>
         </tr>
