@@ -17,9 +17,17 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: api/KlasasWEB
-        public IQueryable<Klasa> GetKlasas()
+        public IQueryable<KlasaWEB> GetKlasas()
         {
-            return db.Klasas;
+            var ZwracaneKlasy = db.Klasas.Select(
+                p => new KlasaWEB
+                {
+                    ID = p.ID,
+                    NazwaKlasy = p.NazwaKlasy,
+                    ProfilKlasy = p.ProfilKlasy
+                }
+            ).AsQueryable();
+            return ZwracaneKlasy;
         }
 
         // GET: api/KlasasWEB/5
@@ -31,8 +39,11 @@ namespace DziennikSzkolny13.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(klasa);
+            KlasaWEB ZwracanaKlasa = new KlasaWEB();
+            ZwracanaKlasa.ID = klasa.ID;
+            ZwracanaKlasa.NazwaKlasy = klasa.NazwaKlasy;
+            ZwracanaKlasa.ProfilKlasy = klasa.ProfilKlasy;
+            return Ok(ZwracanaKlasa);
         }
 
         // PUT: api/KlasasWEB/5

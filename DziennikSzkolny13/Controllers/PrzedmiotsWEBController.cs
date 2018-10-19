@@ -17,9 +17,17 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: api/PrzedmiotsWEB
-        public IQueryable<Przedmiot> GetPrzedmiots()
+        public IQueryable<PrzedmiotWEB> GetPrzedmiots()
         {
-            return db.Przedmiots;
+            var ZwracanePrzedmioty = db.Przedmiots
+                .Select(p => new PrzedmiotWEB
+                {
+                    ID = p.ID,
+                    NauczycielID = p.NauczycielID,
+                    NazwaPrzedmiotu = p.NazwaPrzedmiotu,
+                }
+                       ).AsQueryable();
+            return ZwracanePrzedmioty;
         }
 
         // GET: api/PrzedmiotsWEB/5
@@ -31,8 +39,11 @@ namespace DziennikSzkolny13.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(przedmiot);
+            PrzedmiotWEB ZwracanyPrzedmiot = new PrzedmiotWEB();
+            ZwracanyPrzedmiot.ID = przedmiot.ID;
+            ZwracanyPrzedmiot.NazwaPrzedmiotu = przedmiot.NazwaPrzedmiotu;
+            ZwracanyPrzedmiot.NauczycielID = przedmiot.NauczycielID;
+            return Ok(ZwracanyPrzedmiot);
         }
 
         // PUT: api/PrzedmiotsWEB/5

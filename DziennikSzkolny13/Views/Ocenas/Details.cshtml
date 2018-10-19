@@ -20,10 +20,14 @@
             Ocenę wystawił
         </dt>
         <dd>
-            <a href="~/Uczens/Details/@Model.OcenaPrzedmiot.przedmiotNauczyciel.ID">@Html.DisplayFor(modelItem => modelItem.OcenaPrzedmiot.przedmiotNauczyciel.Imie) @Html.DisplayFor(modelItem => modelItem.OcenaPrzedmiot.przedmiotNauczyciel.Nazwisko)</a>
-
-            @*@Html.DisplayFor(model => model.OcenaPrzedmiot.przedmiotNauczyciel.Imie)
-            @Html.DisplayFor(model => model.OcenaPrzedmiot.przedmiotNauczyciel.Nazwisko)*@
+            @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+            {
+                <a href="~/Nauczyciels/Details/@Model.OcenaPrzedmiot.przedmiotNauczyciel.ID">@Html.DisplayFor(modelItem => modelItem.OcenaPrzedmiot.przedmiotNauczyciel.Imie) @Html.DisplayFor(modelItem => modelItem.OcenaPrzedmiot.przedmiotNauczyciel.Nazwisko)</a>
+            }
+            else
+            {
+                <a>@Html.DisplayFor(model => model.OcenaPrzedmiot.przedmiotNauczyciel.Imie) @Html.DisplayFor(model => model.OcenaPrzedmiot.przedmiotNauczyciel.Nazwisko)</a>
+            }
         </dd>
 
         <dt>
@@ -33,7 +37,7 @@
         <dd>
             <a href="~/Uczens/Details/@Model.OcenaUczen.ID">@Html.DisplayFor(modelItem => modelItem.OcenaUczen.Imie) @Html.DisplayFor(modelItem => modelItem.OcenaUczen.Nazwisko)</a>
             @*@Html.DisplayFor(model => model.OcenaUczen.Imie)
-            @Html.DisplayFor(model => model.OcenaUczen.Nazwisko)*@
+                @Html.DisplayFor(model => model.OcenaUczen.Nazwisko)*@
         </dd>
 
         <dt>

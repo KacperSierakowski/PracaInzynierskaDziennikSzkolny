@@ -27,9 +27,12 @@
 </div>
 <div>
     <h3>Oceny wystawione z tego przedmiotu:</h3>
-    @Html.ActionLink("Dodaj Ocenę", "Create","Ocenas", new { id = Model.ID },null)
-    @Html.Partial("ListaWystawionychOcen", Model.OcenyWystawionePrzezNauczyciela)
-</div>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+    {
+        @Html.ActionLink("Dodaj Ocenę", "Create", "Ocenas", new { id = Model.ID }, null)
+    }
+        @Html.Partial("ListaWystawionychOcen", Model.OcenyWystawionePrzezNauczyciela)
+    </div>
 <p>
     @if (User.IsInRole("Administrator"))
     {

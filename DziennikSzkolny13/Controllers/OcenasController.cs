@@ -126,7 +126,22 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
-            return View(ocena);
+            if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+            {
+                return View(ocena);
+            }
+            else
+            {
+                string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
+                if (ocena.OcenaUczen.Email == ZalogowanyUczen)
+                {
+                    return View(ocena);
+                }
+                else
+                {
+                    return View("~/Views/Uczens/PermissionDenied.cshtml");
+                }
+            }
         }
 
         // GET: Ocenas/Create

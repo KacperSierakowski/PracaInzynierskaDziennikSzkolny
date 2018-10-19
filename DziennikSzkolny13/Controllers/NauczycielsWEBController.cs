@@ -48,9 +48,20 @@ namespace DziennikSzkolny13.Controllers
         }
 
         // GET: api/NauczycielsWEB
-        public IQueryable<Nauczyciel> GetNauczyciels()
+        public IQueryable<NauczycielWEB> GetNauczyciels()
         {
-            return db.Nauczyciels;
+            var ZwracaniNauczyciele = db.Nauczyciels.Select(
+             p => new NauczycielWEB
+             {
+                 ID = p.ID,
+                 Imie = p.Imie,
+                 Nazwisko = p.Nazwisko,
+                 NumerTelefonu = p.NumerTelefonu,
+                 Adres = p.Adres,
+                 Email = p.Email,
+             }
+         ).AsQueryable();
+            return ZwracaniNauczyciele;
         }
 
         // GET: api/NauczycielsWEB/5
@@ -63,7 +74,15 @@ namespace DziennikSzkolny13.Controllers
                 return NotFound();
             }
 
-            return Ok(nauczyciel);
+            NauczycielWEB ZwracanyNauczyciel = new NauczycielWEB();
+            ZwracanyNauczyciel.ID = nauczyciel.ID;
+            ZwracanyNauczyciel.Imie = nauczyciel.Imie;
+            ZwracanyNauczyciel.Nazwisko = nauczyciel.Nazwisko;
+            ZwracanyNauczyciel.NumerTelefonu = nauczyciel.NumerTelefonu;
+            ZwracanyNauczyciel.Email = nauczyciel.Email;
+            ZwracanyNauczyciel.Adres = nauczyciel.Adres;
+
+            return Ok(ZwracanyNauczyciel);
         }
 
         // PUT: api/NauczycielsWEB/5

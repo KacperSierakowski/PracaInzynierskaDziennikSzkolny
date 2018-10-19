@@ -17,9 +17,19 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: api/OcenasWEB
-        public IQueryable<Ocena> GetOcenas()
+        public IQueryable<OcenaWEB> GetOcenas()
         {
-            return db.Ocenas;
+            var ZwracaneOceny = db.Ocenas.Select(
+               p => new OcenaWEB
+               {
+                   ID = p.ID,
+                   UczenID= p.UczenID,
+                   PrzedmiotID = p.PrzedmiotID,
+                   WartoscOceny = p.WartoscOceny,
+               }
+           ).AsQueryable();
+            return ZwracaneOceny;
+            //return db.Ocenas;
         }
 
         // GET: api/OcenasWEB/5
@@ -31,8 +41,13 @@ namespace DziennikSzkolny13.Controllers
             {
                 return NotFound();
             }
+            OcenaWEB ZwracanaOcena= new OcenaWEB();
+            ZwracanaOcena.ID = ocena.ID;
+            ZwracanaOcena.UczenID = ocena.UczenID;
+            ZwracanaOcena.PrzedmiotID = ocena.PrzedmiotID;
+            ZwracanaOcena.WartoscOceny = ocena.WartoscOceny;
 
-            return Ok(ocena);
+            return Ok(ZwracanaOcena);
         }
 
         // PUT: api/OcenasWEB/5
@@ -88,11 +103,13 @@ namespace DziennikSzkolny13.Controllers
             //{
             //    return HttpNotFound();
             //}
+
             Uczen uczenTMP = db.Uczens.Find(IDuczniaTMP);
             if (uczenTMP == null)
             {
                 return NotFound();
             }
+
             Przedmiot przedmiotTMP = db.Przedmiots.Find(IDprzedmiotuTMP);
             if (przedmiotTMP == null)
             {
@@ -102,7 +119,13 @@ namespace DziennikSzkolny13.Controllers
             db.Ocenas.Add(ocena);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = ocena.ID }, ocena);
+            OcenaWEB ZwracanaOcena=new OcenaWEB();
+            ZwracanaOcena.ID = ocena.ID;
+            ZwracanaOcena.PrzedmiotID = ocena.PrzedmiotID;
+            ZwracanaOcena.UczenID = ocena.UczenID;
+            ZwracanaOcena.WartoscOceny = ocena.WartoscOceny;
+
+            return CreatedAtRoute("DefaultApi", new { id = ocena.ID }, ZwracanaOcena);
         }
 
         // DELETE: api/OcenasWEB/5

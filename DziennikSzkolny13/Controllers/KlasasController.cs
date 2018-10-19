@@ -32,15 +32,19 @@ namespace DziennikSzkolny13.Controllers
                     return View(db.Klasas.Include(x => x.UczniowieKlasy).Where(x => x.ProfilKlasy.Contains(searching) || searching == null).ToList());
                 }
             }
+            /*
             else if (User.IsInRole("Uczeń"))
             {
                 //var viewModel = new DziennikSzkolny13DB();
                 // viewModel.Klasas = db.Klasas.Where(i=>i.UczniowieKlasy.Where(i=>i.Email.Equals("")));
+
                 string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
                 //var Zalogowany = db.Uczens.Where(i => i.Email.Equals(ZalogowanyUczen));
                 // var KlasaZalogowanego = Zalogowany.Where(w => w.klasaUcznia.NazwaKlasy.ToString());
+
                 return View(db.Klasas.Include(u => u.UczniowieKlasy).Where(x => x.UczniowieKlasy.Any(u => u.Email.Equals(ZalogowanyUczen))).ToList());
             }
+            */
             else
             {
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
@@ -59,7 +63,14 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
-            return View(klasa);
+            if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+            {
+                return View(klasa);
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
         }
 
         [Authorize(Roles = "Administrator")]
@@ -160,6 +171,7 @@ namespace DziennikSzkolny13.Controllers
         //}
 
         // GET: Klasas/CreateOcenasFromKlasas
+
         public ActionResult CreateOcenasFromKlasas(int? id)
         {
             if (id == null)

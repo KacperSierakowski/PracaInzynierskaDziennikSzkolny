@@ -13,6 +13,7 @@ namespace DziennikSzkolny13.Models
             
         [Display(Name = "Data nieobecności")]
         [Required(ErrorMessage = "Data jest wymagana")]
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public string Data { get; set; }
 

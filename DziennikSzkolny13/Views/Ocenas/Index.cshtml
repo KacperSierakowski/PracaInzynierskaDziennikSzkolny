@@ -37,7 +37,8 @@
         }
     </p>
 }
-@if (User.IsInRole("Uczen"))
+
+@if (User.IsInRole("Uczeń"))
 {
     <p>
         @using (Html.BeginForm("Index", "Ocenas", FormMethod.Get))

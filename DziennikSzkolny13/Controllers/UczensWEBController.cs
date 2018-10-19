@@ -17,9 +17,21 @@ namespace DziennikSzkolny13.Controllers
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: api/UczensWEB
-        public IQueryable<Uczen> GetUczens()
+        public IQueryable<UczenWEB> GetUczens()
         {
-            return db.Uczens;
+            var ZwracaniUczniowie = db.Uczens.Select(
+               p => new UczenWEB
+               {
+                   ID = p.ID,
+                   Imie = p.Imie,
+                   Nazwisko = p.Nazwisko,
+                   NumerTelefonu = p.NumerTelefonu,
+                   KlasaID = p.KlasaID,
+                   Adres = p.Adres,
+                   Email = p.Email,
+               }
+           ).AsQueryable();
+            return ZwracaniUczniowie;
         }
 
         // GET: api/UczensWEB/5
@@ -31,8 +43,16 @@ namespace DziennikSzkolny13.Controllers
             {
                 return NotFound();
             }
+            UczenWEB ZwracanyUczen = new UczenWEB();
+            ZwracanyUczen.ID = uczen.ID;
+            ZwracanyUczen.Imie = uczen.Imie;
+            ZwracanyUczen.Nazwisko = uczen.Nazwisko;
+            ZwracanyUczen.KlasaID = uczen.KlasaID;
+            ZwracanyUczen.NumerTelefonu = uczen.NumerTelefonu;
+            ZwracanyUczen.Email = uczen.Email;
+            ZwracanyUczen.Adres = uczen.Adres;
 
-            return Ok(uczen);
+            return Ok(ZwracanyUczen);
         }
 
         // PUT: api/UczensWEB/5
@@ -78,6 +98,8 @@ namespace DziennikSzkolny13.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+
 
             db.Uczens.Add(uczen);
             db.SaveChanges();
