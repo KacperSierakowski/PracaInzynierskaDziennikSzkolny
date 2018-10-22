@@ -10,15 +10,71 @@ using DziennikSzkolny13.Models;
 
 namespace DziennikSzkolny13.Controllers
 {
+    [Authorize]
     public class NieobecnoscsController : Controller
     {
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
 
         // GET: Nieobecnoscs
-        public ActionResult Index()
+        public ActionResult Index(string SearchBy, string searching)
         {
-            var nieobecnoscs = db.Nieobecnoscs.Include(n => n.NauczycielWystawiajacy).Include(n => n.UczenDotyczacy);
-            return View(nieobecnoscs.ToList());
+            string Zalogowany = Request.ServerVariables["LOGON_USER"];
+            if (User.IsInRole("Administrator"))
+            {
+                if (SearchBy == "NazwaKlasy")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    return View(nieobecnoscs.Where(x => x.UczenDotyczacy.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "NazwiskoUcznia")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    return View(nieobecnoscs.Where(x => x.UczenDotyczacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "Przedmiot")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.PrzedmiotyNauczyciela.Any(s=>s.NazwaPrzedmiotu.Contains(searching) || searching == null)).ToList());
+                }
+                else//Nauczyciel
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+            }
+            else if (User.IsInRole("Nauczyciel"))
+            {
+                if (SearchBy == "NazwaKlasy")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
+                        .Where(s=>s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.UczenDotyczacy.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "NazwiskoUcznia")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
+                        .Where(s => s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.UczenDotyczacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+                else if (SearchBy == "Przedmiot")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
+                        .Where(s => s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.PrzedmiotyNauczyciela.Any(s => s.NazwaPrzedmiotu.Contains(searching) || searching == null)).ToList());
+                }
+                else
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
+                        .Where(s => s.NauczycielWystawiajacy.Nazwisko.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                }
+            }
+            else //uczen
+            {
+                var nieobecnoscs = db.Nieobecnoscs.Include(n => n.NauczycielWystawiajacy).Include(n => n.UczenDotyczacy)
+                        .Where(s => s.UczenDotyczacy.Email.Equals(Zalogowany));
+                return View(nieobecnoscs.ToList());
+            }
         }
 
         // GET: Nieobecnoscs/Details/5
@@ -99,6 +155,7 @@ namespace DziennikSzkolny13.Controllers
         }
 
         // GET: Nieobecnoscs/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +171,7 @@ namespace DziennikSzkolny13.Controllers
         }
 
         // POST: Nieobecnoscs/Delete/5
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

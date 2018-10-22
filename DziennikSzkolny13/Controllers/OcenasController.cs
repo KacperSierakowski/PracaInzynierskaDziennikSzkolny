@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 namespace DziennikSzkolny13.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class OcenasController : Controller
     {
         private DziennikSzkolny13DB db = new DziennikSzkolny13DB();
