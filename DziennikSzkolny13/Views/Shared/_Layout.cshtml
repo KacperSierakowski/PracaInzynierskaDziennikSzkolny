@@ -41,24 +41,30 @@
                     {
                         <li>@Html.ActionLink("Panel Klas", "Index", "Klasas")</li>
                     }
-                    <li>@Html.ActionLink("Panel Uczniów", "Index", "Uczens")</li>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel") || User.IsInRole("Uczeń"))
+                    {
+                        <li>@Html.ActionLink("Panel Uczniów", "Index", "Uczens")</li>
+                    }
                     @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
                     {
                         <li>@Html.ActionLink("Panel Nauczycieli", "Index", "Nauczyciels")</li>
                     }
-                    <li class="nav navbar-nav dropdown">
-                        <a href="@Url.Action("Index", "Przedmiots" )" class="dropdown-toggle"
-                           data-toggle="dropdown">Przedmioty/Oceny<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="@Url.Action("Index", "Przedmiots" )">Panel Przedmiotów</a></li>
-                            <li><a href="@Url.Action("Index", "Ocenas" )">Panel Ocen</a></li>
-                            <li><a href="@Url.Action("Index", "Nieobecnoscs" )">Panel Nieobecności</a></li>
-                            @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
-                            {
-                                <li>@Html.ActionLink("Wgraj Plik", "Index", "Pliks")</li>
-                            }
-                        </ul>
-                    </li>
+                    @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel") || User.IsInRole("Uczeń"))
+                    {
+                        <li class="nav navbar-nav dropdown">
+                            <a href="@Url.Action("Index", "Przedmiots")" class="dropdown-toggle"
+                               data-toggle="dropdown">Przedmioty/Oceny/Frekwencja<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="@Url.Action("Index", "Przedmiots")">Panel Przedmiotów</a></li>
+                                <li><a href="@Url.Action("Index", "Ocenas")">Panel Ocen</a></li>
+                                <li><a href="@Url.Action("Index", "Nieobecnoscs")">Panel Nieobecności</a></li>
+                                @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+                                {
+                                    <li>@Html.ActionLink("Wgraj Plik", "Index", "Pliks")</li>
+                                }
+                            </ul>
+                        </li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

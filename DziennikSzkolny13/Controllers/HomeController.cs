@@ -10,6 +10,20 @@ namespace DziennikSzkolny13.Controllers
     {
         public ActionResult Index()
         {
+            string powitanie = "Dzień dobry!";
+            TimeSpan start = new TimeSpan(18, 0, 0);
+            TimeSpan end = new TimeSpan(06, 0, 0);
+            TimeSpan now = DateTime.Now.TimeOfDay;
+            if (end<now && now<start)
+            {
+                powitanie = "Dzień dobry!";
+            }
+            else
+            {
+                powitanie = "Dobry wieczór!";
+            }
+
+            ViewBag.Powitanie = powitanie;
             return View();
         }
 

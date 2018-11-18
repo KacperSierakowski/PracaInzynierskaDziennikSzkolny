@@ -1,21 +1,21 @@
 ﻿@model DziennikSzkolny13.Models.Nieobecnosc
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Szczegóły";
 }
 
-<h2>Details</h2>
+<h2>Szczegóły nieoebecności</h2>
 
 <div>
-    <h4>Nieobecnosc</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NauczycielWystawiajacy.Imie)
+            @*@Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.NazwaPrzedmiotu)*@
+            Opuszczony przedmiot
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NauczycielWystawiajacy.Imie)
+            @Html.DisplayFor(model => model.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
         </dd>
 
         <dt>
@@ -27,16 +27,30 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.Nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UczenDotyczacy.Nazwisko)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Data)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Data)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CzyUsprawiedliwiona)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.CzyUsprawiedliwiona)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Powrót", "Index")
 </p>

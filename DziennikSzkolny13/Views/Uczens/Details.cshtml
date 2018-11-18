@@ -68,21 +68,38 @@
             @Html.ActionLink("Dodaj Ocenę", "CreateOcenasFromUczens", new { id = Model.ID })
         </p>
     }
-    @Html.Partial("ListaOcenUcznia", Model.OcenyUcznia)
+    @*@Html.Partial("ListaOcenUcznia", Model.OcenyUcznia)*@
 </div>
-
+@*@{
+        Html.Action("ListaOcenUcznia", "Uczens");
+    }*@
+@{
+    Html.RenderAction("ListaOcenUcznia", "Uczens");
+}
+<div>
+    <h3>Odnotowane nieobecności ucznia:</h3>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+    {
+        <p>
+            @Html.ActionLink("Dodaj nieobecność", "CreateNieobecnoscsFromUczens", new { id = Model.ID })
+        </p>
+    }
+</div>
+@{
+    Html.RenderAction("ListaNieobecnosciUcznia", "Uczens");
+}
 <p>
     @if (User.IsInRole("Administrator"))
     {
         @Html.ActionLink("Edytuj", "Edit", new { id = Model.ID })
-        @Html.ActionLink("Powrót do listy wszystkich uczniów", "Index")
+        @Html.ActionLink("Przejdź do listy wszystkich uczniów", "Index")
     }
     else if (User.IsInRole("Nauczyciel"))
     {
-        @Html.ActionLink("Powrót do listy wszystkich uczniów", "Index")
+        @Html.ActionLink("Przejdź do listy wszystkich uczniów", "Index")
     }
     else
     {
-        @Html.ActionLink("Powrót", "Index")
+        @Html.ActionLink("Panel Ucznia", "Index")
     }
 </p>

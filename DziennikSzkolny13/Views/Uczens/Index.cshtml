@@ -33,7 +33,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.klasaUcznia.NazwaKlasy)
+            Klasa
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ID)
@@ -46,6 +46,9 @@
         </th>
         <th>
             Ilość ocen
+        </th>
+        <th>
+            Ilość nieobecności
         </th>
         @*<th>
                 @Html.DisplayNameFor(model => model.NumerTelefonu)
@@ -75,7 +78,32 @@
                 @Html.DisplayFor(modelItem => item.Nazwisko)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OcenyUcznia.Count)
+                @{
+                    string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                    var iloscOcenWystawionychPrzezKonkretnegoNauczycicela = item.OcenyUcznia.Where(d => d.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)).Count();
+
+                }@if (User.IsInRole("Administrator"))
+                {
+                    @Html.DisplayFor(modelItem => item.OcenyUcznia.Count)
+                }
+                else
+                {
+                    @iloscOcenWystawionychPrzezKonkretnegoNauczycicela
+                }
+            </td>
+            <td>
+                @{
+                    var iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela = item.NieobecnosciUcznia.Where(d => d.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)).Count();
+                    @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
+                }
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.DisplayFor(modelItem => item.OcenyUcznia.Count)
+                }
+                else
+                {
+                    @iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela
+                }
             </td>
             @*<td>
                     @Html.DisplayFor(modelItem => item.NumerTelefonu)

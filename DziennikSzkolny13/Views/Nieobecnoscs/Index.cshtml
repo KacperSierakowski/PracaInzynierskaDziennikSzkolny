@@ -1,21 +1,65 @@
 ﻿@model IEnumerable<DziennikSzkolny13.Models.Nieobecnosc>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Panel Nieobecności";
 }
 
-<h2>Index</h2>
-
+<h2>Panel Nieobecności</h2>
+@if (User.IsInRole("Administrator"))
+{
+    <p>
+        @using (Html.BeginForm("Index", "Nieobecnoscs", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaKlasy", true) <text>Nazwa klasy</text>
+            @Html.RadioButton("searchBy", "NazwiskoUcznia") <text>Nazwisko ucznia</text>
+            @Html.RadioButton("searchBy", "Przedmiot") <text>Przedmiot</text>
+            @Html.RadioButton("searchBy", "Nauczyciel") <text>Nazwuzko nauczyciela</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+}
+@if (User.IsInRole("Nauczyciel"))
+{
+    <p>
+        @using (Html.BeginForm("Index", "Nieobecnoscs", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaKlasy", true) <text>Nazwa klasy</text>
+            @Html.RadioButton("searchBy", "NazwiskoUcznia") <text>Nazwisko ucznia</text>
+            @Html.RadioButton("searchBy", "Przedmiot") <text>Przedmiot</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+}
+@if (User.IsInRole("Uczeń"))
+{
+    <p>
+        @using (Html.BeginForm("Index", "Nieobecnoscs", FormMethod.Get))
+        {
+            <b>Szukaj po:</b>
+            @Html.RadioButton("searchBy", "NazwaPrzedmiotu", true) <text>Nazwa przedmiotu</text>
+            @Html.TextBox("searching") <input type="submit" value="Szukaj" />
+            @Html.ActionLink("Powrót", "Index")
+        }
+    </p>
+}
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Wprowadź nową nieobecność", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NauczycielWystawiajacy.Imie)
+            @Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UczenDotyczacy.Imie)
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.Imie) i
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.klasaUcznia.NazwaKlasy)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Data)
@@ -23,23 +67,28 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NauczycielWystawiajacy.Imie)
+            @Html.DisplayFor(modelItem => item.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UczenDotyczacy.Imie)
+            @Html.DisplayFor(modelItem => item.UczenDotyczacy.Nazwisko)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UczenDotyczacy.klasaUcznia.NazwaKlasy)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Data)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
         </td>
     </tr>
-}
+    }
 
 </table>

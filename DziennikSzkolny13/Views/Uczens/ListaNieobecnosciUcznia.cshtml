@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DziennikSzkolny13.Models.Nieobecnosc>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CzyUsprawiedliwiona)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CzyUsprawiedliwiona)
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edytuj", "Edit", "Nieobecnoscs", new { id = item.ID }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Nieobecnoscs", new { id = item.ID }, null)
+                    @Html.ActionLink("Usuń", "Delete", "Nieobecnoscs", new { id = item.ID }, null)
+                }
+                else if (User.IsInRole("Nauczyciel"))
+                {
+                    @Html.ActionLink("Edytuj ", "Edit", "Nieobecnoscs", new { id = item.ID }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Nieobecnoscs", new { id = item.ID }, null)
+                }
+                else
+                {
+                    @Html.ActionLink("Szczegóły", "Details", "Nieobecnoscs", new { id = item.ID }, null)
+                }
+            </td>
+        </tr>
+    }
+
+</table>

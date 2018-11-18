@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<DziennikSzkolny13.Models.Ocena>
 
 <table class="table">
-
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
@@ -30,18 +29,18 @@
             <td>
                 @if (User.IsInRole("Administrator"))
                 {
-                    @Html.ActionLink("Edytuj", "Edit","Ocenas", new { id = item.ID },null)
-                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
-                    @Html.ActionLink("Usuń", "Delete", "Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Edytuj", "Edit", "Ocenas", new { id = item.ID }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID }, null)
+                    @Html.ActionLink("Usuń", "Delete", "Ocenas", new { id = item.ID }, null)
                 }
                 else if (User.IsInRole("Nauczyciel"))
                 {
-                    @Html.ActionLink("Edytuj ", "Edit", "Ocenas", new { id = item.ID },null)
-                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Edytuj ", "Edit", "Ocenas", new { id = item.ID }, null)
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID }, null)
                 }
                 else
                 {
-                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID },null)
+                    @Html.ActionLink("Szczegóły", "Details", "Ocenas", new { id = item.ID }, null)
                 }
             </td>
         </tr>

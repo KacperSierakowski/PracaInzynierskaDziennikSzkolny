@@ -22,9 +22,17 @@ namespace DziennikSzkolny13.Models
         public int UczenID { get; set; }
         public virtual Uczen UczenDotyczacy { get; set; }
 
-        [Display(Name = "Nauczyciel")]
-        [Required(ErrorMessage = "Nauczyciel jest wymagany")]
-        public int NauczycielID { get; set; }
-        public virtual Nauczyciel NauczycielWystawiajacy { get; set; }
+        //[Display(Name = "Nauczyciel")]
+        //[Required(ErrorMessage = "Nauczyciel jest wymagany")]
+        //public int NauczycielID { get; set; }
+        //public virtual Nauczyciel NauczycielWystawiajacy { get; set; }
+
+        [Display(Name = "Opuszczony Przedmiot")]
+        [Required(ErrorMessage = "Przedmiot jest wymagany")]
+        public int PrzedmiotID { get; set; }
+        public virtual Przedmiot OpuszczonyPrzedmiot { get; set; }
+
+        [Display(Name = "Czy usprawiedliwiona?")]
+        public bool CzyUsprawiedliwiona { get; set; }
     }
 }

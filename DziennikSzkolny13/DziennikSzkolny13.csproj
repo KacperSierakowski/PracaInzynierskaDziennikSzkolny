@@ -70,6 +70,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RimDev.AspNetBrowserLocale, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RimDev.AspNetBrowserLocale.0.1.0\lib\net45\RimDev.AspNetBrowserLocale.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -283,6 +286,26 @@
     <Compile Include="Migrations\201810041717337_NieobecnoscModyfikacje.Designer.cs">
       <DependentUpon>201810041717337_NieobecnoscModyfikacje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811071435159_ZmianaNauczycielaNaPrzedmiotWNieobecnosci.cs" />
+    <Compile Include="Migrations\201811071435159_ZmianaNauczycielaNaPrzedmiotWNieobecnosci.Designer.cs">
+      <DependentUpon>201811071435159_ZmianaNauczycielaNaPrzedmiotWNieobecnosci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111628493_usprawiedliwienie.cs" />
+    <Compile Include="Migrations\201811111628493_usprawiedliwienie.Designer.cs">
+      <DependentUpon>201811111628493_usprawiedliwienie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111630597_usprawiedliwienie2.cs" />
+    <Compile Include="Migrations\201811111630597_usprawiedliwienie2.Designer.cs">
+      <DependentUpon>201811111630597_usprawiedliwienie2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111634081_usprawiedliwienie3.cs" />
+    <Compile Include="Migrations\201811111634081_usprawiedliwienie3.Designer.cs">
+      <DependentUpon>201811111634081_usprawiedliwienie3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811111956527_nieobecnosciUcznia.cs" />
+    <Compile Include="Migrations\201811111956527_nieobecnosciUcznia.Designer.cs">
+      <DependentUpon>201811111956527_nieobecnosciUcznia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -400,14 +423,17 @@
     <Content Include="Views\Pliks\Details.cshtml" />
     <Content Include="Views\Pliks\Edit.cshtml" />
     <Content Include="Views\Pliks\Index.cshtml" />
+    <Content Include="Views\Klasas\CreateOcenasFromKlasas.cshtml" />
+    <Content Include="Views\Uczens\ListaOcenUcznia.cshtml" />
+    <Content Include="Views\Uczens\CreateOcenasFromUczens.cshtml" />
     <Content Include="Views\Nieobecnoscs\Create.cshtml" />
     <Content Include="Views\Nieobecnoscs\Delete.cshtml" />
     <Content Include="Views\Nieobecnoscs\Details.cshtml" />
     <Content Include="Views\Nieobecnoscs\Edit.cshtml" />
     <Content Include="Views\Nieobecnoscs\Index.cshtml" />
-    <Content Include="Views\Klasas\CreateOcenasFromKlasas.cshtml" />
-    <Content Include="Views\Uczens\ListaOcenUcznia.cshtml" />
-    <Content Include="Views\Uczens\CreateOcenasFromUczens.cshtml" />
+    <Content Include="Views\Klasas\CreateNieobecnoscsFromKlasas.cshtml" />
+    <Content Include="Views\Uczens\ListaNieobecnosciUcznia.cshtml" />
+    <Content Include="Views\Uczens\CreateNieobecnoscsFromUczens.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -447,6 +473,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810041717337_NieobecnoscModyfikacje.resx">
       <DependentUpon>201810041717337_NieobecnoscModyfikacje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811071435159_ZmianaNauczycielaNaPrzedmiotWNieobecnosci.resx">
+      <DependentUpon>201811071435159_ZmianaNauczycielaNaPrzedmiotWNieobecnosci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111628493_usprawiedliwienie.resx">
+      <DependentUpon>201811111628493_usprawiedliwienie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111630597_usprawiedliwienie2.resx">
+      <DependentUpon>201811111630597_usprawiedliwienie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111634081_usprawiedliwienie3.resx">
+      <DependentUpon>201811111634081_usprawiedliwienie3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111956527_nieobecnosciUcznia.resx">
+      <DependentUpon>201811111956527_nieobecnosciUcznia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

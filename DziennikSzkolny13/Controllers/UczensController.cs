@@ -42,6 +42,7 @@ namespace DziennikSzkolny13.Controllers
             return View("~/Views/Uczens/PermissionDenied.cshtml");
         }
 
+        static public int? TymczasoweIDucznia = 1;
         // GET: Uczens/Details/5
         public ActionResult Details(int? id)
         {
@@ -54,6 +55,7 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
+            TymczasoweIDucznia = id;
             if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
             {
                 return View(uczen);
@@ -69,6 +71,63 @@ namespace DziennikSzkolny13.Controllers
                 {
                     return View("~/Views/Uczens/PermissionDenied.cshtml");
                 }
+            }
+        }
+
+        public ActionResult ListaOcenUcznia()
+        {
+            if (User.IsInRole("Administrator"))
+            {
+                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                //return View(ocenas.ToList());
+                return PartialView("ListaOcenUcznia", ocenas.ToList());
+            }
+            else if (User.IsInRole("Nauczyciel"))
+            {
+                string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                    .Where(x => x.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))
+                    .Where(d => d.UczenID == TymczasoweIDucznia);
+                //return View(ocenas.ToList());
+                return PartialView("ListaOcenUcznia", ocenas.ToList());
+            }
+            else
+            {
+                string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
+                var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                    .Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen))
+                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                //return View(ocenas.ToList());
+                return PartialView("ListaOcenUcznia", ocenas.ToList());
+            }
+        }
+        public ActionResult ListaNieobecnosciUcznia()
+        {
+            if (User.IsInRole("Administrator"))
+            {
+                var nieobe = db.Nieobecnoscs.Include(o => o.UczenDotyczacy).Include(o => o.OpuszczonyPrzedmiot)
+                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                //return View(ocenas.ToList());
+                return PartialView("ListaNieobecnosciUcznia", nieobe.ToList());
+            }
+            else if (User.IsInRole("Nauczyciel"))
+            {
+                string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                var nieobe = db.Nieobecnoscs.Include(o => o.OpuszczonyPrzedmiot).Include(o => o.UczenDotyczacy)
+                    .Where(x => x.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))
+                    .Where(d => d.UczenID == TymczasoweIDucznia);
+                //return View(ocenas.ToList());
+                return PartialView("ListaNieobecnosciUcznia", nieobe.ToList());
+            }
+            else
+            {
+                string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
+                var nieobe = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
+                    .Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen))
+                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                //return View(ocenas.ToList());
+                return PartialView("ListaNieobecnosciUcznia", nieobe.ToList());
             }
         }
 
@@ -225,6 +284,74 @@ namespace DziennikSzkolny13.Controllers
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
         }
+
+        // GET: Klasa/CreateNieobecnoscsFromKlasas
+        public ActionResult CreateNieobecnoscsFromUczens(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Uczen uczen = db.Uczens.Find(id);
+            if (uczen == null)
+            {
+                return HttpNotFound();
+            }
+            if ((User.IsInRole("Nauczyciel")))
+            {
+                string Zalogowany = Request.ServerVariables["LOGON_USER"];
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                return View();
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
+        }
+
+
+        // POST: Klasas/CreateNieobecnoscsFromKlasas
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateNieobecnoscsFromUczens([Bind(Include = "ID,Data,UczenID,PrzedmiotID,CzyUsprawiedliwiona")] Nieobecnosc nieobecnosc)
+        {
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Nieobecnoscs.Add(nieobecnosc);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                if (User.IsInRole("Nauczyciel"))
+                {
+                    string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+
+                    ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                    return View(nieobecnosc);
+                }
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                return View(nieobecnosc);
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
+        }
+
+
+
 
         protected override void Dispose(bool disposing)
         {

@@ -15,14 +15,17 @@
             @Html.DisplayNameFor(model => model.Nazwisko)
         </th>
         @*<th>
-                @Html.DisplayNameFor(model => model.NumerTelefonu)
-            </th>*@
+            @Html.DisplayNameFor(model => model.NumerTelefonu)
+        </th>*@
         @*<th>
-                @Html.DisplayNameFor(model => model.Adres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>*@
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>*@
+        <th>Panel Ocen</th>
+        <th></th>
+        <th>Panel Nieobecności</th>
         <th></th>
         <th></th>
         <th></th>
@@ -30,40 +33,55 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.Imie)
+        </td>
+        <td>
+            <a href="~/Uczens/Details/@item.ID">@Html.DisplayFor(modelItem => item.Nazwisko)</a>
+            @*@Html.DisplayFor(modelItem => item.Nazwisko)*@
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NumerTelefonu)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>*@
+
+        <td>
+            <a href="~/Ocenas?searchBy=NazwiskoUcznia&searching=@item.Nazwisko">-></a>
+        </td>
+
+        <td>
             @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
             {
-                <td>
-                    @Html.DisplayFor(modelItem => item.ID)
-                </td>
+                @Html.ActionLink("Dodaj Ocenę", "CreateOcenasFromKlasas", new { id = item.ID })
             }
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                <a href="~/Uczens/Details/@item.ID">@Html.DisplayFor(modelItem => item.Nazwisko)</a>
-                @*@Html.DisplayFor(modelItem => item.Nazwisko)*@
-            </td>
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.NumerTelefonu)
-                </td>*@
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.Adres)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>*@
-            <td>
-                @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
-                {
-                    @Html.ActionLink("Dodaj Ocenę", "CreateOcenasFromKlasas", new { id = item.ID })
-                }
-            </td>
-            <td>
-                @Html.ActionLink("Szczegóły", "Details", "Uczens", new { id = item.ID }, null)
-            </td>
-            <td></td>
-        </tr>
+        </td>
+        <td>
+            <a href="~/Nieobecnoscs?searchBy=NazwiskoUcznia&searching=@item.Nazwisko">-></a>
+        </td>
+
+        <td>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
+            {
+                @Html.ActionLink("Dodaj Nieobecność", "CreateNieobecnoscsFromKlasas", new { id = item.ID })
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Szczegóły", "Details", "Uczens", new { id = item.ID }, null)
+        </td>
+        <td></td>
+    </tr>
     }
 
 </table>

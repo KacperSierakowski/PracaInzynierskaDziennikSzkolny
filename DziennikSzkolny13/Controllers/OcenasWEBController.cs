@@ -51,41 +51,44 @@ namespace DziennikSzkolny13.Controllers
         }
 
         // PUT: api/OcenasWEB/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutOcena(int id, Ocena ocena)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutOcena(int id, Ocena ocena)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != ocena.ID)
-            {
-                return BadRequest();
-            }
+        //    if (id != ocena.ID)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(ocena).State = EntityState.Modified;
+        //    db.Entry(ocena).State = EntityState.Modified;
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!OcenaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        db.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!OcenaExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
         // POST: api/OcenasWEB
+
+            
+
         [ResponseType(typeof(Ocena))]
         public IHttpActionResult PostOcena(Ocena ocena)
         {
@@ -104,17 +107,20 @@ namespace DziennikSzkolny13.Controllers
             //    return HttpNotFound();
             //}
 
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+
             Uczen uczenTMP = db.Uczens.Find(IDuczniaTMP);
             if (uczenTMP == null)
             {
                 return NotFound();
             }
-
             Przedmiot przedmiotTMP = db.Przedmiots.Find(IDprzedmiotuTMP);
             if (przedmiotTMP == null)
             {
                 return NotFound();
             }
+
 
             db.Ocenas.Add(ocena);
             db.SaveChanges();

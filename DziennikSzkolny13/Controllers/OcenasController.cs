@@ -73,45 +73,45 @@ namespace DziennikSzkolny13.Controllers
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
         }
-        public IQueryable<Ocena> GetOcenas()
-        {
-            return db.Ocenas;
-        }
-        public IEnumerable<Ocena> Get()
-        {
-            return db.Ocenas.ToList();
-        }
-        public JsonResult IndexForMobileApp()
-        {
-            var ListaOcen = db.Ocenas.Include(x => x.OcenaUczen).ToList();
-            return Json(ListaOcen, JsonRequestBehavior.AllowGet);
-        }
-        [HttpGet]
-        [Route("findall")]
-        public HttpResponseMessage findAll()
-        {
-            try
-            {
-                var response = new HttpResponseMessage(HttpStatusCode.OK);
-                //var nauczyciels = db.Ocenas.Include(x => x.OcenaUczen).Select(p => new Nauczyciel
-                //{
-                //    ID = p.ID,
-                //    Imie = p.Imie,
-                //    Nazwisko = p.Nazwisko,
-                //    Adres = p.Adres,
-                //    Email = p.Email,
-                //    NumerTelefonu = p.NumerTelefonu,
-                //    PrzedmiotyNauczyciela = p.PrzedmiotyNauczyciela,
-                //}).ToList();
-                response.Content = new StringContent(JsonConvert.SerializeObject(db.Ocenas));
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                return response;
-            }
-            catch
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadGateway);
-            }
-        }
+        //public IQueryable<Ocena> GetOcenas()
+        //{
+        //    return db.Ocenas;
+        //}
+        //public IEnumerable<Ocena> Get()
+        //{
+        //    return db.Ocenas.ToList();
+        //}
+        //public JsonResult IndexForMobileApp()
+        //{
+        //    var ListaOcen = db.Ocenas.Include(x => x.OcenaUczen).ToList();
+        //    return Json(ListaOcen, JsonRequestBehavior.AllowGet);
+        //}
+        //[HttpGet]
+        //[Route("findall")]
+        //public HttpResponseMessage findAll()
+        //{
+        //    try
+        //    {
+        //        var response = new HttpResponseMessage(HttpStatusCode.OK);
+        //        //var nauczyciels = db.Ocenas.Include(x => x.OcenaUczen).Select(p => new Nauczyciel
+        //        //{
+        //        //    ID = p.ID,
+        //        //    Imie = p.Imie,
+        //        //    Nazwisko = p.Nazwisko,
+        //        //    Adres = p.Adres,
+        //        //    Email = p.Email,
+        //        //    NumerTelefonu = p.NumerTelefonu,
+        //        //    PrzedmiotyNauczyciela = p.PrzedmiotyNauczyciela,
+        //        //}).ToList();
+        //        response.Content = new StringContent(JsonConvert.SerializeObject(db.Ocenas));
+        //        response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        //        return response;
+        //    }
+        //    catch
+        //    {
+        //        return new HttpResponseMessage(HttpStatusCode.BadGateway);
+        //    }
+        //}
 
 
         // GET: Ocenas/Details/5

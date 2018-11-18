@@ -40,5 +40,7 @@ namespace DziennikSzkolny13.Models
         public virtual Klasa klasaUcznia { get; set; }
 
         public virtual ICollection<Ocena> OcenyUcznia { get; set; }
+        public virtual ICollection<Nieobecnosc> NieobecnosciUcznia { get; set; }
+
     }
 }

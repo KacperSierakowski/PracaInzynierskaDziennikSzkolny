@@ -1,7 +1,7 @@
 ﻿@using DziennikSzkolny13.Models
 @model LoginViewModel
 @{
-    ViewBag.Title = "Strona Logowania";
+    ViewBag.Title = "Strona logowania";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -22,19 +22,20 @@
                 </div>
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    @*<div class="col-lg-push-8">Hasło</div>*@
                     <div class="col-md-10">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)
                             @Html.LabelFor(m => m.RememberMe)
                         </div>
                     </div>
-                </div>
+                </div>*@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Zaloguj" class="btn btn-default" />

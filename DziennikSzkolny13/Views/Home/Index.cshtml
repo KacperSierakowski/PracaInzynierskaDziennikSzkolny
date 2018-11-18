@@ -1,15 +1,27 @@
 ﻿@{
+    /**/
+
     ViewBag.Title = "Home Page";
 }
 
 @*<a class="navbar-brand"><img alt="Brand" src="~/Content/Images/schoolIconHome.png" height="350" width="550" /></a>*@
-
-
-<div class="row">
-    <div class="col-md-4">
+@if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel") || User.IsInRole("Uczeń"))
+{
+    <h1>@ViewBag.Powitanie</h1>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>@ViewBag.Powitanie</h1>
+        <p><a href="~/Account/Login" class="btn btn-primary btn-lg">Zaloguj &raquo;</a></p>
+        @*<li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>*@
     </div>
-    <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
     </div>
-    <div class="col-md-4">
-    </div>
-</div>
+}

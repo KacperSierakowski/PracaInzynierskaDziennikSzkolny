@@ -23,57 +23,66 @@ namespace DziennikSzkolny13.Controllers
             {
                 if (SearchBy == "NazwaKlasy")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot);
                     return View(nieobecnoscs.Where(x => x.UczenDotyczacy.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
                 }
                 else if (SearchBy == "NazwiskoUcznia")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot);
                     return View(nieobecnoscs.Where(x => x.UczenDotyczacy.Nazwisko.Contains(searching) || searching == null).ToList());
                 }
                 else if (SearchBy == "Przedmiot")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
-                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.PrzedmiotyNauczyciela.Any(s=>s.NazwaPrzedmiotu.Contains(searching) || searching == null)).ToList());
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot);
+                    return View(nieobecnoscs.Where(x => x.OpuszczonyPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
                 }
                 else//Nauczyciel
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy);
-                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot);
+                    return View(nieobecnoscs.Where(x => x.OpuszczonyPrzedmiot.przedmiotNauczyciel.Nazwisko.Contains(searching) || searching == null).ToList());
                 }
             }
             else if (User.IsInRole("Nauczyciel"))
             {
                 if (SearchBy == "NazwaKlasy")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
-                        .Where(s=>s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot)
+                        .Where(s => s.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(Zalogowany));
                     return View(nieobecnoscs.Where(x => x.UczenDotyczacy.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
                 }
                 else if (SearchBy == "NazwiskoUcznia")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
-                        .Where(s => s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot)
+                        .Where(s => s.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(Zalogowany));
                     return View(nieobecnoscs.Where(x => x.UczenDotyczacy.Nazwisko.Contains(searching) || searching == null).ToList());
                 }
                 else if (SearchBy == "Przedmiot")
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
-                        .Where(s => s.NauczycielWystawiajacy.Email.Equals(Zalogowany));
-                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.PrzedmiotyNauczyciela.Any(s => s.NazwaPrzedmiotu.Contains(searching) || searching == null)).ToList());
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot)
+                        .Where(s => s.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.OpuszczonyPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
                 }
                 else
                 {
-                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.NauczycielWystawiajacy)
-                        .Where(s => s.NauczycielWystawiajacy.Nazwisko.Equals(Zalogowany));
-                    return View(nieobecnoscs.Where(x => x.NauczycielWystawiajacy.Nazwisko.Contains(searching) || searching == null).ToList());
+                    var nieobecnoscs = db.Nieobecnoscs.Include(o => o.UczenDotyczacy.klasaUcznia).Include(o => o.OpuszczonyPrzedmiot)
+                        .Where(s => s.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.UczenDotyczacy.klasaUcznia.NazwaKlasy.Contains(searching) || searching == null).ToList());
                 }
             }
             else //uczen
             {
-                var nieobecnoscs = db.Nieobecnoscs.Include(n => n.NauczycielWystawiajacy).Include(n => n.UczenDotyczacy)
-                        .Where(s => s.UczenDotyczacy.Email.Equals(Zalogowany));
-                return View(nieobecnoscs.ToList());
+                if (SearchBy == "Przedmiot")
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(n => n.OpuszczonyPrzedmiot).Include(n => n.UczenDotyczacy).Include(o => o.OpuszczonyPrzedmiot)
+                            .Where(s => s.UczenDotyczacy.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.Where(x => x.OpuszczonyPrzedmiot.NazwaPrzedmiotu.Contains(searching) || searching == null).ToList());
+                }
+                else
+                {
+                    var nieobecnoscs = db.Nieobecnoscs.Include(n => n.OpuszczonyPrzedmiot).Include(n => n.UczenDotyczacy).Include(o => o.OpuszczonyPrzedmiot)
+                            .Where(s => s.UczenDotyczacy.Email.Equals(Zalogowany));
+                    return View(nieobecnoscs.ToList());
+                }
             }
         }
 
@@ -95,7 +104,9 @@ namespace DziennikSzkolny13.Controllers
         // GET: Nieobecnoscs/Create
         public ActionResult Create()
         {
-            ViewBag.NauczycielID = new SelectList(db.Nauczyciels, "ID", "Imie");
+
+            string Zalogowany = Request.ServerVariables["LOGON_USER"];
+            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s=>s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
             ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie");
             return View();
         }
@@ -105,7 +116,7 @@ namespace DziennikSzkolny13.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Data,UczenID,NauczycielID")] Nieobecnosc nieobecnosc)
+        public ActionResult Create([Bind(Include = "ID,Data,UczenID,PrzedmiotID,CzyUsprawiedliwiona")] Nieobecnosc nieobecnosc)
         {
             if (ModelState.IsValid)
             {
@@ -113,8 +124,9 @@ namespace DziennikSzkolny13.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            string Zalogowany = Request.ServerVariables["LOGON_USER"];
 
-            ViewBag.NauczycielID = new SelectList(db.Nauczyciels, "ID", "Imie", nieobecnosc.NauczycielID);
+            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
             ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
             return View(nieobecnosc);
         }
@@ -122,6 +134,7 @@ namespace DziennikSzkolny13.Controllers
         // GET: Nieobecnoscs/Edit/5
         public ActionResult Edit(int? id)
         {
+            string Zalogowany = Request.ServerVariables["LOGON_USER"];
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -131,7 +144,7 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.NauczycielID = new SelectList(db.Nauczyciels, "ID", "Imie", nieobecnosc.NauczycielID);
+            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
             ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
             return View(nieobecnosc);
         }
@@ -141,21 +154,21 @@ namespace DziennikSzkolny13.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Data,UczenID,NauczycielID")] Nieobecnosc nieobecnosc)
+        public ActionResult Edit([Bind(Include = "ID,Data,UczenID,PrzedmiotID,CzyUsprawiedliwiona")] Nieobecnosc nieobecnosc)
         {
+            string Zalogowany = Request.ServerVariables["LOGON_USER"];
             if (ModelState.IsValid)
             {
                 db.Entry(nieobecnosc).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.NauczycielID = new SelectList(db.Nauczyciels, "ID", "Imie", nieobecnosc.NauczycielID);
+            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
             ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
             return View(nieobecnosc);
         }
 
         // GET: Nieobecnoscs/Delete/5
-        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -171,7 +184,6 @@ namespace DziennikSzkolny13.Controllers
         }
 
         // POST: Nieobecnoscs/Delete/5
-        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

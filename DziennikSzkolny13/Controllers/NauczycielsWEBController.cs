@@ -98,7 +98,13 @@ namespace DziennikSzkolny13.Controllers
             {
                 return BadRequest();
             }
-
+            
+            AccountController accountController = new AccountController();
+            LoginViewModel loginViewModel = new LoginViewModel();
+            loginViewModel.Email = nauczyciel.Email;
+            loginViewModel.Password = nauczyciel.Nazwisko; string xxx = "Okey";
+            System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> XXX = accountController.Login(loginViewModel, xxx);
+            
             db.Entry(nauczyciel).State = EntityState.Modified;
 
             try

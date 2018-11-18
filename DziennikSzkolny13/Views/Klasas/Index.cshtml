@@ -24,9 +24,9 @@
         }
     </p>
     @*using (Html.BeginForm("Index", "Klasas", FormMethod.Get))
-    {
-        @Html.TextBox("searching")<input type="submit" value="Szukaj" />
-    }*@
+        {
+            @Html.TextBox("searching")<input type="submit" value="Szukaj" />
+        }*@
 }
 
 <p>
@@ -46,33 +46,70 @@
         <th>
             Ilość uczniów
         </th>
+        <th>
+            Ilość ocen
+        </th>
+        <th>
+            Ilość nieobecności
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NazwaKlasy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProfilKlasy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UczniowieKlasy.Count)
-        </td>
-        <td>
-            @if (User.IsInRole("Administrator"))
-            {
-                @Html.ActionLink("Edytuj", "Edit", new { id = item.ID })
-            }
-            @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
-            @if (User.IsInRole("Administrator"))
-            {
-                @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
-            }
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaKlasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfilKlasy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UczniowieKlasy.Count)
+            </td>
+            <td>
+                @{
+                    string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
+                    var iloscOcenWystawionychPrzezKonkretnegoNauczycicela = item.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(df => df.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))).Count();
+                    var iloscOcenWystawionych = item.UczniowieKlasy.Select(g => g.OcenyUcznia.Count);
+                    @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
+                }
+                @if (User.IsInRole("Administrator"))
+                {
+                    @iloscOcenWystawionych
+                }
+                else
+                {
+                    @iloscOcenWystawionychPrzezKonkretnegoNauczycicela
+                }
+            </td>
+            <td>
+                @{
+                    var iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela = item.UczniowieKlasy.Where(d => d.NieobecnosciUcznia.Any(df => df.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))).Count();
+                    var iloscNieobecnosciWystawionych = item.UczniowieKlasy.Select(g => g.NieobecnosciUcznia.Count);
+                    @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
+                }
+                @if (User.IsInRole("Administrator"))
+                {
+                    @iloscNieobecnosciWystawionych
+                }
+                else
+                {
+                    @iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela
+                }
+            </td>
+            <td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Edytuj", "Edit", new { id = item.ID })
+                }
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ID })
+                @if (User.IsInRole("Administrator"))
+                {
+                    @Html.ActionLink("Usuń", "Delete", new { id = item.ID })
+                }
+            </td>
+        </tr>
     }
 
 </table>
