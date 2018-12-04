@@ -98,17 +98,44 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
-            return View(nieobecnosc);
+            if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+            {
+                return View(nieobecnosc);
+            }
+            else
+            {
+                string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
+                if (nieobecnosc.UczenDotyczacy.Email == ZalogowanyUczen)
+                {
+                    return View(nieobecnosc);
+                }
+                else
+                {
+                    return View("~/Views/Uczens/PermissionDenied.cshtml");
+                }
+            }
         }
 
         // GET: Nieobecnoscs/Create
         public ActionResult Create()
         {
-
-            string Zalogowany = Request.ServerVariables["LOGON_USER"];
-            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s=>s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
-            ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie");
-            return View();
+            if ((User.IsInRole("Nauczyciel")))
+            {
+                string Zalogowany = Request.ServerVariables["LOGON_USER"];
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa");
+                return View();
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa");
+                return View();
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
         }
 
         // POST: Nieobecnoscs/Create
@@ -118,35 +145,50 @@ namespace DziennikSzkolny13.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Data,UczenID,PrzedmiotID,CzyUsprawiedliwiona")] Nieobecnosc nieobecnosc)
         {
-            if (ModelState.IsValid)
-            {
-                db.Nieobecnoscs.Add(nieobecnosc);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            string Zalogowany = Request.ServerVariables["LOGON_USER"];
 
-            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
-            ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
-            return View(nieobecnosc);
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Nieobecnoscs.Add(nieobecnosc);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                string Zalogowany = Request.ServerVariables["LOGON_USER"];
+
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenDotyczacy.PelnaNazwa);
+                return View(nieobecnosc);
+            }
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
         }
 
         // GET: Nieobecnoscs/Edit/5
         public ActionResult Edit(int? id)
         {
-            string Zalogowany = Request.ServerVariables["LOGON_USER"];
-            if (id == null)
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                string Zalogowany = Request.ServerVariables["LOGON_USER"];
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Nieobecnosc nieobecnosc = db.Nieobecnoscs.Find(id);
+                if (nieobecnosc == null)
+                {
+                    return HttpNotFound();
+                }
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                return View(nieobecnosc);
             }
-            Nieobecnosc nieobecnosc = db.Nieobecnoscs.Find(id);
-            if (nieobecnosc == null)
+            else
             {
-                return HttpNotFound();
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
-            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
-            ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
-            return View(nieobecnosc);
         }
 
         // POST: Nieobecnoscs/Edit/5
@@ -156,19 +198,27 @@ namespace DziennikSzkolny13.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Data,UczenID,PrzedmiotID,CzyUsprawiedliwiona")] Nieobecnosc nieobecnosc)
         {
-            string Zalogowany = Request.ServerVariables["LOGON_USER"];
-            if (ModelState.IsValid)
+            if ((User.IsInRole("Nauczyciel")) || User.IsInRole("Administrator"))
             {
-                db.Entry(nieobecnosc).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                string Zalogowany = Request.ServerVariables["LOGON_USER"];
+                if (ModelState.IsValid)
+                {
+                    db.Entry(nieobecnosc).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                return View(nieobecnosc);
             }
-            ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
-            ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
-            return View(nieobecnosc);
+            else
+            {
+                return View("~/Views/Uczens/PermissionDenied.cshtml");
+            }
         }
 
         // GET: Nieobecnoscs/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -186,6 +236,7 @@ namespace DziennikSzkolny13.Controllers
         // POST: Nieobecnoscs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult DeleteConfirmed(int id)
         {
             Nieobecnosc nieobecnosc = db.Nieobecnoscs.Find(id);

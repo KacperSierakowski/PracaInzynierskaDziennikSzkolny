@@ -10,14 +10,14 @@
 @if (User.IsInRole("Administrator"))
 {
     {
-        ViewBag.Title = "Panel Wszystkich Ocen";
+        ViewBag.Title = "Panel wszystkich ocen";
     }
     <h2>Panel Wszystkich Ocen</h2>
 }
 @if (User.IsInRole("Uczeń"))
 {
     {
-        ViewBag.Title = "Panel Ocen Ucznia";
+        ViewBag.Title = "Panel ocen ucznia";
     }
     <h2>Panel Ocen Ucznia</h2>
 }
@@ -57,18 +57,22 @@
         <th>
             @Html.DisplayNameFor(model => model.OcenaPrzedmiot.NazwaPrzedmiotu)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OcenaUczen.klasaUcznia.NazwaKlasy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OcenaUczen.ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OcenaUczen.Nazwisko)
-        </th>
+        @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.OcenaUczen.klasaUcznia.NazwaKlasy)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OcenaUczen.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OcenaUczen.Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OcenaUczen.Nazwisko)
+            </th>
+        }
         <th>
             @Html.DisplayNameFor(model => model.WartoscOceny)
         </th>
@@ -82,20 +86,24 @@
                 <a href="~/Przedmiots/Details/@item.OcenaPrzedmiot.ID">@Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)</a>
                 @*@Html.DisplayFor(modelItem => item.OcenaPrzedmiot.NazwaPrzedmiotu)*@
             </td>
-            <td>
-                <a href="~/Klasas/Details/@item.OcenaUczen.klasaUcznia.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)</a>
-                @*@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OcenaUczen.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
-            </td>
-            <td>
-                <a href="~/Uczens/Details/@item.OcenaUczen.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)</a>
-                @*@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)*@
-            </td>
+            @if (User.IsInRole("Administrator") || (User.IsInRole("Nauczyciel")))
+            {
+                <td>
+                    <a href="~/Klasas/Details/@item.OcenaUczen.klasaUcznia.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)</a>
+                    @*@Html.DisplayFor(modelItem => item.OcenaUczen.klasaUcznia.NazwaKlasy)*@
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.OcenaUczen.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OcenaUczen.Imie)
+                </td>
+                <td>
+                    <a href="~/Uczens/Details/@item.OcenaUczen.ID">@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)</a>
+                    @*@Html.DisplayFor(modelItem => item.OcenaUczen.Nazwisko)*@
+                </td>
+            }
             <td>
                 @Html.DisplayFor(modelItem => item.WartoscOceny)
             </td>

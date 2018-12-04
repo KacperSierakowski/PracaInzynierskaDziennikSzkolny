@@ -76,6 +76,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -306,9 +307,23 @@
     <Compile Include="Migrations\201811111956527_nieobecnosciUcznia.Designer.cs">
       <DependentUpon>201811111956527_nieobecnosciUcznia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812041234039_pelnaNazwaUcznia.cs" />
+    <Compile Include="Migrations\201812041234039_pelnaNazwaUcznia.Designer.cs">
+      <DependentUpon>201812041234039_pelnaNazwaUcznia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\DB_diagrams\DB1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB_diagrams\DB2.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB2.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\DziennikSzkolny13DB.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Klasa.cs" />
@@ -343,6 +358,16 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Models\DB_diagrams\DB1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Models\DB_diagrams\DB2.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB2.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -489,6 +514,18 @@
     <EmbeddedResource Include="Migrations\201811111956527_nieobecnosciUcznia.resx">
       <DependentUpon>201811111956527_nieobecnosciUcznia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041234039_pelnaNazwaUcznia.resx">
+      <DependentUpon>201812041234039_pelnaNazwaUcznia.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Models\DB_diagrams\DB1.dbml.layout">
+      <DependentUpon>DB1.dbml</DependentUpon>
+    </None>
+    <None Include="Models\DB_diagrams\DB2.dbml.layout">
+      <DependentUpon>DB2.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

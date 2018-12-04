@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DziennikSzkolny13.Models.DziennikSzkolny13DB" Class="DB1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DziennikSzkolny13.Models.DziennikSzkolny13DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DziennikSzkolny13_Models_DziennikSzkolny13DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Klasas" Member="Klasas">
+    <Type Name="Klasa">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NazwaKlasy" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfilKlasy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Klasa_Uczen" Member="Uczens" ThisKey="ID" OtherKey="KlasaID" Type="Uczen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nauczyciels" Member="Nauczyciels">
+    <Type Name="Nauczyciel">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NumerTelefonu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Nauczyciel_Przedmiot" Member="Przedmiots" ThisKey="ID" OtherKey="NauczycielID" Type="Przedmiot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nieobecnoscs" Member="Nieobecnoscs">
+    <Type Name="Nieobecnosc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UczenID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrzedmiotID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CzyUsprawiedliwiona" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Przedmiot_Nieobecnosc" Member="Przedmiot" ThisKey="PrzedmiotID" OtherKey="ID" Type="Przedmiot" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Uczen_Nieobecnosc" Member="Uczen" ThisKey="UczenID" OtherKey="ID" Type="Uczen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ocenas" Member="Ocenas">
+    <Type Name="Ocena">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WartoscOceny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UczenID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrzedmiotID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Przedmiot_Ocena" Member="Przedmiot" ThisKey="PrzedmiotID" OtherKey="ID" Type="Przedmiot" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Uczen_Ocena" Member="Uczen" ThisKey="UczenID" OtherKey="ID" Type="Uczen" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Przedmiots" Member="Przedmiots">
+    <Type Name="Przedmiot">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NazwaPrzedmiotu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NauczycielID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Przedmiot_Nieobecnosc" Member="Nieobecnoscs" ThisKey="ID" OtherKey="PrzedmiotID" Type="Nieobecnosc" />
+      <Association Name="Przedmiot_Ocena" Member="Ocenas" ThisKey="ID" OtherKey="PrzedmiotID" Type="Ocena" />
+      <Association Name="Nauczyciel_Przedmiot" Member="Nauczyciel" ThisKey="NauczycielID" OtherKey="ID" Type="Nauczyciel" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uczens" Member="Uczens">
+    <Type Name="Uczen">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NumerTelefonu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="KlasaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Uczen_Nieobecnosc" Member="Nieobecnoscs" ThisKey="ID" OtherKey="UczenID" Type="Nieobecnosc" />
+      <Association Name="Uczen_Ocena" Member="Ocenas" ThisKey="ID" OtherKey="UczenID" Type="Ocena" />
+      <Association Name="Klasa_Uczen" Member="Klasa" ThisKey="KlasaID" OtherKey="ID" Type="Klasa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -14,7 +14,7 @@
             @Html.RadioButton("searchBy", "NazwaKlasy", true) <text>Nazwa klasy</text>
             @Html.RadioButton("searchBy", "NazwiskoUcznia") <text>Nazwisko ucznia</text>
             @Html.RadioButton("searchBy", "Przedmiot") <text>Przedmiot</text>
-            @Html.RadioButton("searchBy", "Nauczyciel") <text>Nazwuzko nauczyciela</text>
+            @Html.RadioButton("searchBy", "Nauczyciel") <text>Nazwisko nauczyciela</text>
             @Html.TextBox("searching") <input type="submit" value="Szukaj" />
             @Html.ActionLink("Powrót", "Index")
         }
@@ -52,12 +52,20 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.przedmiotNauczyciel.Imie) i
+            @Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.przedmiotNauczyciel.Nazwisko)
+            nauczyciela
+        </th>
+
+        <th>
             @Html.DisplayNameFor(model => model.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UczenDotyczacy.Imie) i
             @Html.DisplayNameFor(model => model.UczenDotyczacy.Nazwisko)
+            ucznia
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.UczenDotyczacy.klasaUcznia.NazwaKlasy)
         </th>
@@ -71,8 +79,14 @@
     {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.OpuszczonyPrzedmiot.przedmiotNauczyciel.Imie)
+            @Html.DisplayFor(modelItem => item.OpuszczonyPrzedmiot.przedmiotNauczyciel.Nazwisko)
+        </td>
+
+        <td>
             @Html.DisplayFor(modelItem => item.OpuszczonyPrzedmiot.NazwaPrzedmiotu)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.UczenDotyczacy.Imie)
             @Html.DisplayFor(modelItem => item.UczenDotyczacy.Nazwisko)

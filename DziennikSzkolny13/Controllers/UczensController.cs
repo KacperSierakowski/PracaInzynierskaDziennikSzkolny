@@ -46,6 +46,7 @@ namespace DziennikSzkolny13.Controllers
         // GET: Uczens/Details/5
         public ActionResult Details(int? id)
         {
+            string ZalogowanyUser = Request.ServerVariables["LOGON_USER"];
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -56,16 +57,120 @@ namespace DziennikSzkolny13.Controllers
                 return HttpNotFound();
             }
             TymczasoweIDucznia = id;
-            if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+            if (User.IsInRole("Nauczyciel"))
             {
-                return View(uczen);
+                int IloscWzystkichOcen = uczen.OcenyUcznia.Where(f => f.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie1 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(1)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie2 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(2)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie3 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(3)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie4 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(4)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie5 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(5)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                int Wszystkie6 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(6)).Where(a => a.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser)).Count();
+                if (IloscWzystkichOcen == 0)
+                {
+                    var Srednia = "";
+                    Srednia = "Brak ocen";
+                    ViewBag.wszystkie = IloscWzystkichOcen;
+                    ViewBag.wszystkie1 = Wszystkie1;
+                    ViewBag.wszystkie2 = Wszystkie2;
+                    ViewBag.wszystkie3 = Wszystkie3;
+                    ViewBag.wszystkie4 = Wszystkie4;
+                    ViewBag.wszystkie5 = Wszystkie5;
+                    ViewBag.wszystkie6 = Wszystkie6;
+                    ViewBag.srednia = Srednia;
+                    return View(uczen);
+                }
+                else
+                {
+                    float Srednia = ((1 * Wszystkie1 + 2 * Wszystkie2 + 3 * Wszystkie3 + 4 * Wszystkie4 + 5 * Wszystkie5 + 6 * Wszystkie6) / IloscWzystkichOcen);
+                    ViewBag.wszystkie = IloscWzystkichOcen;
+                    ViewBag.wszystkie1 = Wszystkie1;
+                    ViewBag.wszystkie2 = Wszystkie2;
+                    ViewBag.wszystkie3 = Wszystkie3;
+                    ViewBag.wszystkie4 = Wszystkie4;
+                    ViewBag.wszystkie5 = Wszystkie5;
+                    ViewBag.wszystkie6 = Wszystkie6;
+                    ViewBag.srednia = Srednia;
+                    return View(uczen);
+                }
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                int IloscWzystkichOcen = uczen.OcenyUcznia.Count();
+                int Wszystkie1 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(1)).Count();
+                int Wszystkie2 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(2)).Count();
+                int Wszystkie3 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(3)).Count();
+                int Wszystkie4 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(4)).Count();
+                int Wszystkie5 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(5)).Count();
+                int Wszystkie6 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(6)).Count();
+                if (IloscWzystkichOcen == 0)
+                {
+                    var Srednia = "";
+                    Srednia = "Brak ocen";
+                    ViewBag.wszystkie = IloscWzystkichOcen;
+                    ViewBag.wszystkie1 = Wszystkie1;
+                    ViewBag.wszystkie2 = Wszystkie2;
+                    ViewBag.wszystkie3 = Wszystkie3;
+                    ViewBag.wszystkie4 = Wszystkie4;
+                    ViewBag.wszystkie5 = Wszystkie5;
+                    ViewBag.wszystkie6 = Wszystkie6;
+                    ViewBag.srednia = Srednia;
+                    return View(uczen);
+                }
+                else
+                {
+                    float Srednia = ((1 * Wszystkie1 + 2 * Wszystkie2 + 3 * Wszystkie3 + 4 * Wszystkie4 + 5 * Wszystkie5 + 6 * Wszystkie6) / IloscWzystkichOcen);
+                    ViewBag.wszystkie = IloscWzystkichOcen;
+                    ViewBag.wszystkie1 = Wszystkie1;
+                    ViewBag.wszystkie2 = Wszystkie2;
+                    ViewBag.wszystkie3 = Wszystkie3;
+                    ViewBag.wszystkie4 = Wszystkie4;
+                    ViewBag.wszystkie5 = Wszystkie5;
+                    ViewBag.wszystkie6 = Wszystkie6;
+                    ViewBag.srednia = Srednia;
+                    return View(uczen);
+                }
             }
             else
             {
-                string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
-                if (uczen.Email == ZalogowanyUczen)
+                if (uczen.Email == ZalogowanyUser)
                 {
-                    return View(uczen);
+                    int IloscWzystkichOcen = uczen.OcenyUcznia.Count();
+                    int Wszystkie1 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(1)).Count();
+                    int Wszystkie2 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(2)).Count();
+                    int Wszystkie3 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(3)).Count();
+                    int Wszystkie4 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(4)).Count();
+                    int Wszystkie5 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(5)).Count();
+                    int Wszystkie6 = uczen.OcenyUcznia.Where(f => f.WartoscOceny.Equals(6)).Count();
+                    
+                    if (IloscWzystkichOcen == 0)
+                    {
+                        var Srednia = "";
+                        Srednia = "Brak ocen";
+                        ViewBag.wszystkie = IloscWzystkichOcen;
+                        ViewBag.wszystkie1 = Wszystkie1;
+                        ViewBag.wszystkie2 = Wszystkie2;
+                        ViewBag.wszystkie3 = Wszystkie3;
+                        ViewBag.wszystkie4 = Wszystkie4;
+                        ViewBag.wszystkie5 = Wszystkie5;
+                        ViewBag.wszystkie6 = Wszystkie6;
+                        ViewBag.srednia = Srednia;
+                        return View(uczen);
+                    }
+                    else
+                    {
+                        double Srednia = ((1 * Wszystkie1 + 2 * Wszystkie2 + 3 * Wszystkie3 + 4 * Wszystkie4 + 5 * Wszystkie5 + 6 * Wszystkie6) / IloscWzystkichOcen);
+                        ViewBag.wszystkie = IloscWzystkichOcen;
+                        ViewBag.wszystkie1 = Wszystkie1;
+                        ViewBag.wszystkie2 = Wszystkie2;
+                        ViewBag.wszystkie3 = Wszystkie3;
+                        ViewBag.wszystkie4 = Wszystkie4;
+                        ViewBag.wszystkie5 = Wszystkie5;
+                        ViewBag.wszystkie6 = Wszystkie6;
+                        ViewBag.srednia = Srednia;
+                        return View(uczen);
+                    }
+                   
                 }
                 else
                 {
@@ -79,7 +184,7 @@ namespace DziennikSzkolny13.Controllers
             if (User.IsInRole("Administrator"))
             {
                 var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
-                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                    .Where(d => d.UczenID == (TymczasoweIDucznia));
                 //return View(ocenas.ToList());
                 return PartialView("ListaOcenUcznia", ocenas.ToList());
             }
@@ -97,7 +202,7 @@ namespace DziennikSzkolny13.Controllers
                 string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
                 var ocenas = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
                     .Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen))
-                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                    .Where(d => d.UczenID ==(TymczasoweIDucznia));
                 //return View(ocenas.ToList());
                 return PartialView("ListaOcenUcznia", ocenas.ToList());
             }
@@ -107,7 +212,7 @@ namespace DziennikSzkolny13.Controllers
             if (User.IsInRole("Administrator"))
             {
                 var nieobe = db.Nieobecnoscs.Include(o => o.UczenDotyczacy).Include(o => o.OpuszczonyPrzedmiot)
-                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                    .Where(d => d.UczenID == (TymczasoweIDucznia));
                 //return View(ocenas.ToList());
                 return PartialView("ListaNieobecnosciUcznia", nieobe.ToList());
             }
@@ -123,9 +228,9 @@ namespace DziennikSzkolny13.Controllers
             else
             {
                 string ZalogowanyUczen = Request.ServerVariables["LOGON_USER"];
-                var nieobe = db.Ocenas.Include(o => o.OcenaPrzedmiot).Include(o => o.OcenaUczen)
-                    .Where(x => x.OcenaUczen.Email.Equals(ZalogowanyUczen))
-                    .Where(d => d.UczenID.Equals(TymczasoweIDucznia));
+                var nieobe = db.Nieobecnoscs.Include(o => o.OpuszczonyPrzedmiot).Include(o => o.UczenDotyczacy)
+                    .Where(x => x.UczenDotyczacy.Email.Equals(ZalogowanyUczen))
+                    .Where(d => d.UczenID == (TymczasoweIDucznia));
                 //return View(ocenas.ToList());
                 return PartialView("ListaNieobecnosciUcznia", nieobe.ToList());
             }
@@ -237,13 +342,13 @@ namespace DziennikSzkolny13.Controllers
             {
                 string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else if (User.IsInRole("Administrator"))
             {
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else
@@ -272,11 +377,11 @@ namespace DziennikSzkolny13.Controllers
                 {
                     string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                     ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
-                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", ocena.UczenID);
                     return View(ocena);
                 }
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", ocena.UczenID);
                 return View(ocena);
             }
             else

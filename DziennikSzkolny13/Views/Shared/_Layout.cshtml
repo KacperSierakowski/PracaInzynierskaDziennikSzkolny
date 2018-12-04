@@ -27,7 +27,7 @@
                 <ul class="nav navbar-nav">
                     @if (User.IsInRole("Administrator"))
                     {
-                        <li class="nav navbar-nav dropdown">
+                        @*<li class="nav navbar-nav dropdown">
                             <a href="@Url.Action("Index", "Home")" class="dropdown-toggle"
                                data-toggle="dropdown">Testy<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -35,7 +35,7 @@
                                 <li><a href="@Url.Action("About", "Home")">About</a></li>
                                 <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
                             </ul>
-                        </li>
+                        </li>*@
                     }
                     @if (User.IsInRole("Administrator") || User.IsInRole("Nauczyciel"))
                     {

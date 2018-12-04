@@ -71,7 +71,7 @@
                 @{
                     string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                     var iloscOcenWystawionychPrzezKonkretnegoNauczycicela = item.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(df => df.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))).Count();
-                    var iloscOcenWystawionych = item.UczniowieKlasy.Select(g => g.OcenyUcznia.Count);
+                    var iloscOcenWystawionych = item.UczniowieKlasy.Select(g => g.OcenyUcznia).Count();
                     @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
                 }
                 @if (User.IsInRole("Administrator"))
@@ -86,7 +86,7 @@
             <td>
                 @{
                     var iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela = item.UczniowieKlasy.Where(d => d.NieobecnosciUcznia.Any(df => df.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel))).Count();
-                    var iloscNieobecnosciWystawionych = item.UczniowieKlasy.Select(g => g.NieobecnosciUcznia.Count);
+                    var iloscNieobecnosciWystawionych = item.UczniowieKlasy.Select(g => g.NieobecnosciUcznia).Count();
                     @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
                 }
                 @if (User.IsInRole("Administrator"))

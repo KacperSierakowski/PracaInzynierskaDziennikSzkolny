@@ -21,6 +21,16 @@ namespace DziennikSzkolny13.Models
         [Required(ErrorMessage = "Nazwisko ucznia jest wymagane")]
         public string Nazwisko { get; set; }
 
+
+        [Display(Name = "ID - Imię i nazwisko")]
+        public string PelnaNazwa
+        {
+            get
+            {
+                return String.Format("{0} {1}, {2}",ID, Imie, Nazwisko);
+            }
+        }
+
         [Display(Name = "Numer Telefonu")]
         //[DataType(DataType.PhoneNumber)]
         //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Numer Telefonu nie jest poprawny (000-000-000)")]

@@ -57,6 +57,8 @@ namespace DziennikSzkolny13.Controllers
         // GET: Klasas/Details/5
         public ActionResult Details(int? id)
         {
+
+            string ZalogowanyUser = Request.ServerVariables["LOGON_USER"];
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -66,8 +68,45 @@ namespace DziennikSzkolny13.Controllers
             {
                 return HttpNotFound();
             }
-            if (User.IsInRole("Nauczyciel") || User.IsInRole("Administrator"))
+            if (User.IsInRole("Nauczyciel"))
             {
+                int IloscWszystkichOcenWystawionychPrzezNauczyciela = klasa.UczniowieKlasy                        .Where(s => s.OcenyUcznia.Any(f => f.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie1 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(1))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie2 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(2))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie3 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(3))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie4 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(4))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie5 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(5))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                int Wszystkie6 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(6))).Where(p => p.OcenyUcznia.Any(s => s.OcenaPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyUser))).Count();
+                float Srednia = ((1 * Wszystkie1) + (2 * Wszystkie2) + (3 * Wszystkie3) + (4 * Wszystkie4) + (5 * Wszystkie5) + (6 * Wszystkie6))
+                    / IloscWszystkichOcenWystawionychPrzezNauczyciela;
+                ViewBag.wszystkie = IloscWszystkichOcenWystawionychPrzezNauczyciela;
+                ViewBag.wszystkie1 = Wszystkie1;
+                ViewBag.wszystkie2 = Wszystkie2;
+                ViewBag.wszystkie3 = Wszystkie3;
+                ViewBag.wszystkie4 = Wszystkie4;
+                ViewBag.wszystkie5 = Wszystkie5;
+                ViewBag.wszystkie6 = Wszystkie6;
+                ViewBag.srednia = Srednia;
+                return View(klasa);
+            }
+            else if (User.IsInRole("Administrator"))
+            {
+                int IloscWszystkichOcenWystawionychPrzezNauczycieli = klasa.UczniowieKlasy.Count();
+                int Wszystkie1 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(1))).Count();
+                int Wszystkie2 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(2))).Count();
+                int Wszystkie3 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(3))).Count();
+                int Wszystkie4 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(4))).Count();
+                int Wszystkie5 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(5))).Count();
+                int Wszystkie6 = klasa.UczniowieKlasy.Where(d => d.OcenyUcznia.Any(q => q.WartoscOceny.Equals(6))).Count();
+                float Srednia = (1 * Wszystkie1 + 2 * Wszystkie2 + 3 * Wszystkie3 + 4 * Wszystkie4 + 5 * Wszystkie5 + 6 * Wszystkie6) / IloscWszystkichOcenWystawionychPrzezNauczycieli;
+                ViewBag.wszystkie = IloscWszystkichOcenWystawionychPrzezNauczycieli;
+                ViewBag.wszystkie1 = Wszystkie1;
+                ViewBag.wszystkie2 = Wszystkie2;
+                ViewBag.wszystkie3 = Wszystkie3;
+                ViewBag.wszystkie4 = Wszystkie4;
+                ViewBag.wszystkie5 = Wszystkie5;
+                ViewBag.wszystkie6 = Wszystkie6;
+                ViewBag.srednia = Srednia;
                 return View(klasa);
             }
             else
@@ -189,13 +228,13 @@ namespace DziennikSzkolny13.Controllers
             {
                 string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else if (User.IsInRole("Administrator"))
             {
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else
@@ -223,11 +262,11 @@ namespace DziennikSzkolny13.Controllers
                 {
                     string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
                     ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(u => u.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
-                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", ocena.UczenID);
                     return View(ocena);
                 }
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu", ocena.PrzedmiotID);
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", ocena.UczenID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", ocena.UczenID);
                 return View(ocena);
             }
             else
@@ -252,13 +291,13 @@ namespace DziennikSzkolny13.Controllers
             {
                 string Zalogowany = Request.ServerVariables["LOGON_USER"];
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(Zalogowany)), "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else if (User.IsInRole("Administrator"))
             {
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Email", uczen.ID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", uczen.ID);
                 return View();
             }
             else
@@ -266,7 +305,7 @@ namespace DziennikSzkolny13.Controllers
                 return View("~/Views/Uczens/PermissionDenied.cshtml");
             }
         }
-       
+
 
         // POST: Klasas/CreateNieobecnoscsFromKlasas
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -288,11 +327,11 @@ namespace DziennikSzkolny13.Controllers
                     string ZalogowanyNauczyciel = Request.ServerVariables["LOGON_USER"];
 
                     ViewBag.PrzedmiotID = new SelectList(db.Przedmiots.Where(s => s.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)), "ID", "NazwaPrzedmiotu");
-                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                    ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", nieobecnosc.UczenID);
                     return View(nieobecnosc);
                 }
                 ViewBag.PrzedmiotID = new SelectList(db.Przedmiots, "ID", "NazwaPrzedmiotu");
-                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "Imie", nieobecnosc.UczenID);
+                ViewBag.UczenID = new SelectList(db.Uczens, "ID", "PelnaNazwa", nieobecnosc.UczenID);
                 return View(nieobecnosc);
             }
             else

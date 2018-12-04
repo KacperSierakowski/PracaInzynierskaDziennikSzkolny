@@ -4,9 +4,7 @@
     ViewBag.Title = "Usuń nieobecność";
 }
 
-<h2>Usuń wpis o nieoeności</h2>
-
-<h3>Jesteś pewna/pewny?</h3>
+<h3>Usunąć wpis o nieobecności?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -25,7 +23,20 @@
         <dd>
             @Html.DisplayFor(model => model.UczenDotyczacy.Imie)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.Nazwisko)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.UczenDotyczacy.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UczenDotyczacy.ID) ucznia
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UczenDotyczacy.ID)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Data)
         </dt>
@@ -40,7 +51,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
             @Html.ActionLink("Powrót", "Index")
         </div>
     }

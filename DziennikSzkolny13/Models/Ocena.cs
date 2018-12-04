@@ -10,6 +10,8 @@ namespace DziennikSzkolny13.Models
     {
         [Key]
         public int ID { get; set; }
+
+        [Range(1, 6, ErrorMessage = "Wprowadź prawidłową wartość oceny")]
         [Display(Name = "Wartość Oceny")]
         [Required(ErrorMessage = "Wymagana wartość oceny, którą wystawiamy")]
         public int WartoscOceny { get; set; }

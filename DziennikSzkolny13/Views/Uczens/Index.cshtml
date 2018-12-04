@@ -66,7 +66,8 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.klasaUcznia.NazwaKlasy)
+                <a href="~/Klasas/Details/@item.klasaUcznia.ID">@Html.DisplayFor(modelItem => item.klasaUcznia.NazwaKlasy)</a>
+                @*@Html.DisplayFor(modelItem => item.klasaUcznia.NazwaKlasy)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ID)
@@ -88,7 +89,11 @@
                 }
                 else
                 {
-                    @iloscOcenWystawionychPrzezKonkretnegoNauczycicela
+                    if (User.IsInRole("Uczeń"))
+                    {
+                        @Html.DisplayFor(modelItem => item.OcenyUcznia.Count)
+                    }
+                    @*@iloscOcenWystawionychPrzezKonkretnegoNauczycicela*@
                 }
             </td>
             <td>
@@ -96,9 +101,9 @@
                     var iloscNieobecnosciWystawionychPrzezKonkretnegoNauczycicela = item.NieobecnosciUcznia.Where(d => d.OpuszczonyPrzedmiot.przedmiotNauczyciel.Email.Equals(ZalogowanyNauczyciel)).Count();
                     @*@Html.DisplayFor(modelItem => item.OcenyUcznia.Count)*@
                 }
-                @if (User.IsInRole("Administrator"))
+                @if (User.IsInRole("Administrator") || User.IsInRole("Uczeń"))
                 {
-                    @Html.DisplayFor(modelItem => item.OcenyUcznia.Count)
+                    @Html.DisplayFor(modelItem => item.NieobecnosciUcznia.Count)
                 }
                 else
                 {
